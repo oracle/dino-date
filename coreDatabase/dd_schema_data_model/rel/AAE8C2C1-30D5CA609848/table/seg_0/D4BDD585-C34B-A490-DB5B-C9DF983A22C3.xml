@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D4BDD585-C34B-A490-DB5B-C9DF983A22C3" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_DINOSAURS_T">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_DINOSAURS_T</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:50 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="DINOSAUR_ID" id="A0DBABBE-F900-1D38-C5B1-8D2BB2813346">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>DINOSAUR_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="SPECIES_NAME" id="74093351-BC59-6480-967A-64B0A3995C22">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>SPECIES_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AVERAGE_LENGTH_IN_FEET" id="B41D64B2-6835-178A-4B1C-DC3A0B4567BF">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>AVERAGE_LENGTH_IN_FEET</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AVERAGE_WEIGHT_IN_TONS" id="ED0A0A71-9D9E-5AC9-71B8-03A46A199704">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>AVERAGE_WEIGHT_IN_TONS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="4A794C51-E73E-0552-5EA4-C03648A66A48">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_BY" id="D0A4CCCC-5D67-CE45-2E26-3B1794629F26">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_ON" id="77368951-3C72-2529-4652-B6FAADD31EC0">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_ON" id="69B04221-5405-08F4-4942-077F14A4FB79">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS_T</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:57 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="53B47593-ED8F-25D8-B118-3BD8BC20EAF0" name="DD_DINOSAURS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_DINOSAURS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:09 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0DBABBE-F900-1D38-C5B1-8D2BB2813346"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="369809E2-F8DD-2ED5-02E2-B24D13A005BB" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_DINOSAURS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_DINOSAURS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:06 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0DBABBE-F900-1D38-C5B1-8D2BB2813346"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

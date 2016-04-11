@@ -1,0 +1,17 @@
+/*-------------------------------------------------------------------------------
+ *
+ *  Set up Oracle Advanced Queuing
+ */
+
+-- The table for queue errors
+CREATE TABLE dd_dequeue_errors_t
+(
+  id              INTEGER GENERATED ALWAYS AS IDENTITY,
+  error_message   VARCHAR2 (4000)
+)
+/
+
+CREATE OR REPLACE EDITIONING VIEW dd_dequeue_errors AS
+  SELECT *
+  FROM dd_dequeue_errors_t
+/

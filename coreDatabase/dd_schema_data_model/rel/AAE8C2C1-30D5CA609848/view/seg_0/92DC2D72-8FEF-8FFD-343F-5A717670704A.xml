@@ -1,0 +1,111 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="92DC2D72-8FEF-8FFD-343F-5A717670704A" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_TEMPLATES">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEMPLATES</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DD_TEMPLATES&lt;br/&gt;AS &lt;br/&gt;SELECT &quot;TEMPLATE_ID&quot;,&quot;TEMPLATE_NAME&quot;,&quot;TEMPLATE_CONTENTS&quot;,&quot;CREATED_BY&quot;,&quot;CHANGED_BY&quot;,&quot;CREATED_ON&quot;,&quot;CHANGED_ON&quot;&lt;br/&gt;  FROM dd_templates_t</userDefinedSQL>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TEMPLATE_ID" id="C2ADA527-EA96-FC34-37AB-6E6C3EB96669">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>TEMPLATE_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>TEMPLATE_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>TEMPLATE_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TEMPLATE_NAME" id="43FD5367-4628-254A-5689-3895ED3436C8">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>TEMPLATE_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>TEMPLATE_NAME</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>TEMPLATE_NAME</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TEMPLATE_CONTENTS" id="ED012D3E-459C-BA2D-5394-BC3E938ECB38">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>TEMPLATE_CONTENTS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>TEMPLATE_CONTENTS</alias>
+<dataType>CLOB (4000)</dataType>
+<headerAlias>TEMPLATE_CONTENTS</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="23FC1045-4681-A6FC-B843-4CAC59D63DC4">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>VARCHAR2 (132)</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_BY" id="2320FAA3-0658-99D3-0F0A-28CB99EBA3D4">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_BY</alias>
+<dataType>VARCHAR2 (132)</dataType>
+<headerAlias>CHANGED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_ON" id="D2AA03A7-E33A-2FDB-9BA6-F9966A9CE0C1">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CREATED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_ON" id="68D577F5-1A8C-D969-CF85-158D97954567">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:17 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CHANGED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

@@ -1,0 +1,63 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+  <div id="login-view" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+    <div class="page-header">
+      <h1>Login</h1>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-body">
+        <form id="loginForm" name="loginForm" novalidate ng-submit="login()" class="form-horizontal" role="form">
+          <div class="form-group" ng-class="{'has-error': showError('email')}">
+            <div class="col-md-12">
+              <label class="sr-only" for="email">Email</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+                <input id="email" type="email" class="form-control" name="email" value="" placeholder="Email"
+                       ng-model="user.email"
+                       required ng-maxlength="100">
+              </div>
+              <p ng-show="showError('email')"
+                 ng-messages="loginForm.email.$error" class="help-block">
+                <span ng-message="required">Email is required.</span>
+                <span ng-message="maxlength">Email must be less than 100 characters.</span>
+                <span ng-message="email">The email entered is not valid.</span>
+              </p>
+            </div>
+          </div>
+          <div class="form-group" ng-class="{'has-error': showError('password')}">
+            <div class="col-md-12">
+              <label class="sr-only" for="password">Password</label>
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password"
+                       ng-model="user.password"
+                       required ng-maxlength="100" ng-minlength="6">
+              </div>
+              <p ng-show="showError('password')"
+                 ng-messages="loginForm.password.$error" class="help-block">
+                <span ng-message="required">Password is required.</span>
+                <span ng-message="maxlength">Password must be less than 100 characters.</span>
+                <span ng-message="minlength">Password must be more than 5 characters.</span>
+              </p>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-12">
+              <button id="login-btn" type="submit" class="btn btn-primary btn-block">Login</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="panel-footer">
+        <p>Don't have an account?
+          <a ui-sref="registration">
+            Register Here
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

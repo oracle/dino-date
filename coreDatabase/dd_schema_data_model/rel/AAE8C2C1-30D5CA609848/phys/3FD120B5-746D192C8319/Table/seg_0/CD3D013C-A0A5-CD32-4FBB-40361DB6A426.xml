@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="DD_LOCATIONS_T" directorySegmentName="seg_0" id="CD3D013C-A0A5-CD32-4FBB-40361DB6A426">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:51 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<schemaObject>929E04B3-5639-4CF1-A7D1-FC63873D31F0</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>1B841945-88FA-3D64-7622-FEE361086B2D</segment>
+<tableSpace>6687405F-7C48-BFA1-6E37-51B86C044F93</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="CITY" id="122F3ED0-EEF2-B77C-2F6C-499B5885ADF9">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS1" id="273C81E8-D9AB-9B6F-7B16-C3457675BBD4">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_BY" id="2D67B396-1B4F-9FCF-9394-39E797A92EA9">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ADDRESS2" id="47296562-4EBB-DA58-F53B-CFD0B3B4816B">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="GEOMETRY" id="6047E4D2-2587-9646-E46F-B9449A0E1A53">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_ON" id="7585ECCB-D680-6EEB-B2CD-DEB1A96B3E03">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:00 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="STATE" id="7ECE5AE0-C7B6-D9AA-FF43-D95B80E9B4E3">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CHANGED_ON" id="80FEB664-2CA3-56C5-641E-206C77FED511">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:00 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CHANGED_BY" id="8711E9C6-413D-8F7E-302C-9BBE31987586">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOCATION_NAME" id="A913F094-D634-F6AD-F1DB-94C879A4CC5D">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:58 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="COUNTRY" id="BA0F2FC5-9BBF-0511-6CA7-A460CC3DBC1E">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LOCATION_ID" id="BF33878A-EF41-8A18-880F-DACDBD3CB2CB">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:58 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<autoIncrementDDL>IDENTITY_CLAUSE</autoIncrementDDL>
+</ColumnProxy>
+<ColumnProxy name="POSTAL_CODE" id="C2ED6743-D404-5509-C611-28075E16B604">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DD_LOCATION_SX" id="1655353A-752F-06C2-7D4E-D48E4DECA5BF">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:06 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<schemaObject>929E04B3-5639-4CF1-A7D1-FC63873D31F0</schemaObject>
+<segment>BE6FCE05-6158-A482-B47F-632837BEBE1D</segment>
+<tableSpace>6687405F-7C48-BFA1-6E37-51B86C044F93</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="DD_LOCATIONS" id="7ED35168-05DD-2039-BC25-B4C7B775E483">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:07 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<schemaObject>929E04B3-5639-4CF1-A7D1-FC63873D31F0</schemaObject>
+<segment>06B98E07-31FB-CA79-8820-EE530FC36745</segment>
+<tableSpace>6687405F-7C48-BFA1-6E37-51B86C044F93</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="DD_LOCATIONS" id="DEEE8C3E-E795-C1BA-043B-1C694D6223A6">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:09 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<segment>06B98E07-31FB-CA79-8820-EE530FC36745</segment>
+<tableSpace>6687405F-7C48-BFA1-6E37-51B86C044F93</tableSpace>
+<existingIndex>7ED35168-05DD-2039-BC25-B4C7B775E483</existingIndex>
+<indexSegment>06B98E07-31FB-CA79-8820-EE530FC36745</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

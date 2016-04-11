@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD" seqName="seg_0"/>
+   <object objectType="Table" objectID="90012F40-2124-4A7E-6CD5-74B6650E61E7" name="DD_DEQUEUE_ERRORS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="D4BDD585-C34B-A490-DB5B-C9DF983A22C3" name="DD_DINOSAURS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="CD3D013C-A0A5-CD32-4FBB-40361DB6A426" name="DD_LOCATIONS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="48FA3282-8A3D-E092-7391-FD0D45A2B930" name="DD_MEMBERS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="B8AACC52-5C08-662F-288B-53504751F5A0" name="DD_MESSAGES_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="27E6D053-7914-B5D2-28F9-D45AB49C5F3B" name="DD_TEMPLATES_T" seqName="seg_0"/>
+   <object objectType="View" objectID="67E76BC1-5C06-A954-BC11-F7750674DB9C" name="DD_DEQUEUE_ERRORS" seqName="seg_0"/>
+   <object objectType="View" objectID="EE388570-08BB-E1D0-1382-89BF22060AE1" name="DD_DINOSAURS" seqName="seg_0"/>
+   <object objectType="View" objectID="AD01F3AC-2805-C239-C66D-F7BC26386326" name="DD_LOCATIONS" seqName="seg_0"/>
+   <object objectType="View" objectID="F43115B8-FC8B-169E-9839-A94D63B5A40A" name="DD_MEMBERS" seqName="seg_0"/>
+   <object objectType="View" objectID="E5B44BE3-E893-4BA6-B1B1-B8BABC72C35F" name="DD_MESSAGES" seqName="seg_0"/>
+   <object objectType="View" objectID="92DC2D72-8FEF-8FFD-343F-5A717670704A" name="DD_TEMPLATES" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="C156F408-4176-CCAA-F96D-F0D30DB3FC01" name="FK_DD_MEMBERS_D" seqName="seg_0" containerID="48FA3282-8A3D-E092-7391-FD0D45A2B930" refContainerID="D4BDD585-C34B-A490-DB5B-C9DF983A22C3"/>
+   <object objectType="FKIndexAssociation" objectID="5D2BBEBC-F672-F2A3-9F8D-4799741BA657" name="FK_DD_MEMBERS_L" seqName="seg_0" containerID="48FA3282-8A3D-E092-7391-FD0D45A2B930" refContainerID="CD3D013C-A0A5-CD32-4FBB-40361DB6A426"/>
+   <object objectType="FKIndexAssociation" objectID="9484E3C0-96AF-7E1A-45E6-060D2C6421A4" name="FK_DD_MESSAGES_FROM" seqName="seg_0" containerID="B8AACC52-5C08-662F-288B-53504751F5A0" refContainerID="48FA3282-8A3D-E092-7391-FD0D45A2B930"/>
+   <object objectType="FKIndexAssociation" objectID="A5933E41-3FA3-51AA-4013-5621B382E4E4" name="FK_DD_MESSAGES_TO" seqName="seg_0" containerID="B8AACC52-5C08-662F-288B-53504751F5A0" refContainerID="48FA3282-8A3D-E092-7391-FD0D45A2B930"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>

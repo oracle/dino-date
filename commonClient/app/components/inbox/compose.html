@@ -1,0 +1,56 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div class="mailheaders" data-ng-init="InboxCtrl.getToMemberName()">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 >Send Mail to {{InboxCtrl.toMember.name}}</h3>
+            </div>
+            <div class="panel-body">
+                <form id="registrationForm" name="registrationForm" novalidate ng-submit="InboxCtrl.register()"
+                      class="form-horizontal" role="form">
+                    <div class="form-group" ng-class="{'has-error': InboxCtrl.showError('subject')}">
+                        <label for="subject" class="col-md-4 control-label">Subject</label>
+
+                        <div class="col-md-8">
+                            <input id="subject" name="subject" ng-model="InboxCtrl.subject" class="form-control"
+                                   type="text" name="subject"
+                                   class="form-control" placeholder="Subject" required autofocus>
+
+                            <p ng-show="InboxCtrl.showError('subject')"
+                               ng-messages="registrationForm.name.$error" class="help-block">
+                                <span ng-message="required">Subject is required.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': InboxCtrl.showError('messageContents')}">
+                        <label for="messageContents" class="col-md-4 control-label">Message</label>
+
+                        <div class="col-md-8">
+                            <textarea ng-model="InboxCtrl.messageContents" class="form-control" id="messageContents"
+                                      name="messageContents"
+                                      class="form-control" placeholder="Send a message . . ." wrap="soft" required
+                                      rows="6" cols="50"></textarea>
+
+
+                            <p ng-show="InboxCtrl.showError('messageContents')"
+                               ng-messages="registrationForm.name.$error" class="help-block">
+                                <span ng-message="required">Message is required.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <button id="send" type="button" value="Send"
+                                    ng-click="InboxCtrl.sendMessage()"
+                                    class="btn btn-primary btn-block">Send
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

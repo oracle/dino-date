@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="4A4D9E1E-27EC-22C4-A47E-59F2B98F4BC0" mainViewID="F3CDFE08-95B0-5554-CDE6-A31D9BE5482C">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:11:21 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

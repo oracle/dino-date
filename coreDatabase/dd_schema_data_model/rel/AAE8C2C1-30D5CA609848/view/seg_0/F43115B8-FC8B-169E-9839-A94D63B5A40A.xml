@@ -1,0 +1,153 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="F43115B8-FC8B-169E-9839-A94D63B5A40A" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_MEMBERS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MEMBERS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DD_MEMBERS&lt;br/&gt;AS &lt;br/&gt;SELECT &quot;MEMBER_ID&quot;,&quot;DINOSAUR_ID&quot;,&quot;LOCATION_ID&quot;,&quot;DINO_NAME&quot;,&quot;ABOUT_YOURSELF&quot;,&quot;SUBSCRIPTION_STATUS&quot;,&quot;CREATED_BY&quot;,&quot;CHANGED_BY&quot;,&quot;CREATED_ON&quot;,&quot;CHANGED_ON&quot;&lt;br/&gt;  FROM dd_members_t</userDefinedSQL>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="MEMBER_ID" id="D7A23F76-CA43-F86F-AB2D-908109EEAF64">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>MEMBER_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>MEMBER_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>MEMBER_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="DINOSAUR_ID" id="41E0E0B5-3676-13FD-15FE-C3B81533BEC0">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>DINOSAUR_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>DINOSAUR_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>DINOSAUR_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="LOCATION_ID" id="4938BDBA-D36E-2410-793B-214E9A9B11FB">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>LOCATION_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>LOCATION_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="DINO_NAME" id="C67ED256-4802-E576-56FE-8420F37A7E66">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>DINO_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>DINO_NAME</alias>
+<dataType>VARCHAR2 (500)</dataType>
+<headerAlias>DINO_NAME</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ABOUT_YOURSELF" id="4106AC0D-C8FF-71C2-D673-F95A17893552">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>ABOUT_YOURSELF</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ABOUT_YOURSELF</alias>
+<dataType>CLOB (4000)</dataType>
+<headerAlias>ABOUT_YOURSELF</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SUBSCRIPTION_STATUS" id="18A203B2-2B55-1718-78DA-9B2E6950797D">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>SUBSCRIPTION_STATUS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>SUBSCRIPTION_STATUS</alias>
+<dataType>VARCHAR2 (1)</dataType>
+<headerAlias>SUBSCRIPTION_STATUS</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="A92364CE-5E90-BAE4-2938-5DFCE7D91191">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_BY" id="0ECFF44E-4753-C59D-381B-97A6B9B0504C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CHANGED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_ON" id="AA0DD65A-985A-AC63-B221-9DC04E3A2AF8">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CREATED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_ON" id="B5DB6B17-6058-C873-0144-E90C6537EC49">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CHANGED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

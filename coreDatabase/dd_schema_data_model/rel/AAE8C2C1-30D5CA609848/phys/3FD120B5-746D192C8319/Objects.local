@@ -1,0 +1,42 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v12c.StorageDesignOraclev12c>
+   <object objectType="TSpace" objectID="6687405F-7C48-BFA1-6E37-51B86C044F93" name="USERS" seqName="seg_0"/>
+   <object objectType="User" objectID="29F77958-DE9B-AAEB-4F89-771962185EA5" name="DD" seqName="seg_0"/>
+   <object objectType="User" objectID="29519916-7FAF-6F55-C166-B24A57969CD3" name="DD_NON_EBR" seqName="seg_0"/>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
+   <object objectType="SType" objectID="5D2AD2B3-8E63-03E9-BE27-65F4FAB77C64" name="DD_USER_PAYMENT_TYPE" seqName="seg_0"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
+   <object objectType="Package" objectID="D01709F3-ECA2-784E-520D-587CE9812306" name="DD_ADMIN_PKG" seqName="seg_0"/>
+   <object objectType="Package" objectID="6D426B92-36E6-345E-69BC-B9F4D2B4CD73" name="DD_PAYMENT_PKG" seqName="seg_0"/>
+   <object objectType="Package" objectID="6B76B415-5498-84E9-90A8-DAB2852BA6D2" name="DD_SEARCH_PKG" seqName="seg_0"/>
+   <object objectType="Package" objectID="B55D0AFA-7098-3E1D-E763-23EB8C274BB2" name="DD_TEXT_UDS_PKG" seqName="seg_0"/>
+   <object objectType="Table" objectID="27E6D053-7914-B5D2-28F9-D45AB49C5F3B" name="DD_TEMPLATES_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="48FA3282-8A3D-E092-7391-FD0D45A2B930" name="DD_MEMBERS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="90012F40-2124-4A7E-6CD5-74B6650E61E7" name="DD_DEQUEUE_ERRORS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="B8AACC52-5C08-662F-288B-53504751F5A0" name="DD_MESSAGES_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="CD3D013C-A0A5-CD32-4FBB-40361DB6A426" name="DD_LOCATIONS_T" seqName="seg_0"/>
+   <object objectType="Table" objectID="D4BDD585-C34B-A490-DB5B-C9DF983A22C3" name="DD_DINOSAURS_T" seqName="seg_0"/>
+   <object objectType="Segment" objectID="F2E1544E-1E08-6438-55CD-18B51E0D8237" name="Storage1" seqName="seg_0"/>
+   <object objectType="Segment" objectID="2DF8BD59-1ADA-4BB6-E75F-6DD233910CFB" name="Storage14" seqName="seg_0"/>
+   <object objectType="Segment" objectID="1B841945-88FA-3D64-7622-FEE361086B2D" name="Storage2" seqName="seg_0"/>
+   <object objectType="Segment" objectID="06B98E07-31FB-CA79-8820-EE530FC36745" name="Storage7" seqName="seg_0"/>
+   <object objectType="Segment" objectID="BE6FCE05-6158-A482-B47F-632837BEBE1D" name="Storage8" seqName="seg_0"/>
+   <object objectType="View" objectID="67E76BC1-5C06-A954-BC11-F7750674DB9C" name="DD_DEQUEUE_ERRORS" seqName="seg_0"/>
+   <object objectType="View" objectID="92DC2D72-8FEF-8FFD-343F-5A717670704A" name="DD_TEMPLATES" seqName="seg_0"/>
+   <object objectType="View" objectID="AD01F3AC-2805-C239-C66D-F7BC26386326" name="DD_LOCATIONS" seqName="seg_0"/>
+   <object objectType="View" objectID="E5B44BE3-E893-4BA6-B1B1-B8BABC72C35F" name="DD_MESSAGES" seqName="seg_0"/>
+   <object objectType="View" objectID="EE388570-08BB-E1D0-1382-89BF22060AE1" name="DD_DINOSAURS" seqName="seg_0"/>
+   <object objectType="View" objectID="F43115B8-FC8B-169E-9839-A94D63B5A40A" name="DD_MEMBERS" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="2326136F-5332-5CCC-ED81-FE07648D43D0" name="DD_DINOSAURS_BIR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="2E2080B9-113B-C5F3-AD0D-BBA2CB3A1E68" name="DD_DINOSAURS_BUR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="F41F5532-793A-11B2-0A19-A346690EA45F" name="DD_LOCATIONS_BIR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="DF46922C-EF2D-EDD3-ABBA-05155C54A07B" name="DD_LOCATIONS_BUR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="C48CFAFF-F5FE-28CA-B2B6-59B99811D916" name="DD_MEMBERS_BIR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="24E85C99-B7B4-E190-26DC-B1D8322D4C69" name="DD_MEMBERS_BUR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="C6B2546F-774F-6F49-7E79-CB6D8656D218" name="DD_MESSAGES_BIR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="FB162AB0-A67E-1BD2-E45E-6FA5676A6082" name="DD_MESSAGES_BUR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="9754DE36-4560-488B-6B2E-667341DC6CDF" name="DD_TEMPLATES_BIR" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="3BCB1B76-D378-E94D-D20B-512E76247A4F" name="DD_TEMPLATES_BUR" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v12c.StorageDesignOraclev12c>

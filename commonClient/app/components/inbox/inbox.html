@@ -1,0 +1,31 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3>Inbox for {{InboxCtrl.user.name}}</h3>
+        </div>
+        <div class="panel-body">
+            <div data-ng-init="InboxCtrl.getMessages()">
+                <div ng-show="InboxCtrl.messages.length > 0">
+                    <table class="table table-user-information">
+                        <tr>
+                            <th>From</th>
+                            <th>Subject</th>
+                        </tr>
+                        <tr class="mytable" data-ng-repeat="message in InboxCtrl.messages">
+                            <td>{{message.name}}</td>
+                            <td><a href="/#/inbox/{{message.messageId}}">{{message.subject}}</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div ng-show="InboxCtrl.messages.length == 0">
+                    <p>No Messages</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

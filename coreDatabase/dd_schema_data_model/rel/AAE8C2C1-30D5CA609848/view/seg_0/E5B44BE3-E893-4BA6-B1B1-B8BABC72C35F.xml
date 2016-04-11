@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="E5B44BE3-E893-4BA6-B1B1-B8BABC72C35F" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_MESSAGES">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MESSAGES</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DD_MESSAGES&lt;br/&gt;AS &lt;br/&gt;SELECT &quot;MESSAGE_ID&quot;,&quot;FROM_MEMBER_ID&quot;,&quot;TO_MEMBER_ID&quot;,&quot;SUBJECT&quot;,&quot;MESSAGE_CONTENTS&quot;,&quot;CREATED_BY&quot;,&quot;CHANGED_BY&quot;,&quot;CREATED_ON&quot;,&quot;CHANGED_ON&quot;&lt;br/&gt;  FROM dd_messages_t</userDefinedSQL>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="MESSAGE_ID" id="05DB9188-430C-5519-03D5-ED723B8ECE02">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>MESSAGE_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>MESSAGE_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>MESSAGE_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="FROM_MEMBER_ID" id="245DFF7F-DF35-D456-5B1E-526FFB8DFCEB">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>FROM_MEMBER_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>FROM_MEMBER_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>FROM_MEMBER_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="TO_MEMBER_ID" id="44CA0AA6-C04A-C4B1-379D-61122E8F4935">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>TO_MEMBER_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>TO_MEMBER_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>TO_MEMBER_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SUBJECT" id="1F3408C1-4CA1-1C5D-9A78-67EEC6D4B0CE">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>SUBJECT</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>SUBJECT</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>SUBJECT</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="MESSAGE_CONTENTS" id="6B31D54C-B73E-7EB9-BFE8-C42580DACF4C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>MESSAGE_CONTENTS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>MESSAGE_CONTENTS</alias>
+<dataType>CLOB (4000)</dataType>
+<headerAlias>MESSAGE_CONTENTS</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="D1766858-ADD3-766D-DD41-FCFD6DC70FC7">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>VARCHAR2 (132)</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_BY" id="BF4C7152-15A9-4EE3-DC20-844CC1A30BE9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_BY</alias>
+<dataType>VARCHAR2 (132)</dataType>
+<headerAlias>CHANGED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_ON" id="2513EF36-389A-6185-AAB6-19DEE3357F2D">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CREATED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_ON" id="E0749513-B1A1-660F-D9CA-C4856BBC1DCD">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MESSAGES</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CHANGED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

@@ -1,0 +1,42 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div id="register" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <div class="page-header">
+            <h1>Control Panel</h1>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <form id="registrationForm" name="registrationForm" novalidate ng-submit="PanelCtrl.register()" class="form-horizontal" role="form">
+
+                  <div class="form-group" ng-class="{'has-error': PanelCtrl.showError('generateAmount')}">
+                      <label for="generateAmount" class="col-md-4 control-label">Generate Members</label>
+                      <div class="col-md-6">
+                          <select id="generateAmount" class="form-control" name="generateAmount"
+                                  ng-model="PanelCtrl.generateAmount">
+                              <option value="0">- Select Amount -</option>
+                              <option value="100">100</option>
+                              <option value="500">500</option>
+                              <option value="1000">1,000</option>
+                              <option value="10000">10,000</option>
+                          </select>
+                          <p ng-show="PanelCtrl.showError('generateAmount')"
+                             ng-messages="registrationForm.generateAmount.$error" class="help-block">
+                          </p>
+                      </div> <i class="fa fa-3x fa-magic" ng-class={"fa-spin":PanelCtrl.generating} ng-click="PanelCtrl.generateMembers()"></i>
+                  </div>
+                    <!-- <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <button id="register-btn" type="submit" class="btn btn-primary btn-block">View Singles</button>
+                        </div>
+                    </div> -->
+                </form>
+            </div>
+            <div class="panel-footer">
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,29 @@
+CREATE TABLE dd_seed_data_t
+(
+  seed_data_id    NUMBER GENERATED ALWAYS AS IDENTITY,
+  data_type       VARCHAR2 (20),
+  data            VARCHAR2 (1000)
+)
+/
+
+ALTER TABLE dd_seed_data_t
+RESULT_CACHE (MODE FORCE)
+/
+
+CREATE UNIQUE INDEX dd_seed_data
+ON dd_seed_data_t (seed_data_id)
+/
+
+CREATE OR REPLACE EDITIONING VIEW dd_seed_data AS
+  SELECT *
+  FROM dd_seed_data_t
+/
+
+ALTER TABLE dd_seed_data_t ADD
+(CONSTRAINT dd_seed_data
+PRIMARY KEY (seed_data_id)
+  USING INDEX dd_seed_data ENABLE VALIDATE)
+/
+
+CREATE INDEX dd_seed_data_type ON dd_seed_data_t (data_type)
+/

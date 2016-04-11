@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="DD_MESSAGES_BUR" directorySegmentName="seg_0" id="FB162AB0-A67E-1BD2-E45E-6FA5676A6082">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MESSAGES_BUR</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<actions>UPDATE</actions>
+<body>DECLARE&lt;br/&gt;  BEGIN&lt;br/&gt;    :new.changed_on := SYSDATE;&lt;br/&gt;    :new.changed_by := USER;&lt;br/&gt;  END dd_messages_bur;</body>
+<triggerTime>BEFORE</triggerTime>
+<owner>29F77958-DE9B-AAEB-4F89-771962185EA5</owner>
+<view>E5B44BE3-E893-4BA6-B1B1-B8BABC72C35F</view>
+</TriggerOraclev10g>

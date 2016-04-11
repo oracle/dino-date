@@ -1,0 +1,22 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div class="panel panel-primary" data-ng-init="InboxCtrl.getMessage()">
+        <div class="panel-heading">
+            <h3>Message From {{InboxCtrl.message.name}}</h3>
+        </div>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>Subject</dt>
+                <dd>{{InboxCtrl.message.subject}}</dd>
+                <dt>Message</dt>
+                <dd>{{InboxCtrl.message.messageContents}}</dd>
+            </dl>
+        </div>
+
+        <a href="/#/inbox" class="btn btn-default messageBtn" ><i class="fa fa-inbox fa-lg"></i> Return to Inbox</a>
+        <a href="/#/compose/{{InboxCtrl.message.fromMemberId}}" class="btn btn-primary messageBtn pull-right" ><i class="fa fa-reply fa-lg"></i> Reply</a>
+    </div>
+</div>

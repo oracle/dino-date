@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<StructuredType class="oracle.dbtools.crest.model.design.datatypes.StructuredType" name="DD_USER_PAYMENT_TYPE" directorySegmentName="seg_0" id="5D2AD2B3-8E63-03E9-BE27-65F4FAB77C64">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_NON_EBR</sourceObjSchema>
+<sourceObjName>DD_USER_PAYMENT_TYPE</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<predefined>false</predefined>
+<final>true</final>
+<instantiable>true</instantiable>
+<attributes itemClass="oracle.dbtools.crest.model.design.datatypes.TypeElement">
+<Attribute name="MEMBER_ID" id="6102CEF5-160A-1C54-F89D-B94CF2C9C422">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<type>LOGDT011</type>
+</Attribute>
+<Attribute name="DINO_NAME" id="46BEA22B-FD91-300D-66B5-3EFB0AC13EB4">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<size>500</size>
+<type>LOGDT024</type>
+</Attribute>
+<Attribute name="CARD_NUMBER" id="E778878A-B396-7BAC-9068-586901AE12BB">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<type>LOGDT011</type>
+</Attribute>
+<Attribute name="AMOUNT" id="A997FD52-C3E4-E786-4976-1FDEBC9FB183">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<mandatory>false</mandatory>
+<precision>0</precision>
+<reference>false</reference>
+<scale>0</scale>
+<type>LOGDT011</type>
+</Attribute>
+</attributes>
+</StructuredType>

@@ -1,0 +1,36 @@
+CREATE TABLE dd_settings_t
+(
+  setting_id             NUMBER GENERATED ALWAYS AS IDENTITY,
+  setting_name           VARCHAR2(100),
+  char_value             VARCHAR2(100),
+  num_value              NUMBER,
+  date_value             DATE,
+  created_by             VARCHAR2(100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
+  changed_by             VARCHAR2(100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
+  created_on             TIMESTAMP WITH LOCAL TIME ZONE          NOT NULL,
+  changed_on             TIMESTAMP WITH LOCAL TIME ZONE          NOT NULL
+)
+/
+
+ALTER TABLE dd_settings_t
+RESULT_CACHE ( MODE FORCE )
+/
+
+CREATE UNIQUE INDEX dd_settings
+ON dd_settings_t (setting_id)
+/
+
+CREATE UNIQUE INDEX dd_settings_2
+ON dd_settings_t (setting_name)
+/
+
+CREATE OR REPLACE EDITIONING VIEW dd_settings AS
+  SELECT *
+  FROM dd_settings_t
+/
+
+ALTER TABLE dd_settings_t ADD
+(CONSTRAINT dd_settings
+PRIMARY KEY (setting_id)
+  USING INDEX dd_settings ENABLE VALIDATE)
+/

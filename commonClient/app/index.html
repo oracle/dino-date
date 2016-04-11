@@ -1,0 +1,67 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="assets/libs/fontawesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/libs/animate.css/animate.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-sandstone.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <title>DinoDate</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body ng-app="dinoDateApp" ng-controller="AppCtrl">
+    <dd-header></dd-header>
+
+    <div ng-cloak>
+      <div class="main-alert">
+        <div class="alert alert-{{alert.type}} animated"
+             ng-hide=alert.hasBeenShown ng-class="{'flipInX': alert.show, 'flipOutX': !alert.show, 'alert-hidden': !alert.show}" data-ng-repeat="alert in alerts">
+            <strong>{{alert.title}}</strong>
+            {{alert.message}}
+        </div>
+      </div>
+    </div>
+
+    <dd-oracle-info></dd-oracle-info>
+
+    <div ui-view class="container" ng-cloak></div>
+
+    <div class="footer">
+        <div class="container">
+            <p class="row"><span class="fa fa-heart"></span> Luvin' dinosaurs since before you were born</p>
+        </div>
+    </div>
+
+    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="assets/libs/angular/angular.js"></script>
+    <script src="assets/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="assets/libs/angular-resource/angular-resource.js"></script>
+    <script src="assets/libs/angular-sanitize/angular-sanitize.js"></script>
+    <script src="assets/libs/angular-messages/angular-messages.js"></script>
+    <script src="assets/libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="app.js"></script>
+    <script src="shared/alert.js"></script>
+    <script src="shared/auth.js"></script>
+    <script src="shared/authinterceptor.js"></script>
+    <script src="shared/currentUser.js"></script>
+    <script src="shared/valuematch.js"></script>
+    <script src="components/home/home.js"></script>
+    <script src="components/header/header.js"></script>
+    <script src="components/oracle-info/oracle-info.js"></script>
+    <script src="components/registration/registration.js"></script>
+    <script src="components/login/login.js"></script>
+    <script src="components/member-home/member-home.js"></script>
+    <script src="components/search/search.js"></script>
+    <script src="components/profile/profile.js"></script>
+    <script src="components/inbox/inbox.js"></script>
+    <script src="components/about/about.js"></script>
+    <script src="components/admin/panel.js"></script>
+</body>
+</html>

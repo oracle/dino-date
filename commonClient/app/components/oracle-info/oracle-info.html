@@ -1,0 +1,26 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div id="oracle-info" ng-if="OracleInfoCtrl.show()">
+    <div class="oi-details">
+        <form>
+            <div class="form-group">
+                <label for="processType">Process Type</label>
+                <select id="processType" class="form-control"
+                        ng-model="OracleInfoCtrl.currentType"
+                        ng-options="type.name + type.subText for type in OracleInfoCtrl.currentTypes"
+                        ng-change="OracleInfoCtrl.oracleInfo.setRegisterType(OracleInfoCtrl.currentType.value, OracleInfoCtrl.currentStateStr)">
+                </select>
+            </div>
+        </form>
+        <div class="oi-description" ng-bind-html="OracleInfoCtrl.currentType.description"></div>
+        <button id="show-code-btn" class="btn btn-primary btn-block" ng-click="OracleInfoCtrl.toggleCode()">{{OracleInfoCtrl.codeBtnLabel}} Code</button>
+    </div>
+    <div class="oi-icon">
+        <i class="fa fa-gears fa-2x"> {{OracleInfoCtrl.currentType.name}}<div class="small"> {{OracleInfoCtrl.currentType.subText}}</div></i>
+        <div class="oi-code" ng-show="OracleInfoCtrl.showCode">
+            <pre>{{OracleInfoCtrl.currentType.code}}</pre>
+        </div>
+    </div>
+</div>

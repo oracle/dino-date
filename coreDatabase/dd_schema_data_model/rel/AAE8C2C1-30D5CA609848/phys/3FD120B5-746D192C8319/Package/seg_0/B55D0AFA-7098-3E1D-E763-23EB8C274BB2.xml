@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<PackageOracle class="oracle.dbtools.crest.model.design.storage.oracle.PackageOracle" name="DD_TEXT_UDS_PKG" directorySegmentName="seg_0" id="B55D0AFA-7098-3E1D-E763-23EB8C274BB2">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEXT_UDS_PKG</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:21 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<owner>29F77958-DE9B-AAEB-4F89-771962185EA5</owner>
+<source>CREATE OR REPLACE PACKAGE DD.DD_TEXT_UDS_PKG&lt;br/&gt;IS&lt;br/&gt;  CURSOR dino_member_cur (&lt;br/&gt;    dd_member_rid    ROWID)&lt;br/&gt;  IS&lt;br/&gt;    SELECT dm.member_id,&lt;br/&gt;      dm.dino_name,&lt;br/&gt;      dm.about_yourself,&lt;br/&gt;      dl.location_name,&lt;br/&gt;      dl.address1 || &apos; &apos; || dl.address2 AS address,&lt;br/&gt;      dl.city,&lt;br/&gt;      dl.state,&lt;br/&gt;      dl.postal_code,&lt;br/&gt;      dl.country,&lt;br/&gt;      ds.species_name,&lt;br/&gt;      ds.average_length_in_feet,&lt;br/&gt;      ds.average_weight_in_tons&lt;br/&gt;    FROM dd_members dm&lt;br/&gt;      JOIN dd_locations dl&lt;br/&gt;        ON (dl.location_id = dm.location_id)&lt;br/&gt;      JOIN dd_dinosaurs ds&lt;br/&gt;        ON (ds.dinosaur_id = dm.dinosaur_id)&lt;br/&gt;    WHERE dm.ROWID = dd_member_rid;&lt;br/&gt;&lt;br/&gt;  PROCEDURE get_member_xml (rid    IN            ROWID,&lt;br/&gt;                            tlob   IN OUT NOCOPY VARCHAR2);&lt;br/&gt;END dd_text_uds_pkg;</source>
+<body class="oracle.dbtools.crest.model.design.storage.oracle.PackageBodyOracle" name="DD_TEXT_UDS_PKG" id="B55D0AFA-7098-3E1D-E763-23EB8C274BB2">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEXT_UDS_PKG</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:21 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<owner>29F77958-DE9B-AAEB-4F89-771962185EA5</owner>
+<source>CREATE OR REPLACE PACKAGE BODY DD.DD_TEXT_UDS_PKG&lt;br/&gt;IS&lt;br/&gt;  PROCEDURE get_member_xml (rid    IN            ROWID,&lt;br/&gt;                            tlob   IN OUT NOCOPY VARCHAR2)&lt;br/&gt;  IS&lt;br/&gt;    l_row   dino_member_cur%ROWTYPE;&lt;br/&gt;    BEGIN&lt;br/&gt;      IF dino_member_cur%ISOPEN&lt;br/&gt;      THEN&lt;br/&gt;        CLOSE dino_member_cur;&lt;br/&gt;      END IF;&lt;br/&gt;&lt;br/&gt;      OPEN dino_member_cur (rid);&lt;br/&gt;&lt;br/&gt;      FETCH dino_member_cur INTO l_row;&lt;br/&gt;&lt;br/&gt;      tlob :=&lt;br/&gt;      &apos;&lt;MEMBER_ID&gt;&apos;&lt;br/&gt;      || l_row.member_id&lt;br/&gt;      || &apos;&lt;/MEMBER_ID&gt;&apos;&lt;br/&gt;      || &apos;&lt;DINO_NAME&gt;&apos;&lt;br/&gt;      || l_row.dino_name&lt;br/&gt;      || &apos;&lt;/DINO_NAME&gt;&apos;&lt;br/&gt;      || &apos;&lt;ABOUT_YOURSELF&gt;&apos;&lt;br/&gt;      || l_row.about_yourself&lt;br/&gt;      || &apos;&lt;/ABOUT_YOURSELF&gt;&apos;&lt;br/&gt;      || &apos;&lt;LOCATION_NAME&gt;&apos;&lt;br/&gt;      || l_row.location_name&lt;br/&gt;      || &apos;&lt;/LOCATION_NAME&gt;&apos;&lt;br/&gt;      || &apos;&lt;ADDRESS&gt;&apos;&lt;br/&gt;      || l_row.address&lt;br/&gt;      || &apos;&lt;/ADDRESS&gt;&apos;&lt;br/&gt;      || &apos;&lt;CITY&gt;&apos;&lt;br/&gt;      || l_row.city&lt;br/&gt;      || &apos;&lt;/CITY&gt;&apos;&lt;br/&gt;      || &apos;&lt;STATE&gt;&apos;&lt;br/&gt;      || l_row.state&lt;br/&gt;      || &apos;&lt;/STATE&gt;&apos;&lt;br/&gt;      || &apos;&lt;POSTAL_CODE&gt;&apos;&lt;br/&gt;      || l_row.postal_code&lt;br/&gt;      || &apos;&lt;/POSTAL_CODE&gt;&apos;&lt;br/&gt;      || &apos;&lt;COUNTRY&gt;&apos;&lt;br/&gt;      || l_row.country&lt;br/&gt;      || &apos;&lt;/COUNTRY&gt;&apos;&lt;br/&gt;      || &apos;&lt;SPECIES_NAME&gt;&apos;&lt;br/&gt;      || l_row.species_name&lt;br/&gt;      || &apos;&lt;/SPECIES_NAME&gt;&apos;&lt;br/&gt;      || &apos;&lt;AVGLEN&gt;&apos;&lt;br/&gt;      || l_row.average_length_in_feet&lt;br/&gt;      || &apos;&lt;/AVGLEN&gt;&apos;&lt;br/&gt;      || &apos;&lt;AVGWEIGHT&gt;&apos;&lt;br/&gt;      || l_row.average_weight_in_tons&lt;br/&gt;      || &apos;&lt;/AVGWEIGHT&gt;&apos;;&lt;br/&gt;&lt;br/&gt;      CLOSE dino_member_cur;&lt;br/&gt;    END;&lt;br/&gt;END;</source>
+</body>
+</PackageOracle>

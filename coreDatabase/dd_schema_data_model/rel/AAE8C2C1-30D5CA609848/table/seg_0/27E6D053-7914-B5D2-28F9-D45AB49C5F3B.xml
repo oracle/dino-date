@@ -1,0 +1,149 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27E6D053-7914-B5D2-28F9-D45AB49C5F3B" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_TEMPLATES_T">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEMPLATES_T</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:55 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="TEMPLATE_ID" id="12161E16-1A47-1A73-A38B-8C258FE33F89">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>TEMPLATE_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="TEMPLATE_NAME" id="F589605C-74C7-6935-8969-3D9CA10285B1">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>TEMPLATE_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEMPLATE_CONTENTS" id="F3E5222F-53E7-0311-21B1-DC234AD0B427">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>TEMPLATE_CONTENTS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="27034EEF-E516-39E5-76C2-4DC7BF56B827">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>132 BYTE</dataTypeSize>
+<ownDataTypeParameters>132 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_BY" id="1BCB5414-7B71-7619-2159-E426B22C7460">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>132 BYTE</dataTypeSize>
+<ownDataTypeParameters>132 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_ON" id="20CEE57A-38DA-71E6-21C7-8C2DB84F8C10">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_ON" id="1DCEAE3C-BC81-D3A6-7E90-3E9D84CAD1ED">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_TEMPLATES_T</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:04 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00CD0144-1EDF-A544-905B-9B2AA83DE9DF" name="DD_TEMPLATES">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEMPLATES</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:11 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12161E16-1A47-1A73-A38B-8C258FE33F89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="58C51B15-A540-71EC-F989-556382B4846F" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_TEMPLATES">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_TEMPLATES</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:08 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="12161E16-1A47-1A73-A38B-8C258FE33F89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

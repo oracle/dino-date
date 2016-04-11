@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="DD_LOCATIONS_BIR" directorySegmentName="seg_0" id="F41F5532-793A-11B2-0A19-A346690EA45F">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATIONS_BIR</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<actions>INSERT</actions>
+<body>DECLARE&lt;br/&gt;  BEGIN&lt;br/&gt;    :new.created_on := SYSDATE;&lt;br/&gt;    :new.created_by := USER;&lt;br/&gt;    :new.changed_on := SYSDATE;&lt;br/&gt;    :new.changed_by := USER;&lt;br/&gt;  END dd_locations_bir;</body>
+<triggerTime>BEFORE</triggerTime>
+<owner>29F77958-DE9B-AAEB-4F89-771962185EA5</owner>
+<view>AD01F3AC-2805-C239-C66D-F7BC26386326</view>
+</TriggerOraclev10g>

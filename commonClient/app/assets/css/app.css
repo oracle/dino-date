@@ -1,0 +1,164 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar {
+  margin-bottom: 1px;
+}
+
+/* Custom page header */
+.page-header {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 0 20px;
+}
+/* Make the masthead heading the same height as the navigation */
+.page-header h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 10px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+.jumbotron .glyphicon {
+  color: #D86868;
+  font-size: 2em;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.help-block {
+  margin-bottom: 0;
+}
+
+.main-alert{
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  z-index: 1000;
+}
+
+.alert-hidden {
+  visiblity: hidden;
+}
+
+
+.dino-logo {
+  width: 30%;
+}
+
+#oracle-info{
+  display: table;
+  position: fixed;
+  top: 55px;
+  left: -300px;
+  z-index: 1000;
+  transition: all .25s ease;
+}
+
+#oracle-info:hover {
+  left: 0;
+}
+
+#oracle-info > .oi-details{
+  display: table-cell;
+  width: 300px;
+  background-color: #eee;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.75);
+  background-image: linear-gradient(to top, #ececec, #f4f4f4);
+}
+
+#oracle-info > .oi-icon {
+  display: table-cell;
+}
+
+#oracle-info > .oi-icon > i{
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.75);
+  background-image: linear-gradient(to top, #ececec, #f4f4f4);
+}
+
+#oracle-info .oi-description{
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#oracle-info > .oi-code {
+  display: table-row;
+}
+
+.messageBtn {
+  margin: 10px;
+}

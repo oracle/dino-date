@@ -1,0 +1,21 @@
+{
+  "name": "DinoDate",
+  "description": "A demo app for Oracle Database",
+  "version": "0.1.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.0",
+    "angular-loader": "~1.4.0",
+    "angular-mocks": "~1.4.0",
+    "angular-resource": "~1.4.3",
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5",
+    "fontawesome": "~4.4.0",
+    "angular-ui-router": "~0.2.15",
+    "angular-sanitize": "~1.4.3",
+    "angular-messages": "~1.4.3",
+    "animate.css": "~3.3.0"
+  }
+}

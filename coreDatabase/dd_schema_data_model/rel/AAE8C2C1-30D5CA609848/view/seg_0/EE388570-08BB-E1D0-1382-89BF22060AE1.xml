@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="EE388570-08BB-E1D0-1382-89BF22060AE1" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_DINOSAURS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_DINOSAURS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DD_DINOSAURS&lt;br/&gt;AS &lt;br/&gt;SELECT &quot;DINOSAUR_ID&quot;,&quot;SPECIES_NAME&quot;,&quot;AVERAGE_LENGTH_IN_FEET&quot;,&quot;AVERAGE_WEIGHT_IN_TONS&quot;,&quot;CREATED_BY&quot;,&quot;CHANGED_BY&quot;,&quot;CREATED_ON&quot;,&quot;CHANGED_ON&quot;&lt;br/&gt;  FROM dd_dinosaurs_t</userDefinedSQL>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="DINOSAUR_ID" id="2938685E-7F00-B334-E57E-B1617C1FFD3C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>DINOSAUR_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>DINOSAUR_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>DINOSAUR_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="SPECIES_NAME" id="AD1EAEE0-A833-0F24-13CD-3E50FFA198E7">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>SPECIES_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>SPECIES_NAME</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>SPECIES_NAME</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="AVERAGE_LENGTH_IN_FEET" id="5055B676-1391-71E8-830A-E450BC37BA0E">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>AVERAGE_LENGTH_IN_FEET</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>AVERAGE_LENGTH_IN_FEET</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>AVERAGE_LENGTH_IN_FEET</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="AVERAGE_WEIGHT_IN_TONS" id="ACB79BAA-83ED-0500-2149-6687F09B7F7C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>AVERAGE_WEIGHT_IN_TONS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>AVERAGE_WEIGHT_IN_TONS</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>AVERAGE_WEIGHT_IN_TONS</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="A1823436-6C11-CD05-2151-AF3801F07C7C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_BY" id="9915EC43-6C1B-1A8A-7739-022546ABC831">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CHANGED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_ON" id="090F8DA0-F1A0-3382-693B-C5989EC744F9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CREATED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_ON" id="39EE08DA-82B4-88C5-499F-28BA660E68BE">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_DINOSAURS</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CHANGED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

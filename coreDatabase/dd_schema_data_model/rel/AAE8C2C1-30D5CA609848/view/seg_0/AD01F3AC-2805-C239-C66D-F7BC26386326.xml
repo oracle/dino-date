@@ -1,0 +1,195 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableView class="oracle.dbtools.crest.model.design.relational.TableView" directorySegmentName="seg_0" id="AD01F3AC-2805-C239-C66D-F7BC26386326" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_LOCATIONS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATIONS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:15 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<userDefined>true</userDefined>
+<userDefinedSQL>CREATE OR REPLACE VIEW DD_LOCATIONS&lt;br/&gt;AS &lt;br/&gt;SELECT &quot;LOCATION_ID&quot;,&quot;LOCATION_NAME&quot;,&quot;ADDRESS1&quot;,&quot;ADDRESS2&quot;,&quot;CITY&quot;,&quot;STATE&quot;,&quot;POSTAL_CODE&quot;,&quot;COUNTRY&quot;,&quot;GEOMETRY&quot;,&quot;CREATED_BY&quot;,&quot;CHANGED_BY&quot;,&quot;CREATED_ON&quot;,&quot;CHANGED_ON&quot;&lt;br/&gt;  FROM dd_locations_t</userDefinedSQL>
+<viewElements>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="LOCATION_ID" id="B0EDB788-52DC-D24D-0040-D8CF66D3BF9F">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>LOCATION_ID</alias>
+<dataType>NUMBER</dataType>
+<headerAlias>LOCATION_ID</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="LOCATION_NAME" id="1B4FDE41-FF6C-3C88-1E80-42F7E2F24EEE">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>LOCATION_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>LOCATION_NAME</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>LOCATION_NAME</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ADDRESS1" id="F25A4823-B4E0-8EC8-FC57-5C4E691D2549">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>ADDRESS1</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ADDRESS1</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>ADDRESS1</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="ADDRESS2" id="0F10CDBD-8B0F-317D-5CB5-0DEEA06E028A">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>ADDRESS2</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>ADDRESS2</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>ADDRESS2</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CITY" id="62C3D5F0-474E-2578-3D52-744AF7C56AA2">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>CITY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CITY</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>CITY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="STATE" id="06C728D6-998A-0716-2814-64D4AF0F3C68">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>STATE</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>STATE</alias>
+<dataType>VARCHAR2 (1000)</dataType>
+<headerAlias>STATE</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="POSTAL_CODE" id="79711919-138F-5BD3-60CF-91EBE05AF091">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>POSTAL_CODE</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>POSTAL_CODE</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>POSTAL_CODE</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="COUNTRY" id="8A34C64B-7D4A-63DB-0120-3B2220F12C23">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>COUNTRY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>COUNTRY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>COUNTRY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="GEOMETRY" id="D697B030-04CF-AC92-78B9-48BF418B21A9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>GEOMETRY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>GEOMETRY</alias>
+<dataType>SDO_GEOMETRY (64)</dataType>
+<headerAlias>GEOMETRY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_BY" id="20485EC9-CA26-C974-ACBB-469406A18168">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CREATED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_BY" id="EC63EB81-EC2B-B5E0-BB6F-C41D7A68F7A3">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_BY</alias>
+<dataType>VARCHAR2 (100)</dataType>
+<headerAlias>CHANGED_BY</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CREATED_ON" id="24E68B24-B211-F0C9-AF33-BFFDA71DE907">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CREATED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CREATED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+<viewElement class="oracle.dbtools.crest.model.design.relational.ColumnView" name="CHANGED_ON" id="AD88B725-24C1-C330-C899-2ADC9B94C728">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:16 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<alias>CHANGED_ON</alias>
+<dataType>DATE (7)</dataType>
+<headerAlias>CHANGED_ON</headerAlias>
+<reference>false</reference>
+</viewElement>
+</viewElements>
+</TableView>

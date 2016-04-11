@@ -1,0 +1,8 @@
+/*-------------------------------------------------------------------------------
+ *
+ *  Set up Oracle Advanced Queuing
+ */
+
+-- The data we want to queue
+create synonym dd.dd_user_payment_type for dd_non_ebr.dd_user_payment_type
+/

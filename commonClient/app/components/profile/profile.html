@@ -1,0 +1,48 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3>Profile for {{ ProfileCtrl.userBio.name }}</h3>
+            </div>
+            <div class="panel-body">
+                <div data-ng-init="ProfileCtrl.getBio()">
+                    <div ng-show="ProfileCtrl.userBio">
+                        <div class="row">
+                            <div class="col-md-7">
+
+                                <dl class="dl-horizontal">
+                                    <dt>Species</dt>
+                                    <dd>{{ ProfileCtrl.userBio.speciesName }}</dd>
+                                    <dt>Park</dt>
+                                    <dd>{{ ProfileCtrl.userBio.locationName }}</dd>
+                                    <dt>Address</dt>
+                                    <dd>{{ ProfileCtrl.userBio.city }}, {{ ProfileCtrl.userBio.state }},
+                                        {{ ProfileCtrl.userBio.postalCode }}, {{ ProfileCtrl.userBio.country }}</dd>
+                                </dl>
+                            </div>
+                            <div class="col-md-5">
+                                {{ ProfileCtrl.userBio.aboutYourself }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div ng-show="ProfileCtrl.userBio.memberId != user.memberId" class="col-md-12">
+                                <a class="btn btn-default" href="/#/compose/{{ ProfileCtrl.userBio.memberId }}"><i class="fa fa-envelope fa-2x"></i> Send {{ ProfileCtrl.userBio.name
+                                    }} a message</a>
+                                <!--<p><a href="/#/searchresults">Return to Search Results</a></p>-->
+                            </div>
+                        </div>
+                    </div>
+                    <div ng-show="!ProfileCtrl.userBio">
+                        <br>
+
+                        <p>No biography found</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

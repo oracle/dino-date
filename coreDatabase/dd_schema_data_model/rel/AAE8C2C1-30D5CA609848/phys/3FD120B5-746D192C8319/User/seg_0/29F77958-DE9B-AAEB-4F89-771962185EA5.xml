@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="DD" directorySegmentName="seg_0" id="29F77958-DE9B-AAEB-4F89-771962185EA5">
+<sourceConnName>dd</sourceConnName>
+<sourceObjName>DD</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:47 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<schemaObject>929E04B3-5639-4CF1-A7D1-FC63873D31F0</schemaObject>
+<permissions>
+<Permission class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PermissionsOraclev10g" name="Permissions1" id="0F13067F-2CF0-1BE7-D24A-88991022C546">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:21 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<privileges>EXECUTE</privileges>
+<structuredTypeOracle>5D2AD2B3-8E63-03E9-BE27-65F4FAB77C64</structuredTypeOracle>
+</Permission>
+</permissions>
+</UserOraclev10g>

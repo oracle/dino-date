@@ -1,0 +1,141 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates. 
+All rights reserved.
+ -->
+<div class="row">
+    <div id="register" class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <div class="page-header">
+            <h1>Become a member <small><strong>FREE</strong> for 30 days</small></h1>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-body">
+                <form id="registrationForm" name="registrationForm" novalidate ng-submit="RegistrationCtrl.register()" class="form-horizontal" role="form">
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('name')}">
+                        <label for="name" class="col-md-4 control-label">Name</label>
+                        <div class="col-md-8">
+                            <input id="name" type="text" class="form-control" name="name" placeholder="Jane Doe"
+                                   ng-model="RegistrationCtrl.user.name"
+                                   required ng-maxlength="50">
+                            <p ng-show="RegistrationCtrl.showError('name')"
+                               ng-messages="registrationForm.name.$error" class="help-block">
+                                <span ng-message="required">Name is required.</span>
+                                <span ng-message="maxlength">Name must be less than 50 characters.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('email')}">
+                        <label for="email" class="col-md-4 control-label">Email</label>
+                        <div class="col-md-8">
+                            <input id="email" type="email" class="form-control" name="email" placeholder="jdoe@email.com"
+                                   ng-model="RegistrationCtrl.user.email"
+                                   required ng-maxlength="100">
+                            <p ng-show="RegistrationCtrl.showError('email')"
+                               ng-messages="registrationForm.email.$error" class="help-block">
+                                <span ng-message="required">Email is required.</span>
+                                <span ng-message="maxlength">Email must be less than 100 characters.</span>
+                                <span ng-message="email">The email entered is not valid.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('password')}">
+                        <label for="password" class="col-md-4 control-label">Password</label>
+                        <div class="col-md-8">
+                            <input id="password" type="password" class="form-control" name="password" placeholder="pleasedonttell"
+                                   ng-model="RegistrationCtrl.user.password"
+                                   required ng-maxlength="100" ng-minlength="6">
+                            <p ng-show="RegistrationCtrl.showError('password')"
+                               ng-messages="registrationForm.password.$error" class="help-block">
+                                <span ng-message="required">Password is required.</span>
+                                <span ng-message="maxlength">Password must be less than 100 characters.</span>
+                                <span ng-message="minlength">Password must be more than 5 characters.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('confirmPassword')}">
+                        <label for="confirmPassword" class="col-md-4 control-label">Confirm Password</label>
+                        <div class="col-md-8">
+                            <input id="confirmPassword" type="password" class="form-control" name="confirmPassword" placeholder="pleasedonttell"
+                                   ng-model="RegistrationCtrl.user.confirmPassword"
+                                   required value-match="RegistrationCtrl.user.password">
+                            <p ng-show="RegistrationCtrl.showError('confirmPassword')"
+                               ng-messages="registrationForm.confirmPassword.$error" class="help-block">
+                                <span ng-message="required">Confirm Password is required.</span>
+                                <span ng-message="valueMatch">Confirm Password must match Password.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('trilobitcoinNumber')}">
+                        <label for="trilobitcoinNumber" class="col-md-4 control-label">Trilobitcoin Number</label>
+                        <div class="col-md-8">
+                            <input id="trilobitcoinNumber" type="text" class="form-control" name="trilobitcoinNumber" placeholder="1234-1234-1234-1234"
+                                   ng-model="RegistrationCtrl.user.trilobitcoinNumber"
+                                   required ng-maxlength="19">
+                            <p ng-show="RegistrationCtrl.showError('trilobitcoinNumber')"
+                               ng-messages="registrationForm.trilobitcoinNumber.$error" class="help-block">
+                                <span ng-message="required">Trilobitcoin Number is required.</span>
+                                <span ng-message="maxlength">Trilobitcoin Number must be less than 19 characters.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('species')}">
+                        <label for="species" class="col-md-4 control-label">Species</label>
+                        <div class="col-md-8">
+                            <select id="species" class="form-control" name="species"
+                                    ng-model="RegistrationCtrl.user.species"
+                                    ng-options="sp.speciesName for sp in RegistrationCtrl.species"
+                                    required>
+                                <option value="">- Select Species -</option>
+                            </select>
+                            <p ng-show="RegistrationCtrl.showError('species')"
+                               ng-messages="registrationForm.species.$error" class="help-block">
+                                <span ng-message="required">Species is required.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('location')}">
+                        <label for="location" class="col-md-4 control-label">Park</label>
+                        <div class="col-md-8">
+                            <select id="location" class="form-control" name="location"
+                                    ng-model="RegistrationCtrl.user.location"
+                                    ng-options="location.locationName for location in RegistrationCtrl.locations"
+                                    required>
+                                <option value="">- Select Park -</option>
+                            </select>
+                            <p ng-show="RegistrationCtrl.showError('location')"
+                               ng-messages="registrationForm.location.$error" class="help-block">
+                                <span ng-message="required">Park is required.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{'has-error': RegistrationCtrl.showError('aboutYourself')}">
+                        <label for="aboutYourself" class="col-md-4 control-label">About You</label>
+                        <div class="col-md-8">
+                        <textarea id="aboutYourself" type="text" class="form-control" name="aboutYourself"
+                                  placeholder="I like long walks on the beach..."
+                                  ng-model="RegistrationCtrl.user.aboutYourself"
+                                  required ng-maxlength="500"></textarea>
+                            <p ng-show="RegistrationCtrl.showError('aboutYourself')"
+                               ng-messages="registrationForm.aboutYourself.$error" class="help-block">
+                                <span ng-message="required">About You is required.</span>
+                                <span ng-message="maxlength">About You must be less than 500 characters.</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-8 col-md-offset-4">
+                            <button id="register-btn" type="submit" class="btn btn-primary btn-block">View Singles</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="panel-footer">
+                <p>Already have an account?
+                    <a ui-sref="login">
+                        Login Here
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

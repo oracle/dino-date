@@ -1,0 +1,275 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="CD3D013C-A0A5-CD32-4FBB-40361DB6A426" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_LOCATIONS_T">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATIONS_T</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:51 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<spatialTable>true</spatialTable>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LOCATION_ID" id="BF33878A-EF41-8A18-880F-DACDBD3CB2CB">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:58 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementGenerateAlways>true</autoIncrementGenerateAlways>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="LOCATION_NAME" id="A913F094-D634-F6AD-F1DB-94C879A4CC5D">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>LOCATION_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:58 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS1" id="273C81E8-D9AB-9B6F-7B16-C3457675BBD4">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>ADDRESS1</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ADDRESS2" id="47296562-4EBB-DA58-F53B-CFD0B3B4816B">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>ADDRESS2</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CITY" id="122F3ED0-EEF2-B77C-2F6C-499B5885ADF9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>CITY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATE" id="7ECE5AE0-C7B6-D9AA-FF43-D95B80E9B4E3">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>STATE</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 BYTE</dataTypeSize>
+<ownDataTypeParameters>1000 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="POSTAL_CODE" id="C2ED6743-D404-5509-C611-28075E16B604">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>POSTAL_CODE</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRY" id="BA0F2FC5-9BBF-0511-6CA7-A460CC3DBC1E">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>COUNTRY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="GEOMETRY" id="6047E4D2-2587-9646-E46F-B9449A0E1A53">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>GEOMETRY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<allowSubtypeSubstitution>false</allowSubtypeSubstitution>
+<use>3</use>
+<structuredType>47E390DE-0671-C4B1-8428-0F45CBEE18F8</structuredType>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="2D67B396-1B4F-9FCF-9394-39E797A92EA9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_BY" id="8711E9C6-413D-8F7E-302C-9BBE31987586">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:59 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_ON" id="7585ECCB-D680-6EEB-B2CD-DEB1A96B3E03">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:00 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_ON" id="80FEB664-2CA3-56C5-641E-206C77FED511">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_LOCATIONS_T</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:00 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="DEEE8C3E-E795-C1BA-043B-1C694D6223A6" name="DD_LOCATIONS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATIONS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:09 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF33878A-EF41-8A18-880F-DACDBD3CB2CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1655353A-752F-06C2-7D4E-D48E4DECA5BF" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_LOCATION_SX">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATION_SX</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:06 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<spatialIndex>true</spatialIndex>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6047E4D2-2587-9646-E46F-B9449A0E1A53"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7ED35168-05DD-2039-BC25-B4C7B775E483" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_LOCATIONS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_LOCATIONS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:07 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF33878A-EF41-8A18-880F-DACDBD3CB2CB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<spatialDefinitions>
+<spatialColumnDefinition class="oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject" name="ColumnDefinition_1" objectID="A53FEBE6-AAB6-BDF0-2E56-8AF60DFB3F57">
+<function>false</function>
+<spatialColumn>6047E4D2-2587-9646-E46F-B9449A0E1A53</spatialColumn>
+<spatialIndex>1655353A-752F-06C2-7D4E-D48E4DECA5BF</spatialIndex>
+<systemID>4326</systemID>
+<spatialDimensions>
+<spatialDimension class="oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject$TableDimension">
+<name>X</name>
+<lowBoundary>-180</lowBoundary>
+<upperBoundary>180</upperBoundary>
+<tolerance>1</tolerance>
+</spatialDimension>
+<spatialDimension class="oracle.dbtools.crest.model.design.relational.SpatialColumnDefObject$TableDimension">
+<name>Y</name>
+<lowBoundary>-90</lowBoundary>
+<upperBoundary>90</upperBoundary>
+<tolerance>1</tolerance>
+</spatialDimension>
+</spatialDimensions>
+</spatialColumnDefinition>
+</spatialDefinitions>
+</Table>

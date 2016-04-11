@@ -1,0 +1,248 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="48FA3282-8A3D-E092-7391-FD0D45A2B930" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_MEMBERS_T">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MEMBERS_T</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:14:52 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MEMBER_ID" id="8F32494F-8E23-79DE-D8E1-401631F4E7F6">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>MEMBER_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<autoIncrementDisableCache>false</autoIncrementDisableCache>
+<autoIncrementCache>20</autoIncrementCache>
+<autoIncrementOrder>false</autoIncrementOrder>
+</Column>
+<Column name="DINOSAUR_ID" id="BD163158-6031-82A5-9A2F-2D4E2BA0DBBD">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>DINOSAUR_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C156F408-4176-CCAA-F96D-F0D30DB3FC01" referredColumn="A0DBABBE-F900-1D38-C5B1-8D2BB2813346"/>
+</associations>
+</Column>
+<Column name="LOCATION_ID" id="E6536BFC-F6CA-6FD1-8D25-CF51C630FDA9">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>LOCATION_ID</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>*</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,*,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="5D2BBEBC-F672-F2A3-9F8D-4799741BA657" referredColumn="BF33878A-EF41-8A18-880F-DACDBD3CB2CB"/>
+</associations>
+</Column>
+<Column name="DINO_NAME" id="86B8CA8D-0601-31B8-2FB6-88F9484664F0">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>DINO_NAME</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 BYTE</dataTypeSize>
+<ownDataTypeParameters>500 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ABOUT_YOURSELF" id="97069B44-ED8B-2887-1228-54E55BF59B80">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>ABOUT_YOURSELF</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUBSCRIPTION_STATUS" id="EAC0F758-1BC1-8948-A65F-39E779E98C9B">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>SUBSCRIPTION_STATUS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<defaultValue>&apos;P&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="91866E22-D545-5020-129D-7045F5019481">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_BY" id="5ED05C60-C16A-7358-0EF0-9D24BC7E4A88">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>CHANGED_BY</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_ON" id="BBDF1634-E294-B49F-01F7-52C8A6B70575">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>CREATED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANGED_ON" id="06E836D7-CA69-70C1-0058-B60032AA8E4C">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD_MEMBERS_T</sourceObjSchema>
+<sourceObjName>CHANGED_ON</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:01 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BC49756B-422C-81E8-FF28-227B3D7B72D8" name="DD_MEMBERS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MEMBERS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:10 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F32494F-8E23-79DE-D8E1-401631F4E7F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8B0E2E9C-7043-2F07-98AC-FF20B2D53A32" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_MEMBERS_T_DINO_NAME_UN">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>SYS_C0013733</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:08 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86B8CA8D-0601-31B8-2FB6-88F9484664F0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="73A0A3FB-4281-2BE8-467E-EDEED04B29A3" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_MEMBERS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_MEMBERS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:08 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8F32494F-8E23-79DE-D8E1-401631F4E7F6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A78AD0CF-795C-46F3-6046-E9EAF506229A" schemaObject="929E04B3-5639-4CF1-A7D1-FC63873D31F0" name="DD_FT_MEMBERS">
+<sourceConnName>dd</sourceConnName>
+<sourceObjSchema>DD</sourceObjSchema>
+<sourceObjName>DD_FT_MEMBERS</sourceObjName>
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:08 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="97069B44-ED8B-2887-1228-54E55BF59B80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="84B6A345-3F72-2B3E-A76A-455A7B817BAA" name="FK_DD_MEMBERS_D">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:23 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BD163158-6031-82A5-9A2F-2D4E2BA0DBBD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EEA26513-049B-E56B-6D86-D8D7C1637645" name="FK_DD_MEMBERS_L">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:23 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E6536BFC-F6CA-6FD1-8D25-CF51C630FDA9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

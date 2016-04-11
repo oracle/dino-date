@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableViewProxyOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TableViewProxyOraclev10g" name="DD_DEQUEUE_ERRORS" directorySegmentName="seg_0" id="67E76BC1-5C06-A954-BC11-F7750674DB9C">
+<createdBy>bcarter</createdBy>
+<createdTime>2015-07-15 22:15:14 UTC</createdTime>
+<ownerDesignName>dd_schema_data_model</ownerDesignName>
+<schemaObject>929E04B3-5639-4CF1-A7D1-FC63873D31F0</schemaObject>
+<editioning>YES</editioning>
+</TableViewProxyOraclev10g>
