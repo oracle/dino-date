@@ -14,7 +14,7 @@ app = express();
 
 app.use(bodyParser.json());
 
-app.use('/', serveStatic(__dirname + '../../commonClient/app/'));
+app.use('/', serveStatic(__dirname + '/../commonClient/app/'));
 app.use('/api/v1/', routes.router);
 
 app.use(morgan('combined')); //logger
