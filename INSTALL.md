@@ -91,7 +91,7 @@ Create the following environment variables using the correct values for your sys
 * dd_node_port=3000
 
 ## Ruby
-Comming Soon!
+Coming Soon!
 
 ## PHP
-Comming Soon!
+Coming Soon!
