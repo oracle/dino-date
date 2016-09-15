@@ -17,7 +17,7 @@ function auth(role) {
         token = req.headers.authorization.split(' ')[1];
 
         try {
-            payload = jwt.verify(token, config.jwtSecretKey);
+      payload = jwt.verify(token, config.jwtSecretKey, {ignoreExpiration: true});
         } catch (e) {
             if (e.name === 'TokenExpiredError') {
                 res.status(401).send({message: 'Token Expired'});

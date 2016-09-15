@@ -47,7 +47,7 @@ router.post('/logins', function (req, res, next) {
 
         res.status(200).json({
             member: member,
-            token: jwt.sign(payload, config.jwtSecretKey, {expiresInMinutes: 1})
+            token: jwt.sign(payload, config.jwtSecretKey)
         });
     });
 });
@@ -100,7 +100,7 @@ router.post('/members', function (req, res, next) {
 
         res.status(200).json({
             member: member,
-            token: jwt.sign(payload, config.jwtSecretKey, {expiresInMinutes: 60}),
+            token: jwt.sign(payload, config.jwtSecretKey),
             "executionTime": (endTime - startTime) / 1000
         });
     };
