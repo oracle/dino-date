@@ -3,7 +3,7 @@ Copy the dino-date directory to the machine you will use as your server.  This l
 
 ## Database Instructions
 
-**IMPORTANT - Please make sure you're using a database instance in which you can safely create a schema named DD.**
+**IMPORTANT - Please make sure you're using a database instance in which you can safely create schema named 'DD', 'DD_NON_EBR' AND 'DD_LOGGER'.**
 
 ### Prerequisite Technologies
 [Logger](https://github.com/OraOpenSource/Logger)
