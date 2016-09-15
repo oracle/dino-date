@@ -133,3 +133,29 @@ module.exports.sendBroadcastThickDatabase = sendBroadcastThickDatabase = functio
     );
 };
 //SampleTagEnd broadcast_thickDatabase
+
+module.exports.sendMessage = sendMessage = function (message, callback) {
+  oracledb.getConnection(
+    config.database,
+    function (err, connection) {
+      if (err) {
+        callback(err);
+
+        return;
+      }
+
+      connection.execute('BEGIN dd_admin_pkg.send_message(:fromMemberId, :toMemberId, :subject, :messageContents); END;',
+        message,
+        function (err, results) {
+          if (err) {
+            callback(err);
+
+            return;
+          }
+
+          callback(null, null);
+        }
+      );
+    }
+  );
+};
