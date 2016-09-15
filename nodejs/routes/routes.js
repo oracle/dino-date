@@ -282,59 +282,56 @@ router.get('/messages/:id', auth(), function (req, res, next) {
 
 router.post('/messages', auth(), function (req, res, next) {
     var message = {
-        fromMemberId: req.user.memberId,
-        toMemberId: req.body.toMemberId,
-        subject: req.body.subject,
-        messageContents: req.body.messageContents
-    };
+          fromMemberId: req.user.memberId,
+          subject: req.body.subject,
+          messageContents: req.body.messageContents
+        },
+      messageType = req.body.messageType;
 
-    registerCallback = function (err, messageId) {
+    if (messageType === 'single') {
+      message.toMemberId = req.body.toMemberId;
+
+      registerCallback = function (err, messageId) {
         if (err) {
-            next(err);
+          next(err);
 
-            return;
+          return;
         }
 
         res.status(200).json({"messageId": messageId});
-    };
+      };
 
-    messages.sendMessage(message, registerCallback);
-});
+      messages.sendMessage(message, registerCallback);
+    } else if (messageType === 'broadcast') {
 
-router.post('/broadcast', auth(), function (req, res, next) {
-    var message = {
-        fromMemberId: req.user.memberId,
-        subject: req.body.subject,
-        messageContents: req.body.messageContents
-    };
+      var startTime = getTime();
 
-    var startTime = getTime();
-
-    registerCallback = function (err, messageId) {
+      registerCallback = function (err, messageId) {
         if (err) {
-            next(err);
+          next(err);
 
-            return;
+          return;
         }
 
         var endTime = getTime();
 
         res.status(200).json({
-            "messageCount": messageId,
-            "executionTime": (endTime - startTime) / 1000
+          "messageCount": messageId,
+          "executionTime": (endTime - startTime) / 1000
         });
-    };
+      };
 
-    if (req.headers['dd-process-type'] === 'thinDatabase') {
+      if (req.headers['dd-process-type'] === 'thinDatabase') {
         messages.sendBroadcastThinDatabase(
-            message,
-            registerCallback
+          message,
+          registerCallback
         );
-    } else if (req.headers['dd-process-type'] === 'thickDatabase') {
+      } else if (req.headers['dd-process-type'] === 'thickDatabase') {
         messages.sendBroadcastThickDatabase(
-            message,
-            registerCallback
+          message,
+          registerCallback
         );
+      }
     }
 });
 

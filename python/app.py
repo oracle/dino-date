@@ -206,31 +206,29 @@ def memberMessage(messageId):
 @post(api_route + '/messages')
 def post_message():
     from_member_id = request.get_header('userToken')
-    to_member_id = request.json['toMemberId']
     subject = request.json['subject']
     message_contents = request.json['messageContents']
+    messageType = request.json['messageType']
+    retObj = {}
 
-    message_id = messages.send_message(from_member_id, to_member_id, subject, message_contents)
+    if messageType == 'single':
+        to_member_id = request.json['toMemberId']
+        message_id = messages.send_message(from_member_id, to_member_id, subject, message_contents)
+        retObj = {"messageId": message_id}
+    elif messageType == 'broadcast':
+
+        start_time = time.time()
+
+        if request.get_header('DD-Process-Type') == 'simple':
+            message_id = messages.send_broadcast_thinDatabase(from_member_id, subject, message_contents)
+        else:
+            message_id = messages.send_broadcast_thickDatabase(from_member_id, subject, message_contents)
+
+        retObj = {"messageCount": message_id,
+                  "executionTime":(time.time() - start_time)}
 
     response.status = 201
-    return {"messageId": message_id}
-
-@post(api_route + '/broadcast')
-def post_broadcast():
-    from_member_id = request.get_header('userToken')
-    subject = request.json['subject']
-    message_contents = request.json['messageContents']
-
-    start_time = time.time()
-
-    if request.get_header('DD-Process-Type') == 'simple':
-        message_id = messages.send_broadcast_thinDatabase(from_member_id, subject, message_contents)
-    else:
-        message_id = messages.send_broadcast_thickDatabase(from_member_id, subject, message_contents)
-
-    response.status = 201
-    return {"messageCount": message_id,
-            "executionTime":(time.time() - start_time)}
+    return retObj
 
 
 # Dinosaur Routes

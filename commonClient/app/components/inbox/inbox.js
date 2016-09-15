@@ -47,16 +47,15 @@ angular.module('dinoDateApp')
         this.sendMessage = function () {
             var message={
                 "subject": this.subject,
-                "messageContents": this.messageContents
+                "messageContents": this.messageContents,
+                "messageType": this.messageType
             };
 
-            if (this.messageType === 'broadcast') {
-                $http.post(API_URL + 'broadcast', message);
-            } else {
+            if (this.messageType === 'single') {
                 message.toMemberId = $stateParams.toMemberId;
-
-                $http.post(API_URL + 'messages', message);
             }
+          
+            $http.post(API_URL + 'messages', message);
 
             $location.path('home');
         };

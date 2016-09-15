@@ -337,6 +337,7 @@ Send message to another Dino
 | toDinoId  | Number | Yes | Member Id of the dinosaur to send the message to |
 | subject | String | Yes |   |
 | message | String | Yes |   |
+| messageType | String | Yes | 'single' - Message to one member. 'broadcast' - Message to all.  |
 
 ##### Returns
 ```
@@ -352,52 +353,13 @@ Payload
   "toMemberId": 4,
   "subject": "I like sending messages",
   "messageContents": "This message is important!"
+  "messageType": "single"
 }
 ```
 
 ##### Example Response:
 ```
 {"messageId": 46}
-```
-
-### Resource URL: `/api/v1/broadcast`
-
-### POST
-Send broadcast
-
-| Header Variable | Type | Required | Acceptable Values | Details |
-| ------------- |:-------------:|:-------------:|:-------------:|:-------------|:-------------|
-| userToken  | Number | Yes | | Value returned from login |
-| DD-Process-Type | String | No | simple<BR>plsql | Changes the<br>server side function used<br>to broadcast the message.<br>Default: plsql |
-
-
-| Parameters | Type | Required |
-| ------------- |:-------------:|:-------------:|
-| subject | String | Yes |
-| message | String | Yes |
-
-##### Returns
-```
-{'messageCount': <int>} --Need to implement
-```
-
-##### Example Request:
-POST `/api/v1/broadcast`
-
-Payload
-```
-{
-"subject": "I like sending broadcast messages",
-"messages": "This message is important to everyone!"
-}
-```
-
-##### Example Response:
-```
-{
-  "subject": "I like sending broadcast messages",
-  "messageContents": "This message is important to everyone!"
-}
 ```
 
 ---
