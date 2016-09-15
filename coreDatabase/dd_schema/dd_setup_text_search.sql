@@ -89,5 +89,5 @@ CREATE INDEX dd_ft_members
   stoplist       ctxsys.empty_stoplist
   memory 500M
   sync (ON COMMIT)
-');
+')
 /
