@@ -99,10 +99,11 @@ def process_registration_aq(email, name, password, dinosaur_id, location_id, abo
  * @param integer member_id          The id of the dino doing the search
  * @param string  search_string      The search string the dino entered
  * @param integer limit              The maximum number of query results to return
+ * @param integer offset             Start at this offest
  * @return array Array of the member id and names of dinos that match the search criteria
 '''
 #SampleTagStart search_thinDatabase
-def do_search_thinDatabase(member_id, search_string, limit):
+def do_search_thinDatabase(member_id, search_string, limit, offset):
     cur = con.cursor()
 
     search_keywords = search_string.split()
@@ -113,9 +114,10 @@ def do_search_thinDatabase(member_id, search_string, limit):
                    WHERE  member_id != :member_id
                      AND  about_yourself LIKE :keywords
                      AND  member_id > 0
-                   ORDER BY dino_name"""
+                   ORDER BY dino_name
+                   OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY"""
 
-    cur.execute(statement, {'member_id': member_id, 'keywords': keywords})
+    cur.execute(statement, {'member_id': member_id, 'keywords': keywords, 'offset': offset, 'limit': limit})
 
     res = cur.fetchall()
     cur.close()
@@ -131,16 +133,17 @@ def do_search_thinDatabase(member_id, search_string, limit):
  * @param integer member_id          The id of the dino doing the search
  * @param string  search_string      The search string the dino entered
  * @param integer limit              The maximum number of query results to return
+ * @param integer offset             Start at this offest
  * @return array Array of the member id and names of dinos that match the search criteria
  */
 '''
 #SampleTagStart search_text
-def do_search_text(member_id, search_string, limit):
+def do_search_text(member_id, search_string, limit, offset):
     cur = con.cursor()
 
-    statement = "SELECT member_id, dino_name FROM  TABLE(dd_search_pkg.text_only(:member_id, :search_string)) ORDER BY dino_name"
+    statement = "SELECT member_id, dino_name FROM  TABLE(dd_search_pkg.text_only(:member_id, :search_string)) ORDER BY dino_name OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY"
 
-    cur.execute(statement, {'member_id': member_id, 'search_string': search_string})
+    cur.execute(statement, {'member_id': member_id, 'search_string': search_string, 'offset': offset, 'limit': limit})
 
     res = cur.fetchall()
     cur.close()
@@ -156,16 +159,17 @@ def do_search_text(member_id, search_string, limit):
  * @param string  search_string      The search string the dino entered
  * @param integer max_distance       The maximum distance that dinos can be away
  * @param integer limit              The maximum number of query results to return
+ * @param integer offset             Start at this offest
  * @return array Array of the member id and names of dinos that match the search criteria
  */
 '''
 #SampleTagStart search_spatial
-def do_search_spatial(member_id, search_string, max_distance, limit):
+def do_search_spatial(member_id, search_string, max_distance, limit, offset):
     cur = con.cursor()
 
-    statement = "SELECT member_id, dino_name FROM  TABLE(dd_search_pkg.text_and_spatial(:member_id, :search_string, :max_dist)) ORDER BY dino_name"
+    statement = "SELECT member_id, dino_name FROM  TABLE(dd_search_pkg.text_and_spatial(:member_id, :search_string, :max_dist)) ORDER BY dino_name OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY"
 
-    cur.execute(statement, {'member_id': member_id, 'search_string': search_string, 'max_dist': max_distance})
+    cur.execute(statement, {'member_id': member_id, 'search_string': search_string, 'max_dist': max_distance, 'offset': offset, 'limit': limit})
 
     res = cur.fetchall()
     cur.close()
@@ -201,14 +205,15 @@ def get_member(member_id=None, email=None):
     else:
         return []
 
-def get_messages(member_id):
+def get_messages(member_id, limit, offset):
     cur = con.cursor()
     statement = """SELECT message_id, from_member_id, dino_name, subject, message_contents
                  FROM   dd_messages, dd_members
                  WHERE  to_member_id = :to_member_id
                  AND    dd_messages.from_member_id = dd_members.member_id
-                 ORDER BY message_id"""
-    cur.execute(statement, {'to_member_id':member_id})
+                 ORDER BY message_id
+                 OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY"""
+    cur.execute(statement, {'to_member_id':member_id, 'offset': offset, 'limit': limit})
     res = cur.fetchall()
     cur.close()
     return (res)

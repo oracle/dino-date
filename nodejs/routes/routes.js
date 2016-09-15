@@ -138,6 +138,10 @@ router.get('/members', auth(), function (req, res, next) {
         params.limit = req.query.limit;
     }
 
+    if (req.query.hasOwnProperty('offset')) {
+        params.offset = req.query.offset;
+    }
+
     var startTime = getTime();
 
     var callback = function (err, members) {
@@ -179,7 +183,17 @@ router.get('/members/:id', auth(), function (req, res, next) {
 });
 
 router.get('/members/:id/messages', auth(), function (req, res, next) {
-    members.getMemberMessages({id: req.params.id}, function (err, messages) {
+    var params = {memberId: req.params.id};
+
+    if (req.query.hasOwnProperty('limit')) {
+        params.limit = req.query.limit;
+    }
+
+    if (req.query.hasOwnProperty('offset')) {
+        params.offset = req.query.offset;
+    }
+
+    members.getMemberMessages(params, function (err, messages) {
         if (err) {
             next(err);
 
@@ -326,7 +340,7 @@ router.post('/messages', auth(), function (req, res, next) {
           message,
           registerCallback
         );
-      } else if (req.headers['dd-process-type'] === 'thickDatabase') {
+      } else {
         messages.sendBroadcastThickDatabase(
           message,
           registerCallback

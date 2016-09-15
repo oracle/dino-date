@@ -109,17 +109,22 @@ def get_members():
     if 'limit' in request.query:
         limit = request.query['limit']
     else:
-        limit = None
+        limit = 100
+
+    if 'offset' in request.query:
+        offset = request.query['offset']
+    else:
+        offset = 0
 
 
     start_time = time.time()
 
     if request.get_header('DD-Process-Type') == 'simple':
-        members_list = members.do_search_thinDatabase(member_id, search_string, limit)
+        members_list = members.do_search_thinDatabase(member_id, search_string, limit, offset)
     elif request.get_header('DD-Process-Type') == 'spatial':
-        members_list = members.do_search_spatial(member_id, search_string, max_distance, limit)
+        members_list = members.do_search_spatial(member_id, search_string, max_distance, limit, offset)
     else:
-        members_list = members.do_search_text(member_id, search_string, limit)
+        members_list = members.do_search_text(member_id, search_string, limit, offset)
 
     members_return = []
 
@@ -154,7 +159,17 @@ def get_member_messages(member_id):
     else:
         id = -1
 
-    message_list = members.get_messages(id)
+    if 'limit' in request.query:
+        limit = request.query['limit']
+    else:
+        limit = 100
+
+    if 'offset' in request.query:
+        offset = request.query['offset']
+    else:
+        offset = 0
+
+    message_list = members.get_messages(id, limit, offset)
     message_return = []
 
     for message in message_list:
