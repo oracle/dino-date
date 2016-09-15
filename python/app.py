@@ -205,6 +205,14 @@ def generate_members():
             "newMembers":new_members}
 
 
+@delete(api_route + '/members/reset')
+def reset_members():
+    start_time = time.time()
+    delete_count = members.reset_members()
+    return {"executionTime":(time.time() - start_time),
+            "deletedMembers":delete_count}
+
+
 # Message Routes
 @get(api_route + '/messages/<messageId>')
 def memberMessage(messageId):

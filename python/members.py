@@ -268,3 +268,16 @@ def generate_members(amount):
     new_members = new_members_return.getvalue()
     cur.close()
     return (new_members)
+
+def reset_members():
+    cur = con.cursor()
+
+    statement = "delete from dd_members where member_id > 41"
+
+    cur.execute(statement)
+
+    con.commit()
+
+    delete_count = cur.rowcount
+    cur.close()
+    return (delete_count)

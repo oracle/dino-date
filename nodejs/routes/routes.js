@@ -273,6 +273,31 @@ router.post('/members/generate', function (req, res, next) {
     );
 });
 
+router.delete('/members/reset', function (req, res, next) {
+    var registerCallback;
+
+    var startTime = getTime();
+
+    registerCallback = function (err, deletedMembers) {
+        if (err) {
+            next(err);
+
+            return;
+        }
+
+        var endTime = getTime();
+
+        res.status(200).json({
+            "deletedMembers": deletedMembers,
+            "executionTime": (endTime - startTime) / 1000
+        });
+    };
+
+    members.resetMembers(
+      registerCallback
+    );
+});
+
 //Message Routes
 
 router.get('/messages/:id', auth(), function (req, res, next) {

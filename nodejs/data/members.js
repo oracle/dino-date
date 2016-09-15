@@ -671,3 +671,34 @@ module.exports.generateMembers = generateMembers = function (amount, callback) {
     }
   );
 };
+
+module.exports.resetMembers = resetMembers = function (callback) {
+  oracledb.getConnection(
+    function (err, connection) {
+      if (err) {
+        callback(err);
+
+        return;
+      }
+
+      connection.execute(
+        'delete from dd_members where member_id > 41',
+        {},
+        {autoCommit: true},
+        function (err, results) {
+          connection.close(function (err) {
+            if (err) {
+              console.error(err.message);
+            }
+          });
+
+          if (err) {
+            callback(err);
+          } else {
+            callback(null, results.rowsAffected);
+          }
+        }
+      );
+    }
+  );
+};
