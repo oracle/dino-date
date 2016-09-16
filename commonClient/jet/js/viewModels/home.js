@@ -13,7 +13,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton'],
       var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
 
       self.getStarted = function (data, event) {
-        console.log('in');
         if (rootViewModel.currentUser()) {
           rootViewModel.router.go('search');
         } else {
