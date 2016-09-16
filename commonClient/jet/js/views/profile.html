@@ -1,0 +1,52 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div class="panel-title-bar">
+    <h3>Profile for <span data-bind="text: currentMember().name"></span></h3>
+</div>
+<div class="row">
+    <div>
+        <div class="oj-flex-items-pad">
+            <div data-bind="if: currentMember().name">
+                <div class="oj-flex">
+                    <div class="oj-md-7">
+                        <div>
+                            <strong>Species: </strong><span
+                                data-bind="text: currentMember().speciesName"></span>
+                        </div>
+                        <div>
+                            <strong>Park: </strong><span
+                                data-bind="text: currentMember().locationName"></span>
+                        </div>
+                        <div>
+                            <strong>Address: </strong><span data-bind="text: currentMember().city"></span>, <span
+                                data-bind="text:
+                                        currentMember().state"></span>,
+                            <span data-bind="text: currentMember().postalCode"></span>, <span data-bind="text:
+                                        currentMember().country"></span>
+                        </div>
+                    </div>
+                    <div class="oj-md-5" data-bind="text: currentMember().aboutYourself"></div>
+                </div>
+                <div class="oj-flex oj-flex-items-pad">
+                    <div data-bind="if: $root.currentUser() && $root.currentUser().id != currentMember().id" class="oj-md-12">
+                        <a class="btn btn-default" data-bind="click:sendMessage"><i
+                                class="fa fa-envelope fa-2x"></i> Send <span
+                                data-bind="text: currentMember().name"></span> a message</a>
+                    </div>
+                </div>
+            </div>
+            <div data-bind="if: !currentMember().name">
+                <p>No biography found</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="display:none" id="sendDialog" title="Send Message"
+     data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 450px;'}}">
+    <div class="oj-dialog-body" data-bind="ojModule: 'sendMessage'">
+    </div>
+</div>

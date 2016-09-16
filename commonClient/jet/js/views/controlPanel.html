@@ -1,0 +1,42 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+
+<div class="panel-title-bar">
+    <h3>DinoDate Control Panel</h3>
+</div>
+<div class="oj-flex">
+    <div class="oj-md-6">
+        <label for="generateAmount">Generate Members</label>
+        <select id="generateAmount" name="generateAmount" data-bind="ojComponent: {component: 'ojSelect',
+                                                    value: generateAmount,
+                                                    rootAttributes: {style:'max-width:20em'}}">
+            <option value="0">- Select Amount -</option>
+            <option value="100">100</option>
+            <option value="500">500</option>
+            <option value="1000">1,000</option>
+            <option value="10000">10,000</option>
+        </select>
+        <i ng-class={"fa-spin":PanelCtrl.generating} data-bind="click: generateMembers, css: clickCss"></i>
+    </div>
+    <div id='member-reset-button' class="oj-md-6">
+        <button class="oj-button-primary"
+                data-bind="click: resetMembers,
+                      ojComponent: {
+                      component:'ojButton',
+                      disabled: working,
+                      label: 'Delete Generated Members',
+                      chroming: 'full'}">
+        </button>
+    </div>
+</div>
+<div style="display:none" id="generatResults" title=""
+     data-bind="ojComponent:{component: 'ojDialog', initialVisibility: 'hide', modality: 'modeless'}">
+
+    <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="dialogTitleId">
+        <span id="dialogTitleId" class="oj-dialog-title" data-bind="text: headerText"></span>
+    </div>
+
+    <div class="oj-dialog-body" data-bind="text: bodyText"></div>
+</div>

@@ -1,0 +1,59 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div class="panel-title-bar">
+    <h3>Inbox for <span data-bind="text: $root.currentUser().name"></span></h3>
+</div>
+
+<div class="oj-flex oj-flex-items-pad">
+    <div class="oj-md-12 oj-flex-item">
+        <table id="messagesTable" summary="Message List" aria-label="Message Table"
+               data-bind="ojComponent: {
+                             component: 'ojTable',
+                             data: inboxMessages,
+                             selectionMode: {row: 'single'},
+                             columnsDefault: {sortable: 'auto'},
+                             columns: [
+                               {headerText: 'From', field: 'name', style: 'width: 20%'},
+                               {headerText: 'Subject', field: 'subject', style: 'width: 80%'}
+                             ],
+                             optionChange: selectionListener,
+                             rootAttributes: {'style':'width: 100%;'}}">
+        </table>
+    </div>
+</div>
+
+<div id="paging"
+     data-bind="ojComponent: {
+    component: 'ojPagingControl',
+    data: inboxMessages,
+    pageSize: 10
+  }">
+</div>
+
+<div style="display:none" id="messageDialog" title="" data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 350px;'}, cancelBehavior: 'icon'}">
+    <div class="oj-dialog-header oj-helper-clearfix" aria-labelledby="dialogTitleId">
+        <span id="dialogTitleId" class="oj-dialog-title">Message from <span
+                data-bind="text: currentMessage().name"> </span> </span>
+    </div>
+
+    <div class="oj-dialog-body">
+        <h4 data-bind="text: currentMessage().subject"></h4>
+        <span id="selectionEventLog" data-bind="text: currentMessage().messageContents"></span>
+    </div>
+
+    <button id="reply"
+            data-bind="click: reply,
+                       ojComponent: { component: 'ojButton', label: 'Reply' }">
+    </button>
+</div>
+
+
+<div style="display:none" id="sendDialog" title="Send Message"
+     data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 450px;'}}">
+    <div class="oj-dialog-body" data-bind="ojModule: 'sendMessage'">
+    </div>
+</div>

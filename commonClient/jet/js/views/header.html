@@ -1,0 +1,62 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<!--
+   ** Oracle JET V1.1 header template uses oj-flex-bar style classes to layout header content.
+   ** Contains three main areas: appname/logo, global navigation, and application navigation.
+   ** Please see the Oracle JET website under the Cookbook/Application Patterns section for details on how to use this pattern
+-->
+<div class="oj-web-applayout-max-width oj-flex-bar oj-sm-align-items-center">
+    <!-- Offcanvas toggle button -->
+    <div class="oj-flex-bar-start oj-md-hide">
+        <button class="oj-button-lg" data-bind="click: $parent.toggleDrawer,
+      ojComponent: {component:'ojButton', label: 'Application Navigation',
+      chroming: 'half', display: 'icons', icons: {start: 'oj-web-applayout-offcanvas-icon'}}">
+        </button>
+    </div>
+    <div data-bind="css: smScreen() ? 'oj-flex-bar-center-absolute' : 'oj-flex-bar-middle oj-sm-align-items-baseline'">
+        <img class="headerLogo" src="assets/img/dino-date-text.png">
+    </div>
+    <div class="oj-flex-bar-end">
+        <!-- Responsive Toolbar -->
+        <div data-bind="ojComponent: {component:'ojToolbar'}">
+            <!--<button data-bind="ojComponent: {component:'ojButton',-->
+            <!--label: 'Search', display: 'icons', chroming: 'half',-->
+            <!--icons: {start:'oj-fwk-icon-magnifier oj-fwk-icon'}}">-->
+            <!--</button>-->
+            <!--<span class="oj-toolbar-separator" role="separator" aria-orientation="vertical"></span>-->
+            <button id="userMenu"
+                    data-bind="ojComponent: {component: 'ojButton', label: userLogin,
+        display: smScreen() ? 'icons' : 'all',
+        icons: smScreen() ? {start: 'oj-icon', end: null} : {end: null},
+        chroming: 'half', menu: loginButtonMenu}, click: logInRegister">
+            </button>
+            <ul id='menu1' data-bind="ojComponent: {component: 'ojMenu', select: menuItemSelect}" style="display:none">
+                <li id="profile"><a href="#">Profile</a></li>
+                <li id="out"><a href="#">Sign Out</a></li>
+                <li id="about"><a href="#">About</a></li>
+            </ul>
+            <div style="display:none" id="loginDialog" title="Login"
+                 data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 350px;'}}">
+                <div class="oj-dialog-body" data-bind="ojModule: 'login'">
+                </div>
+
+                <footer class="oj-dialog-footer oj-web-applayout-footer"
+                        role="contentinfo" data-bind="ojModule: 'loginFooter'">
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="navMenu" role="navigation" data-bind="ojComponent: {
+  component: 'ojNavigationList',
+  optionChange: $parent.navChange,
+  navigationLevel: 'application',
+  item: {template: 'navTemplate'},
+  data: $parent.navDataSource,
+  selection: $parent.router.stateId(),
+  edge: 'top'}"
+     class="header-nav-list oj-md-condense oj-md-justify-content-center oj-lg-justify-content-flex-end">
+</div>

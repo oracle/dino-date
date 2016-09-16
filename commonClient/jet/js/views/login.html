@@ -1,0 +1,21 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<label for="email">Email</label>
+<i class="fa fa-envelope-o"></i><input id="email" type="email" name="email" value="" placeholder="Email"
+                                       data-bind="userLogin"
+                                       required maxlength="100">
+
+<label for="password">Password</label>
+<i class="fa fa-key"></i><input id="password" type="password" name="password" placeholder="Password"
+                                ng-model="user.password" required ng-maxlength="100" ng-minlength="6">
+
+<button id="login-btn"
+        class="oj-button-primary"
+        data-bind="click: signIn,
+                      ojComponent: {
+                      component:'ojButton',
+                      label: 'Sign In',
+                      chroming: 'full'}">
+</button>

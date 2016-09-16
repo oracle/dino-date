@@ -1,0 +1,84 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div class="oj-flex">
+    <div id="register" class="oj-md-10 oj-md-offset-1 oj-sm-10 oj-sm-offset-1">
+        <div class="page-header">
+            <h1>Become a member <small><strong>FREE</strong> for 30 days</small></h1>
+        </div>
+        <div class="oj-form-layout">
+            <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="name"
+                               placeholder="Jane Doe"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                          value:newMember().name, required: true,
+                                          validators: [{
+                                                        type: 'length',
+                                                        options: {max: 50}}]}">
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="email"
+                               placeholder="jdoe@email.com"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                          value:newMember().email, required: true,
+                                          validators: [{
+                                                        type: 'length',
+                                                        options: {max: 100}}]}">
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="trilobitcoinNumber">Trilobitcoin Number</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <input id="trilobitcoinNumber"
+                               placeholder="1234-1234-1234-1234"
+                               data-bind="ojComponent: {component: 'ojInputText',
+                                          required: true,
+                                          validators: [{
+                                                        type: 'length',
+                                                        options: {max: 19}}]}">
+                    </div>
+                </div>
+
+
+
+
+                        <!--<label for="species" class="oj-md-4 control-label">Species</label>-->
+                              <!--<option value="">- Select Species -</option>-->
+                            <!--</select>-->
+                                <!--<span ng-message="required">Species is required.</span>-->
+
+                <!--<label for="location" class="oj-md-4 control-label">Park</label>-->
+                          <!--<select id="location" class="form-control" name="location"-->
+                                 <!--<option value="">- Select Park -</option>-->
+                            <!--</select>-->
+
+                        <!--<label for="aboutYourself" class="oj-md-4 control-label">About You</label>-->
+                                  <!--placeholder="I like long walks on the beach..."-->
+                                 <!--required ng-maxlength="500"></textarea>-->
+
+                            <!--<button id="register-btn" type="submit" class="btn btn-primary btn-block">View Singles</button>-->
+
+            <!--<div class="panel-footer">-->
+                <!--<p>Already have an account?-->
+                    <!--<a ui-sref="login">-->
+                        <!--Login Here-->
+                    <!--</a>-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+</div>

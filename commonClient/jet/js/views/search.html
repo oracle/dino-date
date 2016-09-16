@@ -1,0 +1,87 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div class="panel-title-bar">
+    <h3>DinoDate Search</h3>
+</div>
+
+<div id='member-search' class="oj-flex">
+    <div class="oj-md-3">
+        <label for="keywordsInputSearch">Keywords</label>
+        <input id="keywordsInputSearch" placeholder="Search..."
+               data-bind="ojComponent: {
+          component: 'ojInputText',
+          value: keywords,
+          rootAttributes: {style:'max-width: 20em'}}">
+    </div>
+    <div class="oj-md-1">
+        <label for="maxDistanceInput">Distance</label>
+        <input id="maxDistanceInput" placeholder="KM"
+               data-bind="ojComponent: {
+          component: 'ojInputNumber',
+          max:10000,
+          min:1,
+          step:1,
+          value: maxDistance,
+          rootAttributes: {style:'max-width: 20em'}}">
+    </div>
+</div>
+<div id='member-search-button' class="oj-flex">
+    <div class="oj-md-12">
+        <button class="oj-button-primary"
+                data-bind="click: search,
+                      ojComponent: {
+                      component:'ojButton',
+                      label: 'View Singles',
+                      chroming: 'full'}">
+        </button>
+    </div>
+</div>
+
+<div class="oj-flex oj-flex-items-pad">
+    <div class="oj-md-12 oj-flex-item">
+        <table id="membersTable" summary="Member List" aria-label="Member Table"
+               data-bind="ojComponent: {
+                             component: 'ojTable',
+                             data: members,
+                             selectionMode: {row: 'single'},
+                             columnsDefault: {sortable: 'auto'},
+                             columns: [
+                               {headerText: 'Member', sortProperty: 'name'}
+                             ],
+                             rootAttributes: {'style':'width: 100%;'},
+                             rowTemplate: 'listViewResultItemTemplate',
+                             optionChange: showMember}">
+        </table>
+    </div>
+</div>
+
+<div id="paging"
+     data-bind="ojComponent: {
+    component: 'ojPagingControl',
+    data: pagingData,
+    pageSize: 10}">
+</div>
+
+<!-- Result item template for ListView -->
+<script type="text/html" id="listViewResultItemTemplate">
+    <tr>
+        <td><i class="fa fa-user"></i> <span data-bind="text: name"></span></td>
+    </tr>
+</script>
+
+<div style="display:none" id="messageDialog" title="" data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 350px;'}, cancelBehavior: 'icon'}">
+    <button id="reply"
+            data-bind="click: reply,
+                       ojComponent: { component: 'ojButton', label: 'Reply' }">
+    </button>
+</div>
+
+<div style="display:none" id="profileDialog" title="Member Profile"
+     data-bind="ojComponent:{component: 'ojDialog',
+        rootAttributes: { style: 'width: 620px; height: 450px;'}}">
+    <div class="oj-dialog-body" data-bind="ojModule: 'profile'">
+    </div>
+</div>

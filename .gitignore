@@ -78,8 +78,17 @@ modules/views/
 *.bup
 
 coreDatabase/logger*
+
 commonClient/jet/assets/libs/
 commonClient/jet/css/libs/
 commonClient/jet/js/libs/
-commonClient/jet/scss/libs/
+commonClient/jet/scss/oj/
+commonClient/jet/CONTRIBUTING.md
+commonClient/jet/LICENSE.md
+commonClient/jet/README.md
+commonClient/jet/THIRDPARTYLICENSE.txt
+commonClient/jet/buildnum
+commonClient/jet/revnum
+
+
 commonClient/angularJS/assets/libs/

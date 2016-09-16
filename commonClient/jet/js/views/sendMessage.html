@@ -1,0 +1,35 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div id="pageContent" class="panel-title-bar">
+    <h3>Send message to <span data-bind="text: sendTo().name"></span></h3>
+</div>
+<div id='broadcast-message'
+     class="oj-flex">
+    <div class="oj-md-12">
+        <label for="subject">Subject</label>
+        <input id="subject"
+               type="text"
+               data-bind="ojComponent: {component: 'ojInputText',
+                                    value: subject,
+                                        rootAttributes: {
+                                            style:'max-width:100%'}
+                                        }"
+               placeholder="Subject" required/>
+
+        <label for="messageText">Message</label>
+        <textarea id="messageText"
+                  style="resize: both;"
+                  data-bind="ojComponent: {component: 'ojTextArea',
+                                     value: messageText,
+                                        rootAttributes: {
+                                            style:'max-width:100%'}}"
+                  placeholder="Send a message . . ." required
+                  rows="10"></textarea>
+        <button id="send"
+                data-bind="click: send,
+                       ojComponent: { component: 'ojButton', label: 'Send' }">
+        </button>
+    </div>
+</div>
