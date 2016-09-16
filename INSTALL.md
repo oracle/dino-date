@@ -26,7 +26,17 @@ client pages used by all mid-tier restful interfaces.
 * [bower](http://bower.io/#install-bower)
 
 ### Installation
-Open a prompt in the dino-date/commonClient directory
+## Jet
+Download the Oracle JavaScript Extension Toolkit : Base Distribution and extract it into the commonClient/jet directory
+
+Open a prompt in the dino-date/commonClient/jet directory
+
+```
+bower install
+```
+
+## AngularJS
+Open a prompt in the dino-date/commonClient/angularJS directory
 
 ```
 bower install
@@ -48,7 +58,7 @@ You can install one or more languages.  They can be run simultaneously as long a
   * os
 
 ### Installation
-Open a propmt in the dino-date/python directory
+Open a prompt in the dino-date/python directory
 
 ```
 pip install cx_Oracle
@@ -72,7 +82,7 @@ pip install bottle
    * serve-static
 
 ### Installation
-Open a propmt in the dino-date/nodejs directory
+Open a prompt in the dino-date/nodejs directory
 
 ```
 npm install
@@ -89,6 +99,13 @@ Create the following environment variables using the correct values for your sys
 * dd_port=8888
 * dd_python_port=8080
 * dd_node_port=3000
+* dd_clientAppCodeDir=jet
+* dd_python_clientAppCodeDir=jet
+* dd_node_clientAppCodeDir=jet
+
+Variables such as dd_port and dd_clientAppCodeDir have language specific variations if you would like to run multiple environments at the same time.
+
+If you only plan to run one at at time you do not need to include the language variations.
 
 ## Ruby
 Coming Soon!

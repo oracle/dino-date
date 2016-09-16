@@ -9,5 +9,6 @@ module.exports = {
         connectString: process.env.dd_connectString || 'localhost:1521/orcl'
     },
     port: process.env.dd_node_port || process.env.dd_port || 3000,
-    jwtSecretKey: 'Zi-jV&vu@9qrc$6efZ'
+    jwtSecretKey: 'Zi-jV&vu@9qrc$6efZ',
+    clientAppCodeDir: process.env.dd_node_clientAppCodeDir || process.env.dd_clientAppCodeDir || 'jet'
 };

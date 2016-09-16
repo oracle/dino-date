@@ -1,0 +1,270 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar {
+  margin-bottom: 1px;
+}
+
+.headerLogo {
+  display: inline;
+  width: 140px;
+  margin-top: 12px;
+}
+
+.panel-title-bar{
+  color: #ffffff;
+  background-color: #0572ce;
+  border-color: #0572ce;
+
+  font-size: 11px;
+  line-height: 22px;
+  font-weight: 500;
+
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.panel-title-bar h3 {
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 1.1;
+  color: inherit;
+}
+
+.oj-web-applayout-max-width {
+  width: 70%;
+}
+
+.header-nav-list{
+  width: 70%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1440px;
+  box-sizing: border-box;
+}
+
+
+
+/* Custom page header */
+.page-header {
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0 0 20px;
+}
+/* Make the masthead heading the same height as the navigation */
+.page-header h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 10px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+  color: inherit;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+.jumbotron .glyphicon {
+  color: #D86868;
+  font-size: 2em;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+.help-block {
+  margin-bottom: 0;
+}
+
+.main-alert{
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 10px;
+  z-index: 1000;
+}
+
+.alert-hidden {
+  visiblity: hidden;
+}
+
+
+.dino-logo {
+  max-width: 30%;
+}
+
+.lead {
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+
+.media {
+  margin-top: 15px;
+}
+.media:first-child {
+  margin-top: 0;
+}
+.media,
+.media-body {
+  zoom: 1;
+  overflow: hidden;
+}
+.media-body {
+  width: 10000px;
+}
+.media-object {
+  display: block;
+}
+.media-object.img-thumbnail {
+  max-width: none;
+}
+.media-right,
+.media > .pull-right {
+  padding-left: 10px;
+}
+.media-left,
+.media > .pull-left {
+  padding-right: 10px;
+}
+.media-left,
+.media-right,
+.media-body {
+  display: table-cell;
+  vertical-align: top;
+}
+.media-middle {
+  vertical-align: middle;
+}
+.media-bottom {
+  vertical-align: bottom;
+}
+.media-heading {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+.media-list {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+
+
+
+#oracle-info{
+  display: table;
+  position: fixed;
+  top: 55px;
+  left: -300px;
+  z-index: 1000;
+  transition: all .25s ease;
+}
+
+#oracle-info:hover {
+  left: 0;
+}
+
+#oracle-info > .oi-details{
+  display: table-cell;
+  width: 300px;
+  background-color: #eee;
+  padding: 15px 20px;
+  position: relative;
+  z-index: 100;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.75);
+  background-image: linear-gradient(to top, #ececec, #f4f4f4);
+}
+
+#oracle-info > .oi-icon {
+  display: table-cell;
+}
+
+#oracle-info > .oi-icon > i{
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4), inset 0 0 2px rgba(255, 255, 255, 0.75);
+  background-image: linear-gradient(to top, #ececec, #f4f4f4);
+}
+
+#oracle-info .oi-description{
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+#oracle-info > .oi-code {
+  display: table-row;
+}
+
+.messageBtn {
+  margin: 10px;
+}

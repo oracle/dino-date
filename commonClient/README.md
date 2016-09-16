@@ -1,6 +1,6 @@
 ## Common Client Pages Used by All Mid-Tier Restful Interfaces.
 
-The common client is only as a user friendly front end for the Restful API layers.
+The commonClient folder is where we have the browser side code.
 
-See the language folders for example code.
+See the language folders for mid-tier example code.
 

@@ -287,17 +287,19 @@ def code(page, tag):
     sample = code_samples.get_code_sample(file_names[page], page + "_" + tag)
     return {"code": sample}
 
+clientAppCodeDir = '../commonClient/' + (os.getenv("dd_python_clientAppCodeDir") or os.getenv("dd_clientAppCodeDir") or 'jet')
+print(clientAppCodeDir)
 
 @route('/', methods=['GET', 'POST'])
 def server_static():
-    return static_file('index.html', root='../commonClient/app')
+    return static_file('index.html', root=clientAppCodeDir)
     # return template('..\commonClient\app\index.html')
 
 
 @route('/:path#.+#', methods=['GET', 'POST'])
 def server_static(path):
-    return static_file(path, root='../commonClient/app')
+    return static_file(path, root=clientAppCodeDir)
     # return template('..\commonClient\app\index.html')
 
 
-run(host='0.0.0.0', port=os.getenv("dd_python_port") or os.getenv("dd_port") or 8081)
+run(host='0.0.0.0', port=os.getenv("dd_python_port") or os.getenv("dd_port") or 8080)

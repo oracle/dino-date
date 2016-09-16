@@ -1,0 +1,12 @@
+{
+  "name": "DinoDate",
+  "description": "A demo app for Oracle Database",
+  "version": "0.1.0",
+  "homepage": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fontawesome": "~4.4.0",
+    "animate.css": "~3.3.0"
+  }
+}
