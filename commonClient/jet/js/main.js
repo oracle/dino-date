@@ -18,7 +18,8 @@ requirejs.config({
     'ojL10n': 'libs/oj/v2.1.0/ojL10n',
     'ojtranslations': 'libs/oj/v2.1.0/resources',
     'signals': 'libs/js-signals/signals.min',
-    'text': 'libs/require/text'
+    'text': 'libs/require/text',
+    'ddData': 'viewModels/ddData'
   }
   //endinjector
   ,
@@ -154,7 +155,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
 
         var headers = {
           'Authorization': 'Bearer ' + userToken,
-          'userToken': userToken || parseInt(self.currentUser().id)
+          'userToken': userToken || parseInt(self.currentUser()? self.currentUser().id : null)
         };
 
         if (stateStr === 'registration' || stateStr === 'search' || stateStr === 'broadcast') {

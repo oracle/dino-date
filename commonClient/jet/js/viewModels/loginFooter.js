@@ -10,6 +10,14 @@ define(['ojs/ojcore', 'knockout'],
      */
     function FooterViewModel() {
       var self = this;
+
+      self.goRegister = function () {
+        var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
+
+        rootViewModel.router.go('register');
+
+        $("#loginDialog").ojDialog("close");
+      };
     }
 
     return new FooterViewModel();

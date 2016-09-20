@@ -5,7 +5,9 @@ All rights reserved.
 <div class="oj-flex">
     <div id="register" class="oj-md-10 oj-md-offset-1 oj-sm-10 oj-sm-offset-1">
         <div class="page-header">
-            <h1>Become a member <small><strong>FREE</strong> for 30 days</small></h1>
+            <h1>Become a member
+                <small><strong>FREE</strong> for 30 days</small>
+            </h1>
         </div>
         <div class="oj-form-layout">
             <div class="oj-form oj-sm-odd-cols-12 oj-md-odd-cols-4 oj-md-labels-inline">
@@ -43,42 +45,85 @@ All rights reserved.
                     </div>
                     <div class="oj-flex-item">
                         <input id="trilobitcoinNumber"
-                               placeholder="1234-1234-1234-1234"
-                               data-bind="ojComponent: {component: 'ojInputText',
+                               placeholder="1234123412341234"
+                               data-bind="ojComponent: {component: 'ojInputNumber',
+                                          value:newMember().trilobitcoinNumber,
                                           required: true,
                                           validators: [{
                                                         type: 'length',
-                                                        options: {max: 19}}]}">
+                                                        options: {max: 19}}],
+                                          converter: {
+                                                        type: 'number',
+                                                        options: {
+                                                          style:'decimal', roundingMode: 'HALF_DOWN',
+                                                          maximumFractionDigits: 0,
+                                                          useGrouping: false}}}">
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="species">Species</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <select id="species"
+                                placeholder="Select One"
+                                data-bind="ojComponent: {component: 'ojSelect',
+                                          options: species,
+                                          value: speciesKeysVal,
+                                          optionsKeys: {value : 'dinosaurId', label : 'speciesName'},
+                                          required: true}">
+                        </select>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="locations">Location</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <select id="locations"
+                                placeholder="Select One"
+                                data-bind="ojComponent: {component: 'ojSelect',
+                                          options: locations,
+                                          value: locationKeysVal,
+                                          optionsKeys: {value : 'locationId', label : 'locationName'},
+                                          required: true}">
+                        </select>
+                    </div>
+                </div>
+                <div class="oj-flex">
+                    <div class="oj-flex-item">
+                        <label for="aboutYourself">About Yourself</label>
+                    </div>
+                    <div class="oj-flex-item">
+                        <textarea id="aboutYourself"
+                                  placeholder="Tell us something interesting."
+                                  data-bind="ojComponent: {component: 'ojTextArea',
+                                          value:newMember().aboutYourself,
+                                          required: true,
+                                          validators: [{
+                                                        type: 'length',
+                                                        options: {max: 500}}]}">
+                        </textarea>
                     </div>
                 </div>
 
+                <button id="register-btn"
+                        class="oj-button-primary"
+                        data-bind="click: registerMember,
+                      ojComponent: {
+                      component:'ojButton',
+                      label: 'Register',
+                      chroming: 'full'}">
+                </button>
 
-
-
-                        <!--<label for="species" class="oj-md-4 control-label">Species</label>-->
-                              <!--<option value="">- Select Species -</option>-->
-                            <!--</select>-->
-                                <!--<span ng-message="required">Species is required.</span>-->
-
-                <!--<label for="location" class="oj-md-4 control-label">Park</label>-->
-                          <!--<select id="location" class="form-control" name="location"-->
-                                 <!--<option value="">- Select Park -</option>-->
-                            <!--</select>-->
-
-                        <!--<label for="aboutYourself" class="oj-md-4 control-label">About You</label>-->
-                                  <!--placeholder="I like long walks on the beach..."-->
-                                 <!--required ng-maxlength="500"></textarea>-->
-
-                            <!--<button id="register-btn" type="submit" class="btn btn-primary btn-block">View Singles</button>-->
-
-            <!--<div class="panel-footer">-->
+                <!--<div class="panel-footer">-->
                 <!--<p>Already have an account?-->
-                    <!--<a ui-sref="login">-->
-                        <!--Login Here-->
-                    <!--</a>-->
+                <!--<a ui-sref="login">-->
+                <!--Login Here-->
+                <!--</a>-->
                 <!--</p>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
 </div>
