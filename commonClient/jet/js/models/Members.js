@@ -3,14 +3,14 @@
  Copyright (c) 2016, Oracle and/or its affiliates. 
  All rights reserved.
  */
-define(['ojs/ojcore', 'knockout', 'models/Member', 'ojs/ojmodel'],
-  function (oj, ko, Member) {
+define(['ojs/ojcore', 'knockout', 'models/Member', 'alert', 'ojs/ojmodel'],
+  function (oj, ko, Member, alert) {
     var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
 
     var Members = oj.Collection.extend({
       url: "api/v1/members",
       model: Member,
-      fetchSize: 10,
+      fetchSize: 100,
       //used to generate authentication and config headers
       customURL: rootViewModel.getHeaders,
       // The object returned from the server includes both the member records in the members.items array
@@ -22,8 +22,8 @@ define(['ojs/ojcore', 'knockout', 'models/Member', 'ojs/ojmodel'],
         var exTime = Math.round(members.executionTime * 1000) / 1000;
         var seconds = (exTime) % 60;
         var minutes = parseInt(seconds / 60, 10);
+        alert('info', 'Code Execution Time', (((minutes > 0) ? (minutes) + ' Min ' : '') + seconds + ' Sec'), 3000);
 
-        console.log('Code Execution Time: ' + ((minutes > 0) ? (minutes) + ' Min ' : '') + seconds + ' Sec');
         return members.items;
       }
     });

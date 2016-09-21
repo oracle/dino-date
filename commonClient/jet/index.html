@@ -9,11 +9,11 @@ All rights reserved.
      For more detailed examples of specific features please see the Oracle JET project.
      ***************************** IMPORTANT INFORMATION ************************************ -->
 <html lang="en-us">
-  <head>
+<head>
     <title>DinoDate</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" href="assets/libs/fontawesome/css/font-awesome.css">
     <link rel="stylesheet" href="assets/libs/animate.css/animate.css">
 
@@ -25,52 +25,63 @@ All rights reserved.
 
     <!-- RequireJS configuration file -->
     <script data-main="js/main" src="js/libs/require/require.js"></script>
-  </head>
-  <body>
-    <!-- template for rendering navigation items shared between nav bar and nav list -->
-    <script type="text/html" id="navTemplate">
-      <li><a href="#">
+</head>
+<body>
+<!-- template for rendering navigation items shared between nav bar and nav list -->
+<script type="text/html" id="navTemplate">
+    <li><a href="#">
         <span data-bind="css: $data['iconClass']"></span>
         <!-- ko text: $data['name'] --> <!--/ko-->
-      </a></li>
-    </script>
-    <div id="globalBody" class="oj-web-applayout-offcanvas-wrapper oj-offcanvas-outer-wrapper">
-      <div class="oj-offcanvas-inner-wrapper">
+    </a></li>
+</script>
+<div id="globalBody" class="oj-web-applayout-offcanvas-wrapper oj-offcanvas-outer-wrapper">
+    <div class="oj-offcanvas-inner-wrapper">
         <!--
         ** This off-canvas section is used when the browser is resized to a
         ** medium or smaller media query size. It moves the App Navigation into a drawer
         -->
         <!-- off-canvas content -->
         <div id="offcanvas" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start"
-          data-bind="ojModule: {viewName: 'navDrawer'}"></div>
+             data-bind="ojModule: {viewName: 'navDrawer'}"></div>
         <div class="oj-web-applayout-scrollable-wrapper">
-          <div class="oj-web-applayout-scrollable oj-web-applayout-page">
-            <!-- Header section which contains the Global Branding, Global Navigation,
-            ** and Application Navigation code. Template is located in /js/views/header.html
-            -->
-            <header role="banner" class="oj-web-applayout-header"
-              data-bind="ojModule: 'header'"></header>
+            <div class="oj-web-applayout-scrollable oj-web-applayout-page">
+                <!-- Header section which contains the Global Branding, Global Navigation,
+                ** and Application Navigation code. Template is located in /js/views/header.html
+                -->
+                <header role="banner" class="oj-web-applayout-header"
+                        data-bind="ojModule: 'header'"></header>
 
-            <!-- This is where your main page content will be loaded -->
-            <div class="oj-web-applayout-max-width oj-web-applayout-content">
-              <div class="oj-flex">
-                <div class="oj-xl-12 oj-lg-12 oj-sm-12 oj-flex-item oj-flex">
-                  <div id="mainContent" role="main" class="oj-panel oj-margin oj-flex-item"
-                    data-bind="ojModule: router.moduleConfig">
-                    <!-- Unlike the Navigation and Complementary sections,
-                      ** this ojModule binding is using "name" instead of "viewName".
-                      ** When the "name" option is specified, ojModule expects that
-                      ** the View and the ViewModel share the same base name.
-                      ** The "viewName" option is used when the View does not have
-                      ** an associated ViewModel or when the ViewModel has a different base name.
-                    -->
-                  </div>
+
+                <div class="main-alert" data-bind="foreach: alerts">
+                    <div data-bind="visible: !hasBeenShown(),
+                                    attr: { 'class': type },
+                                    css:{'flipInX': show(), 'flipOutX': !show(), 'alert-hidden': !show()}">
+                        <strong data-bind="text: title"></strong>
+                        <div data-bind="text: message"></div>
+                    </div>
                 </div>
-              </div>
+
+
+                <!-- This is where your main page content will be loaded -->
+                <div class="oj-web-applayout-max-width oj-web-applayout-content">
+                    <div class="oj-flex">
+                        <div class="oj-xl-12 oj-lg-12 oj-sm-12 oj-flex-item oj-flex">
+                            <div id="mainContent" role="main" class="oj-panel oj-margin oj-flex-item"
+                                 data-bind="ojModule: router.moduleConfig">
+                                <!-- Unlike the Navigation and Complementary sections,
+                                  ** this ojModule binding is using "name" instead of "viewName".
+                                  ** When the "name" option is specified, ojModule expects that
+                                  ** the View and the ViewModel share the same base name.
+                                  ** The "viewName" option is used when the View does not have
+                                  ** an associated ViewModel or when the ViewModel has a different base name.
+                                -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </body>
+</div>
+</body>
 </html>

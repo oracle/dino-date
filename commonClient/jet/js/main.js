@@ -19,7 +19,8 @@ requirejs.config({
     'ojtranslations': 'libs/oj/v2.1.0/resources',
     'signals': 'libs/js-signals/signals.min',
     'text': 'libs/require/text',
-    'ddData': 'viewModels/ddData'
+    'ddData': 'viewModels/ddData',
+    'alert': 'viewModels/alert'
   }
   //endinjector
   ,
@@ -165,6 +166,8 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
         return {'headers': headers};
       };
 
+      self.alerts = ko.observableArray();
+      
       var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
       self.smScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
       self.navChange = function(event, ui) {

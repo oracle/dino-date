@@ -3,9 +3,9 @@
  Copyright (c) 2016, Oracle and/or its affiliates. 
  All rights reserved.
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombobox',
+define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojselectcombobox',
     'ojs/ojbutton', 'ojs/ojmodel', 'ojs/ojdialog'],
-  function (oj, ko, $) {
+  function (oj, ko, $, alert) {
     function ControlPanelViewModel() {
       var self = this;
 
@@ -49,13 +49,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
                 self.headerText('No Members Generated');
                 self.bodyText('You may already have the maximum members.');
               }
-
-              $("#generatResults").ojDialog("open");
-
+              alert('info', self.headerText(), self.bodyText(), 5000);
             },
             error: function (jqXHR, textStatus, errorThrown) {
               self.headerText('Generation Failed');
               self.bodyText(textStatus);
+              alert('danger', self.headerText(), self.bodyText(), 5000);
             }
           }).then(function () {
             self.generateAmount(["0"]);
@@ -84,14 +83,14 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojselectcombo
                 self.bodyText(res.deletedMembers);
               } else {
                 self.headerText('No Members Deleted');
+                self.bodyText(null);
               }
-
-              $("#generatResults").ojDialog("open");
-
+              alert('info', self.headerText(), self.bodyText(), 5000);
             },
             failure: function (jqXHR, textStatus, errorThrown) {
               self.headerText('Deletion Failed');
               self.bodyText(textStatus);
+              alert('danger', self.headerText(), self.bodyText(), 5000);
             }
           }).then(function () {
             self.working(false);

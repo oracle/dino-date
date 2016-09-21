@@ -44,14 +44,19 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Member', 'ddData', 'ojs/ojdi
         var member = new Member();
         
         member.attributes = self.newMember();
+
         //get the values of the observableArray objects
         member.attributes.dinosaurId = self.speciesKeysVal()[0];
         member.attributes.locationId = self.locationKeysVal()[0];
 
         member.save().then(function () {
           //Log in as the new user
-          var retMember = member.attributes.member;
-          var userToken = member.attributes.token || retMember.memberId;
+          var retMember = member.attributes.member,
+            userToken = member.attributes.token || retMember.id;
+
+          if (member.attributes.hasOwnProperty('token')){
+            delete member.attributes.token;
+          }
 
           var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
 
