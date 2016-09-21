@@ -19,8 +19,8 @@ requirejs.config({
     'ojtranslations': 'libs/oj/v2.1.0/resources',
     'signals': 'libs/js-signals/signals.min',
     'text': 'libs/require/text',
-    'ddData': 'viewModels/ddData',
-    'alert': 'viewModels/alert'
+    'ddData': 'shared/ddData',
+    'alert': 'shared/alert'
   }
   //endinjector
   ,

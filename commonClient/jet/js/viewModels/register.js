@@ -11,10 +11,10 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Member', 'ddData', 'ojs/ojdi
 
       self.newMember = ko.observable();
 
-      self.species = ko.observableArray();
+      self.species = ddData.species;
       self.speciesKeysVal = ko.observableArray();
 
-      self.locations = ko.observableArray();
+      self.locations = ddData.locations;
       self.locationKeysVal = ko.observableArray();
 
       // Used to initialize and reset the observable objects
@@ -25,16 +25,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Member', 'ddData', 'ojs/ojdi
           aboutYourself: null,
           trilobitcoinNumber: null
         });
-
-        // Used for species options
-        self.species(ddData.species);
-        // Used for species value.  The value of an ojSelect is an array.
-        self.speciesKeysVal([self.species()[0].dinosaurId]);
-
-        // Used for location options
-        self.locations(ddData.locations);
-        // Used for location value.  The value of an ojSelect is an array.
-        self.locationKeysVal([self.locations()[0].locationId]);
       };
 
       //initialize the data
@@ -42,7 +32,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Member', 'ddData', 'ojs/ojdi
 
       self.registerMember = function (data, event) {
         var member = new Member();
-        
+
         member.attributes = self.newMember();
 
         //get the values of the observableArray objects

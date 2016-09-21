@@ -5,24 +5,23 @@
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodel'],
   function (oj, ko, $) {
-    function SpeciesViewModel() {
+    function DdDataCache() {
       var self = this;
 
-      self.species = [];
-      self.locations = [];
+      self.species = ko.observableArray();
+      self.locations = ko.observableArray();
 
       var species = new Species();
 
       species.fetch().then(function (res) {
-        self.species = res.items;
+        self.species(res.items);
       });
 
       var locations = new Locations();
 
       locations.fetch().then(function (res) {
-        self.locations = res.items;
+        self.locations(res.items);
       });
-
     }
 
     var Species = oj.Collection.extend({
@@ -35,7 +34,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojmodel'],
       model: oj.Model.extend({idAttribute: "locationId"})
     });
 
-
-    return new SpeciesViewModel();
+    return new DdDataCache();
   }
 );

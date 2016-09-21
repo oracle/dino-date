@@ -42,18 +42,21 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Members', 'viewModels/profil
             '?searchString=' + self.keywords() +
             '&maxDistance=' + self.maxDistance();
 
-          self.membersColl.fetch().then(function () {
+          //The ojPaging control fetches multiple times.
+          //  Doing it this way to try and prevent extra fetches.
+          //////////////
+          // self.membersColl.fetch().then(function () {
             // As mentioned in the above workaround for the ojPagingControl
             // Set the pagingData to the fetched records.
             self.pagingData(self.members);
-          });
+          // });
         }
       };
 
       // Used to store the data for the member selected from the search results.
       self.currentMember = ko.observable({
         name: null,
-        memberId: null
+        id: null
       });
 
       // Triggered by selecting a row from the ojTable

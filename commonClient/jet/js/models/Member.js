@@ -9,7 +9,7 @@ define(['ojs/ojcore', 'knockout', 'alert', 'ojs/ojmodel'],
     var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
 
     var Member = oj.Model.extend({
-      idAttribute: "id",
+      idAttribute: "memberId",
       urlRoot: "api/v1/members",
       //used to generate authentication and config headers
       customURL: rootViewModel.getHeaders,
