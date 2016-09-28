@@ -1,0 +1,27 @@
+<!--
+Copyright (c) 2016, Oracle and/or its affiliates.
+All rights reserved.
+ -->
+<div data-bind="visible: show()">
+<!--<select id="species"-->
+        <!--data-bind="ojComponent: {component: 'ojSelect',-->
+                                          <!--options: listVals,-->
+                                          <!--value: currentProcess,-->
+                                          <!--optionsKeys: {value : 'value', label : 'name'}}">-->
+<!--</select>-->
+
+    <div id="processType-container">
+        <button id="processType"
+                data-bind="ojComponent: {component: 'ojButton', label: currentProcess().name + (currentProcess().subText? currentProcess().subText:'') ,
+                                   menu: '#processTypeMenu'}">
+        </button>
+        <ul id="processTypeMenu" data-bind="ojComponent: {component: 'ojMenu', select: setProcessType}"
+            style="display:none">
+            <!-- ko foreach: listVals -->
+            <li data-bind="visible: ($data.value !== $parent.currentProcess().value), attr: {id: value, index: $index}">
+                <a href="#" data-bind="text: name + ($data.subText? $data.subText:'')"></a>
+            </li>
+            <!-- /ko -->
+        </ul>
+    </div>
+</div>

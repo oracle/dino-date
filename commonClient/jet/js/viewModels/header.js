@@ -3,7 +3,7 @@
  Copyright (c) 2016, Oracle and/or its affiliates.
  All rights reserved.
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'viewModels/profile', 'ojs/ojknockout', 'ojs/ojdialog',
+define(['ojs/ojcore', 'knockout', 'jquery', 'viewModels/profile', 'viewModels/oracleInfo', 'ojs/ojknockout', 'ojs/ojdialog',
     'ojs/ojtoolbar', 'ojs/ojbutton', 'ojs/ojmenu', 'ojs/ojmodel', 'ojs/ojnavigationlist'],
   function (oj, ko, $, Profile) {
     /**
