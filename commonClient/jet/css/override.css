@@ -143,11 +143,15 @@ body {
   margin-bottom: 0;
 }
 
-.process-select{
+.process-area{
   max-width: 400px;
   position: fixed;
-  top: 0;
+  top: 55px;
   left: 0;
+}
+
+.process-menu{
+  position: relative;
   margin: 10px;
   z-index: 1000;
 }

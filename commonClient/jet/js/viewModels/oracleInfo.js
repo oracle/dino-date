@@ -4,7 +4,7 @@
  All rights reserved.
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
-    'ojs/ojbutton','ojs/ojselectcombobox'],
+    'ojs/ojbutton', 'ojs/ojselectcombobox'],
   function (oj, ko, $, alert) {
     function OracleInfoViewModel() {
       var self = this;
@@ -96,78 +96,115 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
           }]
       };
 
-      var getProcessByValue = function(type, value){
+      var getProcessByValue = function (type, value) {
         var retProcess;
 
-        self.processTypes[type].forEach(function(process){
-          if (value === process.value){
-            retProcess = process;
-          }
-        });
+        if (self.processTypes.hasOwnProperty(type)) {
+          self.processTypes[type].forEach(function (process) {
+            if (value === process.value) {
+              retProcess = process;
+            }
+          });
+        } else {
+          retProcess = {
+            name: null,
+            subText: null,
+            value: null,
+            description: null
+          };
+        }
 
         return retProcess;
       };
-
 
       self.stateStr = ko.computed(function () {
         return rootViewModel.router.stateId();
       });
 
-      self.currentProcess = ko.observable( getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
+      self.listVals = ko.observable();
+
+      // self.currentProcess = ko.observable(getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
+      self.currentProcess = ko.observable(getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
 
       self.show = ko.computed(function () {
-        return (self.stateStr() === 'register' || self.stateStr() === 'search' || self.stateStr() === 'broadcast');
-      });
-
-      self.listVals = ko.computed(function(){
-        if (self.show()){
-          return self.processTypes[self.stateStr()];
+        var showPanel = (self.stateStr() === 'register' || self.stateStr() === 'search' || self.stateStr() === 'broadcast');
+        if (showPanel){
+          self.currentProcess(getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
+          self.listVals(self.processTypes[self.stateStr()]);
+          $( "#processTypeMenu" ).ojMenu( "refresh" );
         }
+        return showPanel;
       });
 
-      self.setProcessType = function(event, ui){
-        self.currentProcess(self.processTypes[self.stateStr()][ui.item.attr("index")]);
-        rootViewModel.setProcessType(self.currentProcess().value, self.stateStr());
-      };
+      self.exampleCode = ko.observable();
 
-
-
-      self.getExampleCode = function (pType, index) {
-        var processType = self.processTypes[pType][index];
-        $http.get(API_URL + 'code/' + pType + '/' + processType.value)
+      var getExampleCode = function () {
+        self.exampleCode(null);
+        //TODO refactor register to be registration
+        var pType = (self.stateStr()==='register')?'registration': self.stateStr();
+        $.get('api/v1/code/' + pType + '/' + self.currentProcess().value)
           .then(function success(res) {
-            processType.code = res.data.code;
+            self.exampleCode(res.code);
           }, function error(res) {
             alert('danger', 'Code Fetch Failed', res.error);
           });
       };
 
-      self.init = function (stateStr) {
-        if (stateStr === 'register' || stateStr === 'search' || stateStr === 'broadcast') {
-
-          for (var pType in self.processTypes) {
-            if (self.processTypes.hasOwnProperty(pType)) {
-              for (var j = 0; j < self.processTypes[pType].length; j++) {
-                self.getExampleCode(pType, j);
-              }
-            }
-          }
-
-          self.currentTypes = self.processTypes[stateStr];
-          self.currentType = self.currentTypes[0];
-          var savedType = rootViewModel.getProcessType(stateStr);
-          if (savedType) {
-            for (var i = 0; i < self.currentTypes.length; i++) {
-              if (savedType === self.currentTypes[i].value) {
-                self.currentType = self.currentTypes[i];
-              }
-            }
-          } else {
-            rootViewModel.setProcessType(self.currentType.value, stateStr);
-          }
-          self.currentStateStr = stateStr;
-        }
+      self.setProcessType = function (event, ui) {
+        var pType = self.stateStr();
+        self.currentProcess(self.processTypes[pType][ui.item.attr("index")]);
+        rootViewModel.setProcessType(self.currentProcess().value, pType);
+        getExampleCode();
       };
+
+      self.showDescription = function (event, ui) {
+        $("#processDialog").ojDialog("open");
+      };
+
+
+      self.showCode = function (event, ui) {
+        if (!self.exampleCode()){
+          getExampleCode();
+        }
+        $("#codeDialog").ojDialog("open");
+      };
+
+      // self.getExampleCode = function (pType, index) {
+      //   var processType = self.processTypes[pType][index];
+      //   $http.get(API_URL + 'code/' + pType + '/' + processType.value)
+      //     .then(function success(res) {
+      //       processType.code = res.data.code;
+      //     }, function error(res) {
+      //       alert('danger', 'Code Fetch Failed', res.error);
+      //     });
+      // };
+      //
+      // self.init = function (stateStr) {
+      //   if (stateStr === 'register' || stateStr === 'search' || stateStr === 'broadcast') {
+      //
+      //     for (var pType in self.processTypes) {
+      //       if (self.processTypes.hasOwnProperty(pType)) {
+      //         for (var j = 0; j < self.processTypes[pType].length; j++) {
+      //           self.getExampleCode(pType, j);
+      //         }
+      //       }
+      //     }
+      //
+      //     self.currentTypes = self.processTypes[stateStr];
+      //     self.currentType = self.currentTypes[0];
+      //     var savedType = rootViewModel.getProcessType(stateStr);
+      //     if (savedType) {
+      //       for (var i = 0; i < self.currentTypes.length; i++) {
+      //         if (savedType === self.currentTypes[i].value) {
+      //           self.currentType = self.currentTypes[i];
+      //         }
+      //       }
+      //     } else {
+      //       rootViewModel.setProcessType(self.currentType.value, stateStr);
+      //     }
+      //     self.currentStateStr = stateStr;
+      //   }
+      // };
 
 
     }

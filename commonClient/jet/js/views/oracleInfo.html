@@ -9,19 +9,36 @@ All rights reserved.
                                           <!--value: currentProcess,-->
                                           <!--optionsKeys: {value : 'value', label : 'name'}}">-->
 <!--</select>-->
-
-    <div id="processType-container">
+    <div id="processType-container" class="process-menu">
         <button id="processType"
                 data-bind="ojComponent: {component: 'ojButton', label: currentProcess().name + (currentProcess().subText? currentProcess().subText:'') ,
                                    menu: '#processTypeMenu'}">
-        </button>
+        </button> <i class="fa fa-info fa-2x" data-bind="click: showDescription"></i> <i class="fa fa-gears fa-2x" data-bind="click: showCode"></i>
         <ul id="processTypeMenu" data-bind="ojComponent: {component: 'ojMenu', select: setProcessType}"
             style="display:none">
             <!-- ko foreach: listVals -->
             <li data-bind="visible: ($data.value !== $parent.currentProcess().value), attr: {id: value, index: $index}">
-                <a href="#" data-bind="text: name + ($data.subText? $data.subText:'')"></a>
+                <a href="#" data-bind="text: name + ($data.subText? $data.subText:' ')"></a>
             </li>
             <!-- /ko -->
         </ul>
+    </div>
+</div>
+<div style="display:none" id="processDialog"
+     data-bind="ojComponent:{component: 'ojDialog',
+        title: currentProcess().name + (currentProcess().subText? currentProcess().subText:'') + '  Description',
+        modality: 'modeless',
+        rootAttributes: { style: 'width: 400px; height: 450px;'}}">
+    <div class="oj-dialog-body">
+        <span data-bind="html: currentProcess().description"></span>
+    </div>
+</div>
+<div style="display:none" id="codeDialog"
+     data-bind="ojComponent:{component: 'ojDialog',
+        title: currentProcess().name + (currentProcess().subText? currentProcess().subText:'') + ' Process Code',
+        modality: 'modeless',
+        rootAttributes: { style: 'width: 80vw; height: 80vh;'}}">
+    <div class="oj-dialog-body">
+        <pre data-bind="text: exampleCode"></pre>
     </div>
 </div>

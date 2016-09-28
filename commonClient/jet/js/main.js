@@ -136,6 +136,19 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
       //   Used to change processing paths for code demonstration sections
       self.cachedProcessTypes = {};
 
+      //Set default Process Types
+      if (!sessionStorage.hasOwnProperty('broadcastType')) {
+        sessionStorage.setItem("broadcastType", 'thickDatabase');
+      }
+
+      if (!sessionStorage.hasOwnProperty('registerType')) {
+        sessionStorage.setItem("registerType", 'aq');
+      }
+
+      if (!sessionStorage.hasOwnProperty('searchType')) {
+        sessionStorage.setItem("searchType", 'text');
+      }
+
       self.setProcessType = function (value, state) {
         self.cachedProcessTypes[state] = value;
         sessionStorage.setItem((state + 'Type'), value);
@@ -159,7 +172,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
           'userToken': userToken || parseInt(self.currentUser()? self.currentUser().id : null)
         };
 
-        if (stateStr === 'registration' || stateStr === 'search' || stateStr === 'broadcast') {
+        if (stateStr === 'register' || stateStr === 'search' || stateStr === 'broadcast') {
           headers['DD-Process-Type'] = self.getProcessType(stateStr);
         }
 

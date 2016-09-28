@@ -40,6 +40,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Message',
           } else if (self.sendTo().messageType === 'broadcast') {
             rootViewModel.router.go('home');
           }
+          self.clearMessage();
         });
         return true;
       };
