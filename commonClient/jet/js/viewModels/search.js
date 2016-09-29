@@ -4,10 +4,10 @@
  All rights reserved.
  */
 define(['ojs/ojcore', 'knockout', 'jquery', 'models/Members', 'viewModels/profile',
-    'ojs/ojknockout', 'ojs/ojtable', 'ojs/ojcollectiontabledatasource',
+    'viewModels/oracleInfo', 'ojs/ojknockout', 'ojs/ojtable', 'ojs/ojcollectiontabledatasource',
     'ojs/ojpagingcontrol', 'ojs/ojpagingtabledatasource', 'ojs/ojdialog',
     'ojs/ojcomponents', 'ojs/ojselectcombobox'],
-  function (oj, ko, $, Members, Profile) {
+  function (oj, ko, $, Members, Profile, OracleInfo) {
     function SearchViewModel() {
       var self = this;
 
@@ -16,6 +16,12 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Members', 'viewModels/profil
 
       self.keywords = ko.observable();
       self.maxDistance = ko.observable(1000);
+      
+      self.showDistance = ko.computed(function(){
+        // Get the current selected process
+        var processType = OracleInfo.currentProcess().value;
+        return (processType === 'spatial');
+      });
 
       // Create a new members collection from the ../models/Members Collection object
       self.membersColl = new Members();
@@ -32,24 +38,20 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Members', 'viewModels/profil
       self.search = function (event, ui) {
         // verify the search criteria has been entered
         if (self.keywords() && self.maxDistance()) {
-          // Process type feature not yet added
-          // Manually set the process type to preform a spatial search
-          // Remove when feature is added
-          rootViewModel.setProcessType('spatial', 'search');
-
           //Re-build the url to include the search criteria
           self.membersColl.url = self.membersColl.url.split('?')[0] +
             '?searchString=' + self.keywords() +
-            '&maxDistance=' + self.maxDistance();
+            // Dont include if not a spatial search
+            ((self.showDistance())?'&maxDistance=' + self.maxDistance():'');
 
           //The ojPaging control fetches multiple times.
           //  Doing it this way to try and prevent extra fetches.
           //////////////
-          // self.membersColl.fetch().then(function () {
+          self.membersColl.fetch().then(function () {
             // As mentioned in the above workaround for the ojPagingControl
             // Set the pagingData to the fetched records.
             self.pagingData(self.members);
-          // });
+          });
         }
       };
 

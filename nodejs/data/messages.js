@@ -58,7 +58,8 @@ module.exports.sendBroadcastThinDatabase = sendBroadcastThinDatabase = function 
         'FROM   dd_members',
         [],
         {
-          outFormat: oracledb.OBJECT
+          outFormat: oracledb.OBJECT,
+          maxRows: 100000
         },
         function (err, results) {
           if (err) {
@@ -93,6 +94,12 @@ module.exports.sendBroadcastThinDatabase = sendBroadcastThinDatabase = function 
             };
 
           async.forEach(results.rows, sendIndividualMessage, function (err) {
+            connection.close(function (err) {
+              if (err) {
+                console.error(err.message);
+              }
+            });
+
             if (err) {
               callback(err);
 
@@ -100,12 +107,6 @@ module.exports.sendBroadcastThinDatabase = sendBroadcastThinDatabase = function 
             }
 
             callback(null, messageCount);
-          });
-
-          connection.close(function (err) {
-            if (err) {
-              console.error(err.message);
-            }
           });
         }
       );

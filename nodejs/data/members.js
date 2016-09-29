@@ -280,26 +280,12 @@ module.exports.getMember = getMember = function (filter, callback) {
   );
 };
 
-//SampleTagStart search_thinDatabase
-module.exports.getMembersThinDatabase = getMembersThinDatabase = function (filter, callback) {
-  var binds = {};
+var getMembers = function (query, binds, callback) {
 
-  if (filter.hasOwnProperty('limit')) {
-    oracledb.maxRows = parseInt(filter.limit);
+  // Oracldb maxRows defaults to 100.  If the client requests a larger limit adjust it.
+  if (binds.hasOwnProperty('limit') && parseInt(binds.limit) > 100) {
+    oracledb.maxRows = parseInt(binds.limit);
   }
-
-  if (filter.hasOwnProperty('memberId')) {
-    binds.memberId = filter.memberId;
-  }
-
-  if (filter.hasOwnProperty('searchString')) {
-    binds.keywords = '%' + filter.searchString + '%';
-  } else {
-    throw new Error('Invalid search filter');
-  }
-
-  binds.offset = filter.offset || 0;
-  binds.limit = filter.limit || 100;
 
   oracledb.getConnection(
     function (err, connection) {
@@ -310,13 +296,7 @@ module.exports.getMembersThinDatabase = getMembersThinDatabase = function (filte
       }
 
       connection.execute(
-        'SELECT member_id as "memberId", dino_name as "name" ' +
-        'FROM   dd_members ' +
-        'WHERE  member_id != :memberId ' +
-        'AND  about_yourself LIKE :keywords ' +
-        'AND  member_id > 0 ' +
-        'ORDER BY dino_name ' +
-        'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
+        query,
         binds,
         {
           outFormat: oracledb.OBJECT
@@ -334,13 +314,44 @@ module.exports.getMembersThinDatabase = getMembersThinDatabase = function (filte
             return;
           }
 
+// TODO return hasmore and totalcount
           callback(null, results.rows);
         }
       );
     }
   );
 };
-//SampleTagEnd search_thinDatabase
+
+//SampleTagStart search_like
+module.exports.getMembersLike = getMembersLike = function (filter, callback) {
+  var binds = {};
+
+  if (filter.hasOwnProperty('memberId')) {
+    binds.memberId = filter.memberId;
+  }
+
+  if (filter.hasOwnProperty('searchString')) {
+    binds.keywords = '%' + filter.searchString + '%';
+  } else {
+    throw new Error('Invalid search filter');
+  }
+
+  binds.offset = filter.offset || 0;
+  binds.limit = filter.limit || 100;
+
+  getMembers(
+    'SELECT member_id as "memberId", dino_name as "name" ' +
+    'FROM   dd_members ' +
+    'WHERE  member_id != :memberId ' +
+    'AND  about_yourself LIKE :keywords ' +
+    'AND  member_id > 0 ' +
+    'ORDER BY dino_name ' +
+    'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
+    binds,
+    callback
+  );
+};
+//SampleTagEnd search_like
 
 //SampleTagStart search_text
 module.exports.getMembersText = getMembersText = function (filter, callback) {
@@ -359,40 +370,13 @@ module.exports.getMembersText = getMembersText = function (filter, callback) {
   binds.offset = filter.offset || 0;
   binds.limit = filter.limit || 100;
 
-  oracledb.getConnection(
-    function (err, connection) {
-      if (err) {
-        callback(err);
-
-        return;
-      }
-
-      connection.execute(
-        'SELECT member_id as "memberId", dino_name as "name" ' +
-        'FROM  TABLE(dd_search_pkg.text_only(:memberId, :keywords)) ' +
-        'ORDER BY dino_name ' +
-        'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
-        binds,
-        {
-          outFormat: oracledb.OBJECT
-        },
-        function (err, results) {
-          connection.close(function (err) {
-            if (err) {
-              console.error(err.message);
-            }
-          });
-
-          if (err) {
-            callback(err);
-
-            return;
-          }
-
-          callback(null, results.rows);
-        }
-      );
-    }
+  getMembers(
+    'SELECT member_id as "memberId", dino_name as "name" ' +
+    'FROM  TABLE(dd_search_pkg.text_only(:memberId, :keywords)) ' +
+    'ORDER BY dino_name ' +
+    'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
+    binds,
+    callback
   );
 };
 //SampleTagEnd search_text
@@ -400,10 +384,6 @@ module.exports.getMembersText = getMembersText = function (filter, callback) {
 //SampleTagStart search_spatial
 module.exports.getMembersSpatial = getMembersSpatial = function (filter, callback) {
   var binds = {};
-
-  if (filter.hasOwnProperty('limit')) {
-    oracledb.maxRows = parseInt(filter.limit);
-  }
 
   if (filter.hasOwnProperty('memberId')) {
     binds.memberId = filter.memberId;
@@ -417,45 +397,20 @@ module.exports.getMembersSpatial = getMembersSpatial = function (filter, callbac
 
   if (filter.hasOwnProperty('maxDistance')) {
     binds.maxDistance = filter.maxDistance;
+  } else {
+    throw new Error('Invalid search filter');
   }
 
   binds.offset = filter.offset || 0;
   binds.limit = filter.limit || 100;
 
-  oracledb.getConnection(
-    function (err, connection) {
-      if (err) {
-        callback(err);
-
-        return;
-      }
-      console.log(binds);
-      connection.execute(
-        'SELECT member_id as "memberId", dino_name as "name" ' +
-        'FROM  TABLE(dd_search_pkg.text_and_spatial(:memberId, :keywords, :maxDistance)) ' +
-        'ORDER BY dino_name ' +
-        'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
-        binds,
-        {
-          outFormat: oracledb.OBJECT
-        },
-        function (err, results) {
-          connection.close(function (err) {
-            if (err) {
-              console.error(err.message);
-            }
-          });
-
-          if (err) {
-            callback(err);
-
-            return;
-          }
-
-          callback(null, results.rows);
-        }
-      );
-    }
+  getMembers(
+    'SELECT member_id as "memberId", dino_name as "name" ' +
+    'FROM  TABLE(dd_search_pkg.text_and_spatial(:memberId, :keywords, :maxDistance)) ' +
+    'ORDER BY dino_name ' +
+    'OFFSET :offset ROWS FETCH NEXT :limit ROWS ONLY',
+    binds,
+    callback
   );
 };
 //SampleTagEnd search_spatial

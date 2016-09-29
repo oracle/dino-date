@@ -10,7 +10,6 @@ define(['ojs/ojcore', 'knockout', 'models/Member', 'alert', 'ojs/ojmodel'],
     var Members = oj.Collection.extend({
       url: "api/v1/members",
       model: Member,
-      fetchSize: 100,
       //used to generate authentication and config headers
       customURL: rootViewModel.getHeaders,
       // The object returned from the server includes both the member records in the members.items array

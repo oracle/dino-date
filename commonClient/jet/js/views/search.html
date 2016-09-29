@@ -16,7 +16,7 @@ All rights reserved.
           rootAttributes: {style:'max-width: 20em'}}">
     </div>
     <div class="oj-md-1">    </div>
-    <div class="oj-md-1">
+    <div class="oj-md-1" data-bind="visible: showDistance">
         <label for="maxDistanceInput">Distance</label>
         <input id="maxDistanceInput" placeholder="KM"
                data-bind="ojComponent: {
@@ -58,12 +58,12 @@ All rights reserved.
     </div>
 </div>
 
-<div id="paging"
-     data-bind="ojComponent: {
-    component: 'ojPagingControl',
-    data: pagingData,
-    pageSize: 10}">
-</div>
+<!--<div id="paging"-->
+     <!--data-bind="ojComponent: {-->
+    <!--component: 'ojPagingControl',-->
+    <!--data: pagingData,-->
+    <!--pageSize: 10}">-->
+<!--</div>-->
 
 <!-- Result item template for ListView -->
 <script type="text/html" id="listViewResultItemTemplate">

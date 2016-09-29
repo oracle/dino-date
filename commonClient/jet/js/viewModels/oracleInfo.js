@@ -34,8 +34,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
             'only one round trip from the application server is required.</p>'
           },
           {
-            name: 'Database',
-            subText: ' using Advanced Queueing',
+            name: 'Database using Advanced Queueing',
             value: 'aq',
             description: '<p>Advanced Queueing optimizes registrations even further by allowing steps that ' +
             'require a lot of time to be done asynchronously via queues.</p>'
@@ -43,20 +42,18 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
         ],
         search: [
           {
-            name: 'Database',
-            subText: ' using Text Search',
+            name: 'Text',
             value: 'text',
-            description: '<p>This search is preformed by a Database procedure inside the Database.</p>' +
+            description: '<p>This search is preformed using Oracle Text.</p>' +
             '<p>This search takes advantage of <a href="http://docs.oracle.com/cd/B28359_01/text.111/b28303/query.htm" target="_blank">Oracle Text querying</a></p>' +
             '<p>The query uses a CONTAINS operator against a CONTEXT index.' +
             '<p>Notice that if you search for \'eat\', this type of search will return records containing the word \'eat\' but not records where eat is part of the word.</p>' +
             '<p>For example Brandy\'s record contains \'eater\' but not \'eat\', so it will not be returned.'
           },
           {
-            name: 'Database',
-            subText: ' using Spatial',
+            name: 'Text and Spatial',
             value: 'spatial',
-            description: '<p>This search is preformed by a Database procedure inside the Database.</p>' +
+            description: '<p>This search is preformed using Oracle Text and Oracle Spatial.</p>' +
             '<p>This search takes advantage of <a href="http://docs.oracle.com/cd/B28359_01/text.111/b28303/query.htm" target="_blank">Oracle Text querying</a> and ' +
             ' <a href="http://docs.oracle.com/cd/B28359_01/appdev.111/b28400/sdo_intro.htm" target="_blank">Spatial Concepts</a></p>' +
             '<p>The query uses a CONTAINS operator against a CONTEXT index.' +
@@ -64,16 +61,16 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
             '<p>However, if you step the within distance down to 2000 Kilometers, Lina and Weili are not returned.'
           },
           {
-            name: 'Middle Tier',
-            value: 'thinDatabase',
-            description: '<p>This search is preformed at the application level.</p>' +
+            name: 'Like',
+            value: 'like',
+            description: '<p>This search is preformed using the LIKE operator.</p>' +
             '<ol>' +
             '<li>The first keyword is extracted.</li>' +
             '<li>This keyword is wrapped with % wildcards.</li>' +
             '<li>The about_yourself column is then seached using the LIKE operator with the keyword.</li>' +
             '</ol>' +
             '<p>Notice that if you search for \'eat\', this type of search will return not just records containing the word \'eat\' but also any record where eat is part of the word.</p>' +
-            '<p>For example Bob\'s record contains \'features\' but not \'eat\'.'
+            '<p>For example Dot\'s record contains \'sweaters\' and \'creative\' but not \'eat\'.'
           }],
         broadcast: [
           {
@@ -108,7 +105,6 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
         } else {
           retProcess = {
             name: null,
-            subText: null,
             value: null,
             description: null
           };

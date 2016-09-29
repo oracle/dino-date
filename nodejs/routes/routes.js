@@ -159,8 +159,8 @@ router.get('/members', auth(), function (req, res, next) {
         });
     };
 
-    if (req.headers['dd-process-type'] == 'thinDatabase') {
-        members.getMembersThinDatabase(params, callback)
+    if (req.headers['dd-process-type'] == 'like') {
+        members.getMembersLike(params, callback)
     } else if (req.headers['dd-process-type'] === 'spatial') {
         members.getMembersSpatial(params, callback)
     } else {

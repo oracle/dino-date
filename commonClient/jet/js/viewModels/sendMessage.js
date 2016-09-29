@@ -3,9 +3,9 @@
  Copyright (c) 2016, Oracle and/or its affiliates. 
  All rights reserved.
  */
-define(['ojs/ojcore', 'knockout', 'jquery', 'models/Message',
-        'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojinputtext'],
-  function (oj, ko, $, Message) {
+define(['ojs/ojcore', 'knockout', 'jquery', 'models/Message', 'alert',
+    'ojs/ojknockout', 'ojs/ojbutton', 'ojs/ojinputtext'],
+  function (oj, ko, $, Message, alert) {
     function SendMessageViewModel() {
       var self = this;
       var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
@@ -38,6 +38,23 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Message',
           if (self.sendTo().messageType === 'single') {
             $('#sendDialog').ojDialog("close");
           } else if (self.sendTo().messageType === 'broadcast') {
+            var messageCount = newMessage.attributes.messageCount;
+            var exTime = Math.round(newMessage.attributes.executionTime * 1000) / 1000;
+            var seconds = (exTime) % 60;
+            var minutes = parseInt(seconds / 60, 10);
+
+            alert('info',
+              'Code Execution Time',
+              (((minutes > 0) ? (minutes) + ' Min ' : '') + seconds + ' Sec'),
+              5000);
+
+            if (messageCount) {
+              alert('info',
+                'Messages Sent',
+                messageCount,
+                5000);
+            }
+
             rootViewModel.router.go('home');
           }
           self.clearMessage();

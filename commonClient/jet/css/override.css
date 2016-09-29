@@ -146,7 +146,7 @@ body {
 .process-area{
   max-width: 400px;
   position: fixed;
-  top: 55px;
+  top: 50px;
   left: 0;
 }
 
@@ -250,31 +250,6 @@ body {
   color: #fff;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .dino-logo {
   max-width: 30%;
 }
@@ -336,9 +311,9 @@ body {
   list-style: none;
 }
 
-
-
-
+.oi-icon{
+  padding: 10px;
+}
 
 #oracle-info{
   display: table;
