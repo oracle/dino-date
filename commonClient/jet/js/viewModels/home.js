@@ -16,7 +16,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojbutton'],
         if (rootViewModel.currentUser()) {
           rootViewModel.router.go('search');
         } else {
-          rootViewModel.router.go('register');
+          rootViewModel.router.go('registration');
         }
       };
     }

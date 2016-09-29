@@ -70,7 +70,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
       'controlPanel': {label: 'Control Panel', canEnter: isAdmin},
       'about': {label: 'About'},
       'profile': {label: 'Profile'},
-      'register': {label: 'Register'}
+      'registration': {label: 'Registration'}
     });
 
     function RootViewModel() {
@@ -141,8 +141,8 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
         sessionStorage.setItem("broadcastType", 'thickDatabase');
       }
 
-      if (!sessionStorage.hasOwnProperty('registerType')) {
-        sessionStorage.setItem("registerType", 'aq');
+      if (!sessionStorage.hasOwnProperty('registrationType')) {
+        sessionStorage.setItem("registrationType", 'aq');
       }
 
       if (!sessionStorage.hasOwnProperty('searchType')) {
@@ -172,7 +172,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
           'userToken': userToken || parseInt(self.currentUser()? self.currentUser().id : null)
         };
 
-        if (stateStr === 'register' || stateStr === 'search' || stateStr === 'broadcast') {
+        if (stateStr === 'registration' || stateStr === 'search' || stateStr === 'broadcast') {
           headers['DD-Process-Type'] = self.getProcessType(stateStr);
         }
 

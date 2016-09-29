@@ -25,6 +25,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'models/Member', 'ddData', 'ojs/ojdi
           aboutYourself: null,
           trilobitcoinNumber: null
         });
+        self.locationKeysVal(null);
+        self.speciesKeysVal(null);
       };
 
       //initialize the data

@@ -12,7 +12,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
       var rootViewModel = ko.dataFor(document.getElementById('mainContent'));
 
       self.processTypes = {
-        register: [
+        registration: [
           {
             name: 'Middle Tier',
             value: 'thinDatabase',
@@ -127,7 +127,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
       self.currentProcess = ko.observable(getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
 
       self.show = ko.computed(function () {
-        var showPanel = (self.stateStr() === 'register' || self.stateStr() === 'search' || self.stateStr() === 'broadcast');
+        var showPanel = (self.stateStr() === 'registration' || self.stateStr() === 'search' || self.stateStr() === 'broadcast');
         if (showPanel){
           self.currentProcess(getProcessByValue(self.stateStr(), rootViewModel.getProcessType(self.stateStr())));
           self.listVals(self.processTypes[self.stateStr()]);
@@ -140,9 +140,8 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
 
       var getExampleCode = function () {
         self.exampleCode(null);
-        //TODO refactor register to be registration
-        var pType = (self.stateStr()==='register')?'registration': self.stateStr();
-        $.get('api/v1/code/' + pType + '/' + self.currentProcess().value)
+
+        $.get('api/v1/code/' + self.stateStr() + '/' + self.currentProcess().value)
           .then(function success(res) {
             self.exampleCode(res.code);
           }, function error(res) {
@@ -180,7 +179,7 @@ define(['ojs/ojcore', 'knockout', 'jquery', 'alert', 'ojs/ojdialog',
       // };
       //
       // self.init = function (stateStr) {
-      //   if (stateStr === 'register' || stateStr === 'search' || stateStr === 'broadcast') {
+      //   if (stateStr === 'registration' || stateStr === 'search' || stateStr === 'broadcast') {
       //
       //     for (var pType in self.processTypes) {
       //       if (self.processTypes.hasOwnProperty(pType)) {
