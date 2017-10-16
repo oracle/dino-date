@@ -31,30 +31,7 @@ AS
       trilobitcoin_ok_l     INTEGER;
       member_id_l   INTEGER;
 
-      l_scope       logger_logs.scope%TYPE
-                       := gc_scope_prefix || 'process_registration';
-      l_params      logger.tab_param;
-
-      PROCEDURE initialize
-      IS
-      BEGIN
-         logger.append_param (l_params, 'email_p', email_p);
-         logger.append_param (l_params, 'dino_name_p', dino_name_p);
-         logger.append_param (l_params, 'password_p', password_p);
-         logger.append_param (l_params, 'dinosaur_id_p', dinosaur_id_p);
-         logger.append_param (l_params, 'location_id_p', location_id_p);
-         logger.append_param (l_params, 'about_yourself_p', about_yourself_p);
-         logger.append_param (l_params,
-                              'trilobitcoin_number_p',
-                              trilobitcoin_number_p);
-         logger.append_param (l_params, 'amount_p', amount_p);
-         logger.LOG ('START',
-                     l_scope,
-                     NULL,
-                     l_params);
-      END;
    BEGIN
-      initialize;
 
       /* We don't want there to be any possibility that a user could enter a 
          commerce-related number that could be confused with a credit card
@@ -95,16 +72,10 @@ AS
       welcome_new_user (member_id_p => member_id_l);
 
       COMMIT;
-
-      logger.LOG ('END', l_scope);
       RETURN (member_id_l);
    EXCEPTION
       WHEN OTHERS
       THEN
-         logger.log_error ('Unexpected Error',
-                           l_scope,
-                           NULL,
-                           l_params);
          RAISE;
    END process_registration;
 
@@ -116,16 +87,7 @@ AS
       enq_opt    DBMS_AQ.ENQUEUE_OPTIONS_T;
       msg_prop   DBMS_AQ.MESSAGE_PROPERTIES_T;
       msg_id     RAW (16);
-
-      l_scope    logger_logs.scope%TYPE := gc_scope_prefix || 'queue_payment';
-      l_params   logger.tab_param;
    BEGIN
-      --logger.append_param(l_params, 'p_message', p_message);
-      logger.LOG ('START',
-                  l_scope,
-                  NULL,
-                  l_params);
-
       enq_opt.visibility := DBMS_AQ.on_commit;
       enq_opt.delivery_mode := DBMS_AQ.persistent;
       DBMS_AQ.enqueue (queue_name           => queue_name,
@@ -134,14 +96,9 @@ AS
                        payload              => p_message,
                        msgid                => msg_id);
       COMMIT;
-      logger.LOG ('END', l_scope);
    EXCEPTION
       WHEN OTHERS
       THEN
-         logger.log_error ('Unexpected Error',
-                           l_scope,
-                           NULL,
-                           l_params);
          RAISE;
    END queue_payment;
 
@@ -161,30 +118,7 @@ AS
       trilobitcoin_ok_l  INTEGER;
       member_id_l        INTEGER;
 
-      l_scope       logger_logs.scope%TYPE
-                       := gc_scope_prefix || 'process_registration_aq';
-      l_params      logger.tab_param;
-
-      PROCEDURE initialize
-      IS
-      BEGIN
-         logger.append_param (l_params, 'email_p', email_p);
-         logger.append_param (l_params, 'dino_name_p', dino_name_p);
-         logger.append_param (l_params, 'password_p', password_p);
-         logger.append_param (l_params, 'dinosaur_id_p', dinosaur_id_p);
-         logger.append_param (l_params, 'location_id_p', location_id_p);
-         logger.append_param (l_params, 'about_yourself_p', about_yourself_p);
-         logger.append_param (l_params,
-                              'trilobitcoin_number_p',
-                              trilobitcoin_number_p);
-         logger.append_param (l_params, 'amount_p', amount_p);
-         logger.LOG ('START',
-                     l_scope,
-                     NULL,
-                     l_params);
-      END;
    BEGIN
-      initialize;
 
       -- Register the user and get their new member_id.
       -- Their subscription status is marked 'P' for pending.
@@ -220,15 +154,10 @@ AS
 
       COMMIT;
 
-      logger.LOG ('END', l_scope);
       RETURN (member_id_l);
    EXCEPTION
       WHEN OTHERS
       THEN
-         logger.log_error ('Unexpected Error',
-                           l_scope,
-                           NULL,
-                           l_params);
          RAISE;
    END process_registration_aq;
 
@@ -246,28 +175,9 @@ AS
       l_message_properties   DBMS_AQ.MESSAGE_PROPERTIES_T;
       l_message_id           RAW (16);
       l_payment_ok           INTEGER;
-
-      l_scope                logger_logs.scope%TYPE
-                                := gc_scope_prefix || 'auto_dequeue';
-      l_params               logger.tab_param;
       l_processing_error     dd_dequeue_errors.error_message%TYPE;
 
-      PROCEDURE initialize
-      IS
-      BEGIN
-         logger.append_param (l_params, 'context', context);
-         -- logger.append_param(l_params, 'reginfo', reginfo);
-         -- logger.append_param(l_params, 'descr', descr);
-         logger.append_param (l_params, 'payload', payload);
-         logger.append_param (l_params, 'payloadl', payloadl);
-         logger.LOG ('START',
-                     l_scope,
-                     NULL,
-                     l_params);
-      END;
    BEGIN
-      initialize;
-
       l_dequeue_options.msgid := descr.msg_id;
       l_dequeue_options.consumer_name := descr.consumer_name;
       l_dequeue_options.visibility := DBMS_AQ.on_commit;
@@ -296,11 +206,6 @@ AS
    EXCEPTION
       WHEN OTHERS
       THEN
-         logger.log_error ('Unexpected Error',
-                           l_scope,
-                           NULL,
-                           l_params);
-
          ROLLBACK;
 
          -- In case of errors user can log the error message into

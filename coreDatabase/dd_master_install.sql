@@ -13,26 +13,13 @@ WHENEVER SQLERROR EXIT
 
 @@dd_create_schema.sql
 
-define LOGGER_DIRECTORY=LOGGER_DIRECTORY
-accept LOGGER_DIRECTORY char default &LOGGER_DIRECTORY prompt 'Name of the directory for the logger scripts       [&LOGGER_DIRECTORY] :'
-@@&LOGGER_DIRECTORY/create_user.sql dd_logger users temp dd
-
-
-CONNECT &LOGGER_USER/&PASSWD
-@@&LOGGER_DIRECTORY/logger_install.sql
-@@&LOGGER_DIRECTORY/scripts/grant_logger_to_user.sql DD
-@@&LOGGER_DIRECTORY/scripts/grant_logger_to_user.sql DD_NON_EBR
-exec logger.set_level(logger.g_error);
-
 
 CONNECT dd_non_ebr/dd
-@@&LOGGER_DIRECTORY/scripts/create_logger_synonyms.sql DD_LOGGER
 @@dd_non_ebr_schema/dd_non_ebr_user_payment_type.typ
 @@dd_non_ebr_schema/dd_non_ebr_setup_aq.sql
 
 
 CONNECT dd/dd
-@@&LOGGER_DIRECTORY/scripts/create_logger_synonyms.sql DD_LOGGER
 --Create Tables
 @@dd_schema/dd_dinosaurs.tbl
 @@dd_schema/dd_locations.tbl
@@ -45,6 +32,19 @@ CONNECT dd/dd
 
 --Create Synonyms
 @@dd_schema/dd_user_payment_type.syn
+
+--Create Triggers
+@@dd_schema/dd_dinosaurs_bir.trg
+@@dd_schema/dd_dinosaurs_bur.trg
+@@dd_schema/dd_locations_bir.trg
+@@dd_schema/dd_locations_bur.trg
+@@dd_schema/dd_members_bir.trg
+@@dd_schema/dd_members_bur.trg
+@@dd_schema/dd_messages_bir.trg
+@@dd_schema/dd_messages_bur.trg
+@@dd_schema/dd_templates_bur.trg
+@@dd_schema/dd_settings_bir.trg
+@@dd_schema/dd_settings_bur.trg
 
 --Create Functions
 @@dd_schema/dd_dino_id_from_name.fnc
@@ -67,21 +67,10 @@ CONNECT dd/dd
 @@dd_schema/dd_search_pkg.pkb
 @@dd_schema/dd_text_uds_pkg.pkb
 
---Create Triggers
-@@dd_schema/dd_dinosaurs_bur.trg
-@@dd_schema/dd_dinosours_bir.trg
-@@dd_schema/dd_locations_bir.trg
-@@dd_schema/dd_locations_bur.trg
-@@dd_schema/dd_members_bir.trg
-@@dd_schema/dd_members_bur.trg
-@@dd_schema/dd_messages_bir.trg
-@@dd_schema/dd_messages_bur.trg
-@@dd_schema/dd_templates_bur.trg
-@@dd_schema/dd_settings_bir.trg
-@@dd_schema/dd_settings_bur.trg
-
 --Load Data
+set define off
 @@dd_schema/dd_load_data.sql
+set define on
 
 --Setup Text Search
 @@dd_schema/dd_setup_text_search.sql

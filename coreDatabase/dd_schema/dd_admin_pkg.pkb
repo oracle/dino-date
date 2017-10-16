@@ -89,21 +89,10 @@ IS
         SELECT * FROM dd_members;
   
      /* 2016-03 SF Added logging and "real" error logging in FORALL */
-     l_scope             logger_logs.scope%TYPE := 'broadcast_message_big';
-     l_params            logger.tab_param;
   
      PROCEDURE initialize
      IS
-     BEGIN
-        logger.append_param (l_params, 'from_member_id_p', from_member_id_p);
-        logger.append_param (l_params, 'subject_p', subject_p);
-        logger.append_param (l_params, 'message_in', message_in);
-        logger.append_param (l_params, 'fetch_limit_in', fetch_limit_in);
-        logger.LOG ('START',
-                    l_scope,
-                    NULL,
-                    l_params);
-  
+     BEGIN  
         OPEN members_cur;
      END;
   BEGIN
@@ -124,16 +113,7 @@ IS
                            message_in);
         EXCEPTION
            WHEN failure_in_forall
-           THEN
-              FOR indx IN 1 .. SQL%BULK_EXCEPTIONS.COUNT
-              LOOP
-                 logger.log_error (
-                    'Individual Message Failure',
-                    l_scope,
-                    'Member ID = ' || l_members (indx).member_id,
-                    l_params);
-              END LOOP;
-  
+           THEN  
               RAISE;
         END;
      END LOOP;
@@ -149,7 +129,6 @@ IS
      new_about       CLOB;
      num_sentences   NUMBER;
      
-     l_scope logger_logs.scope%TYPE := gc_scope_prefix || 'generate_about';
   BEGIN
      /* Will have between 3 and 10 sentences */
      num_sentences := floor(DBMS_RANDOM.VALUE (3, 11));
@@ -164,7 +143,6 @@ IS
      RETURN new_about;
   EXCEPTION
      WHEN OTHERS THEN
-       logger.log_error('Unhandled Exception', l_scope);
        RAISE;
   END generate_about;
   
