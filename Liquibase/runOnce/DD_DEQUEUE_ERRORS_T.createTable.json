@@ -1,0 +1,34 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-1",
+      "author": "bcarter (generated)",
+      "changes": [{
+        "createTable": {
+          "columns": [{
+            "column": {
+              "autoIncrement": true,
+              "constraints": {
+                "nullable": false
+              },
+              "name": "ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "name": "ERROR_MESSAGE",
+              "type": "VARCHAR2(4000 BYTE)"
+            }
+          }],
+          "tableName": "DD_DEQUEUE_ERRORS_T"
+        }
+      }]
+    }
+  }]
+}

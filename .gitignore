@@ -90,5 +90,6 @@ commonClient/jet/THIRDPARTYLICENSE.txt
 commonClient/jet/buildnum
 commonClient/jet/revnum
 
+liquibase.properties
 
 commonClient/angularJS/assets/libs/

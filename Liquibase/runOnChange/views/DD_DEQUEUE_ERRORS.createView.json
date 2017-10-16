@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-18",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_DEQUEUE_ERRORS (ID, ERROR_MESSAGE) AS SELECT \"ID\",\"ERROR_MESSAGE\"\n  FROM dd_dequeue_errors_t",
+          "viewName": "DD_DEQUEUE_ERRORS"
+        }
+      }]
+    }
+  }]
+}

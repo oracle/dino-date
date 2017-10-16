@@ -1,0 +1,36 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "2",
+      "author": "bcarter",
+      "changes": [{
+        "sqlFile": {
+          "dbms": "oracle",
+          "encoding": "utf8",
+          "endDelimiter": "/",
+          "path": "../../coreDatabase/dd_schema/dd_load_data.sql",
+          "relativeToChangelogFile": true,
+          "splitStatements": true,
+          "stripComments": true
+        }
+      }],
+      "rollback": [
+                    {
+                        "sql": {
+                            "sql": "delete from dd_settings;
+                            delete from dd_dinosaurs;
+                            delete from dd_members;
+                            delete from dd_messages;
+                            delete from dd_seed_data;"
+                        }
+                    }
+                ]
+    }
+  }]
+}

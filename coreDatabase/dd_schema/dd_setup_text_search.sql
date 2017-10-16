@@ -8,8 +8,6 @@ BEGIN
 END;
 /
 
-SHOW ERROR
-
 BEGIN
    ctx_ddl.create_section_group (group_name   => 'dino_sg',
                                  group_type   => 'XML_SECTION_GROUP');
@@ -67,8 +65,6 @@ BEGIN
 END;
 /
 
-SHOW ERROR
-
 BEGIN
    ctx_ddl.create_preference ('dino_lx', 'BASIC_LEXER');
    ctx_ddl.set_attribute ('dino_lx', 'MIXED_CASE', 'NO');
@@ -76,8 +72,6 @@ BEGIN
    ctx_ddl.set_attribute ('dino_lx', 'BASE_LETTER_TYPE', 'GENERIC');
 END;
 /
-
-SHOW ERROR
 
 CREATE INDEX dd_ft_members
    ON dd_members_t (about_yourself)

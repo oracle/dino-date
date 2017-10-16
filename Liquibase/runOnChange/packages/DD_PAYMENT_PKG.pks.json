@@ -1,0 +1,29 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1",
+      "author": "bcarter",
+      "runOnChange": true,
+      "changes": [{
+        "createProcedure": {
+          "dbms": "oracle",
+          "encoding": "utf8",
+          "path": "../../../coreDatabase/dd_schema/dd_payment_pkg.pks",
+          "relativeToChangelogFile": true,
+          "schemaName": "dd"
+        }
+      }],
+      "rollback": [{
+        "sql": {
+          "sql": "drop package dd_payment_pkg;"
+        }
+      }]
+    }
+  }]
+}

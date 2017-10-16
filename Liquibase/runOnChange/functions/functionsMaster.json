@@ -1,0 +1,15 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "runOnChange/functions/DD_DINO_ID_FROM_NAME.function.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/functions/DD_DEGREE_TO_SDO.function.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/functions/DD_LUHN.function.json"
+    }
+  }]
+}

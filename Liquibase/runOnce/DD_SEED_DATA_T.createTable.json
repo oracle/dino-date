@@ -1,0 +1,50 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-6",
+      "author": "bcarter (generated)",
+      "changes": [{
+        "createTable": {
+          "columns": [{
+            "column": {
+              "autoIncrement": true,
+              "constraints": {
+                "primaryKey": true,
+                "primaryKeyName": "DD_SEED_DATA"
+              },
+              "name": "SEED_DATA_ID",
+              "type": "NUMBER"
+            }
+          }, {
+            "column": {
+              "name": "DATA_TYPE",
+              "type": "VARCHAR2(20 BYTE)"
+            }
+          }, {
+            "column": {
+              "name": "DATA",
+              "type": "VARCHAR2(1000 BYTE)"
+            }
+          }],
+          "tableName": "DD_SEED_DATA_T"
+        }
+      }, {
+        "createIndex": {
+          "columns": [{
+            "column": {
+              "name": "DATA_TYPE"
+            }
+          }],
+          "indexName": "DD_SEED_DATA_TYPE",
+          "tableName": "DD_SEED_DATA_T"
+        }
+      }]
+    }
+  }]
+}

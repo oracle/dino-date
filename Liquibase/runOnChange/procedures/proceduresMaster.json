@@ -1,0 +1,7 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "runOnChange/procedures/DD_PROCESS_TBC_PAYMENT.procedure.json"
+    }
+  }]
+}

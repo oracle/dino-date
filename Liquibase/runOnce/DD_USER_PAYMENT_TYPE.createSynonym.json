@@ -1,0 +1,32 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1",
+      "author": "bcarter",
+      "changes": [{
+        "sqlFile": {
+          "dbms": "oracle",
+          "encoding": "utf8",
+          "endDelimiter": "\\nGO",
+          "path": "../../coreDatabase/dd_schema/dd_user_payment_type.syn",
+          "relativeToChangelogFile": true,
+          "splitStatements": true,
+          "stripComments": true
+        }
+      }],
+      "rollback": [
+                    {
+                        "sql": {
+                            "sql": "drop synonym dd_user_payment_type;"
+                        }
+                    }
+                ]
+    }
+  }]
+}

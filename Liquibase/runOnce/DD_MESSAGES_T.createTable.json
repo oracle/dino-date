@@ -1,0 +1,114 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-5",
+      "author": "bcarter (generated)",
+      "changes": [{
+        "createTable": {
+          "columns": [{
+            "column": {
+              "autoIncrement": true,
+              "constraints": {
+                "primaryKey": true,
+                "primaryKeyName": "DD_MESSAGES"
+              },
+              "name": "MESSAGE_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "FROM_MEMBER_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "TO_MEMBER_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "name": "SUBJECT",
+              "type": "VARCHAR2(1000 BYTE)"
+            }
+          }, {
+            "column": {
+              "name": "MESSAGE_CONTENTS",
+              "type": "CLOB"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CREATED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CHANGED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CREATED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CHANGED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }],
+          "tableName": "DD_MESSAGES_T"
+        }
+      }, {
+        "addForeignKeyConstraint": {
+          "baseColumnNames": "FROM_MEMBER_ID",
+          "baseTableName": "DD_MESSAGES_T",
+          "constraintName": "FK_DD_MESSAGES_FROM",
+          "deferrable": false,
+          "initiallyDeferred": false,
+          "onDelete": "CASCADE",
+          "onUpdate": "RESTRICT",
+          "referencedColumnNames": "MEMBER_ID",
+          "referencedTableName": "DD_MEMBERS_T"
+        }
+      }, {
+        "addForeignKeyConstraint": {
+          "baseColumnNames": "TO_MEMBER_ID",
+          "baseTableName": "DD_MESSAGES_T",
+          "constraintName": "FK_DD_MESSAGES_TO",
+          "deferrable": false,
+          "initiallyDeferred": false,
+          "onDelete": "CASCADE",
+          "onUpdate": "RESTRICT",
+          "referencedColumnNames": "MEMBER_ID",
+          "referencedTableName": "DD_MEMBERS_T"
+        }
+      }]
+    }
+  }]
+}

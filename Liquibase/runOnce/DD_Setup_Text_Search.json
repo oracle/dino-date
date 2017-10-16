@@ -1,0 +1,43 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "2",
+      "author": "bcarter",
+      "changes": [{
+        "sqlFile": {
+          "dbms": "oracle",
+          "encoding": "utf8",
+          "endDelimiter": "/",
+          "path": "../../coreDatabase/dd_schema/dd_setup_text_search.sql",
+          "relativeToChangelogFile": true,
+          "splitStatements": true,
+          "stripComments": true
+        }
+      }],
+      "rollback": [
+                    {
+                        "sql": {
+                            "sql": "drop index dd_ft_members;"
+                        }
+                    }, {
+                        "sql": {
+                        "endDelimiter": "/",
+                            "sql": "begin
+                              ctx_ddl.drop_preference('dino_lx');
+                              ctx_ddl.drop_section_group('dino_sg');
+                              ctx_ddl.drop_preference('dino_ds');
+                            end;
+                            /
+                            "
+                        }
+                    }
+                ]
+    }
+  }]
+}

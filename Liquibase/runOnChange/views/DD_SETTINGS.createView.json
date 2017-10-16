@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-24",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_SETTINGS (SETTING_ID, SETTING_NAME, CHAR_VALUE, NUM_VALUE, DATE_VALUE, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"SETTING_ID\",\"SETTING_NAME\",\"CHAR_VALUE\",\"NUM_VALUE\",\"DATE_VALUE\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_settings_t",
+          "viewName": "DD_SETTINGS"
+        }
+      }]
+    }
+  }]
+}

@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-21",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_MEMBERS (MEMBER_ID, DINOSAUR_ID, LOCATION_ID, DINO_NAME, EMAIL, ABOUT_YOURSELF, SUBSCRIPTION_STATUS, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"MEMBER_ID\",\"DINOSAUR_ID\",\"LOCATION_ID\",\"DINO_NAME\",\"EMAIL\",\"ABOUT_YOURSELF\",\"SUBSCRIPTION_STATUS\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_members_t",
+          "viewName": "DD_MEMBERS"
+        }
+      }]
+    }
+  }]
+}

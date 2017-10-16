@@ -1,0 +1,79 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-2",
+      "author": "bcarter (generated)",
+      "changes": [{
+        "createTable": {
+          "columns": [{
+            "column": {
+              "autoIncrement": true,
+              "constraints": {
+                "primaryKey": true,
+                "primaryKeyName": "DD_DINOSAURS"
+              },
+              "name": "DINOSAUR_ID",
+              "type": "NUMBER"
+            }
+          }, {
+            "column": {
+              "name": "SPECIES_NAME",
+              "type": "VARCHAR2(1000 BYTE)"
+            }
+          }, {
+            "column": {
+              "name": "AVERAGE_LENGTH_IN_FEET",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "name": "AVERAGE_WEIGHT_IN_TONS",
+              "type": "NUMBER"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CREATED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CHANGED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CREATED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CHANGED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }],
+          "tableName": "DD_DINOSAURS_T"
+        }
+      }]
+    }
+  }]
+}

@@ -1,0 +1,29 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1",
+      "author": "liquibase-docs",
+      "runOnChange": true,
+      "changes": [{
+        "createProcedure": {
+          "dbms": "oracle",
+          "encoding": "utf8",
+          "path": "../../../coreDatabase/dd_schema/dd_members_bur.trg",
+          "relativeToChangelogFile": true,
+          "schemaName": "dd"
+        }
+      }],
+      "rollback": [{
+        "sql": {
+          "sql": "drop trigger dd_members_bur;"
+        }
+      }]
+    }
+  }]
+}

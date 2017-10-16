@@ -1,4 +1,3 @@
-SET DEFINE OFF;
 BEGIN
   INSERT INTO dd_seed_data (data_type,data)
                   VALUES ('first_name','Aaron');
@@ -2338,4 +2337,3 @@ BEGIN
    COMMIT;
 END;
 /
-SET DEFINE ON;

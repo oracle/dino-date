@@ -1,0 +1,35 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "runOnChange/packages/DD_PAYMENT_PKG.pks.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_ADMIN_PKG.pks.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_SEARCH_PKG.pks.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_TEXT_UDS_PKG.pks.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_PAYMENT_PKG.pkb.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_ADMIN_PKG.pkb.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_SEARCH_PKG.pkb.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/packages/DD_TEXT_UDS_PKG.pkb.json"
+    }
+  }]
+}

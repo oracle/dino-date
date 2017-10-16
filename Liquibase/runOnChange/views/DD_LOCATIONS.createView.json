@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-20",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_LOCATIONS (LOCATION_ID, LOCATION_NAME, ADDRESS1, ADDRESS2, CITY, STATE, POSTAL_CODE, COUNTRY, GEOMETRY, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"LOCATION_ID\",\"LOCATION_NAME\",\"ADDRESS1\",\"ADDRESS2\",\"CITY\",\"STATE\",\"POSTAL_CODE\",\"COUNTRY\",\"GEOMETRY\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_locations_t",
+          "viewName": "DD_LOCATIONS"
+        }
+      }]
+    }
+  }]
+}

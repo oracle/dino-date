@@ -1,0 +1,47 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "runOnChange/triggers/DD_DINOSAURS_BIR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_DINOSAURS_BUR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_LOCATIONS_BIR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_LOCATIONS_BUR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_MEMBERS_BIR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_MEMBERS_BUR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_MESSAGES_BIR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_MESSAGES_BUR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_TEMPLATES_BUR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_SETTINGS_BIR.create_trigger.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/triggers/DD_SETTINGS_BUR.create_trigger.json"
+    }
+  }]
+}

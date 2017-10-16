@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-25",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_TEMPLATES (TEMPLATE_ID, TEMPLATE_NAME, TEMPLATE_CONTENTS, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"TEMPLATE_ID\",\"TEMPLATE_NAME\",\"TEMPLATE_CONTENTS\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_templates_t",
+          "viewName": "DD_TEMPLATES"
+        }
+      }]
+    }
+  }]
+}

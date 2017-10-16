@@ -1,0 +1,35 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "runOnChange/views/DD_DEQUEUE_ERRORS.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_DINOSAURS.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_LOCATIONS.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_MEMBERS.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_MESSAGES.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_SEED_DATA.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_SETTINGS.createView.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnChange/views/DD_TEMPLATES.createView.json"
+    }
+  }]
+}

@@ -1,0 +1,126 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-4",
+      "author": "bcarter (generated)",
+      "changes": [{
+        "createTable": {
+          "columns": [{
+            "column": {
+              "autoIncrement": true,
+              "constraints": {
+                "primaryKey": true,
+                "primaryKeyName": "DD_MEMBERS"
+              },
+              "name": "MEMBER_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "name": "DINOSAUR_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "name": "LOCATION_ID",
+              "type": "NUMBER(*, 0)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "DINO_NAME",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false,
+                "unique": true
+              },
+              "name": "EMAIL",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "name": "ABOUT_YOURSELF",
+              "type": "CLOB"
+            }
+          }, {
+            "column": {
+              "defaultValue": "P",
+              "name": "SUBSCRIPTION_STATUS",
+              "type": "VARCHAR2(1 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CREATED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
+              "name": "CHANGED_BY",
+              "type": "VARCHAR2(100 BYTE)"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CREATED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }, {
+            "column": {
+              "constraints": {
+                "nullable": false
+              },
+              "name": "CHANGED_ON",
+              "type": "TIMESTAMP(6) WITH LOCAL TIME ZONE"
+            }
+          }],
+          "tableName": "DD_MEMBERS_T"
+        }
+      }, {
+        "addForeignKeyConstraint": {
+          "baseColumnNames": "DINOSAUR_ID",
+          "baseTableName": "DD_MEMBERS_T",
+          "constraintName": "FK_DD_MEMBERS_D",
+          "deferrable": false,
+          "initiallyDeferred": false,
+          "onDelete": "CASCADE",
+          "onUpdate": "RESTRICT",
+          "referencedColumnNames": "DINOSAUR_ID",
+          "referencedTableName": "DD_DINOSAURS_T"
+        }
+      }, {
+        "addForeignKeyConstraint": {
+          "baseColumnNames": "LOCATION_ID",
+          "baseTableName": "DD_MEMBERS_T",
+          "constraintName": "FK_DD_MEMBERS_L",
+          "deferrable": false,
+          "initiallyDeferred": false,
+          "onDelete": "CASCADE",
+          "onUpdate": "RESTRICT",
+          "referencedColumnNames": "LOCATION_ID",
+          "referencedTableName": "DD_LOCATIONS_T"
+        }
+      }]
+    }
+  }]
+}

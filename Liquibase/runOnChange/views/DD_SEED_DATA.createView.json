@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-23",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_SEED_DATA (SEED_DATA_ID, DATA_TYPE, DATA) AS SELECT \"SEED_DATA_ID\",\"DATA_TYPE\",\"DATA\"\n  FROM dd_seed_data_t",
+          "viewName": "DD_SEED_DATA"
+        }
+      }]
+    }
+  }]
+}

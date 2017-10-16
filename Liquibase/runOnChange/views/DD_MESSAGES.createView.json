@@ -1,0 +1,22 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "1507062717550-22",
+      "author": "bcarter (generated)",
+      "runOnChange":true,
+      "changes": [{
+        "createView": {
+          "fullDefinition": true,
+          "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_MESSAGES (MESSAGE_ID, FROM_MEMBER_ID, TO_MEMBER_ID, SUBJECT, MESSAGE_CONTENTS, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"MESSAGE_ID\",\"FROM_MEMBER_ID\",\"TO_MEMBER_ID\",\"SUBJECT\",\"MESSAGE_CONTENTS\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_messages_t",
+          "viewName": "DD_MESSAGES"
+        }
+      }]
+    }
+  }]
+}
