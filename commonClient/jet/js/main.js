@@ -5,20 +5,23 @@
  */
 requirejs.config({
   // Path mappings for the logical module names
-  paths: 
+  paths:
  //injector:mainReleasePaths
   {
     'knockout': 'libs/knockout/knockout-3.4.0.debug',
-    'jquery': 'libs/jquery/jquery-3.1.0',
+    'jquery': 'libs/jquery/jquery-3.1.1',
     'jqueryui-amd': 'libs/jquery/jqueryui-amd-1.12.0',
     'promise': 'libs/es6-promise/es6-promise.min',
     'hammerjs': 'libs/hammer/hammer-2.0.8.min',
     'ojdnd': 'libs/dnd-polyfill/dnd-polyfill-1.0.0.min',
-    'ojs': 'libs/oj/v2.1.0/debug',
-    'ojL10n': 'libs/oj/v2.1.0/ojL10n',
-    'ojtranslations': 'libs/oj/v2.1.0/resources',
-    'signals': 'libs/js-signals/signals.min',
+    'ojs': 'libs/oj/v4.0.0/debug',
+    'ojL10n': 'libs/oj/v4.0.0/ojL10n',
+    'ojtranslations': 'libs/oj/v4.0.0/resources',
     'text': 'libs/require/text',
+    'signals': 'libs/js-signals/signals.min',
+    'customElements': 'libs/webcomponents/custom-elements.min',
+    'proj4': 'libs/proj4js/dist/proj4-src',
+    'css': 'libs/require-css/css',
     'ddData': 'shared/ddData',
     'alert': 'shared/alert'
   }
@@ -76,7 +79,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
     function RootViewModel() {
       var self = this;
       self.router = router;
-      
+
       self.currentUser = ko.observable(null);
 
       self.viewProfileId = ko.observable(null);
@@ -113,7 +116,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
               name: 'Broadcast',
               id: 'broadcast'
             });
-            
+
             navData.push({
                 name: 'Control Panel',
                 id: 'controlPanel'
@@ -180,7 +183,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
       };
 
       self.alerts = ko.observableArray();
-      
+
       var smQuery = oj.ResponsiveUtils.getFrameworkQuery(oj.ResponsiveUtils.FRAMEWORK_QUERY_KEY.SM_ONLY);
       self.smScreen = oj.ResponsiveKnockoutUtils.createMediaQueryObservable(smQuery);
       self.navChange = function(event, ui) {
@@ -189,7 +192,7 @@ require(['ojs/ojcore', 'knockout', 'jquery', 'ojs/ojknockout', 'ojs/ojrouter',
           if (self.smScreen()) {
             self.toggleDrawer();
           }
-          
+
           self.router.go(ui.value);
         }
       };
