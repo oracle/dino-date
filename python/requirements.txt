@@ -1,0 +1,2 @@
+cx_Oracle==6.0b1
+bottle==0.12.9
