@@ -9,7 +9,15 @@ SET SERVEROUTPUT ON
 
 WHENEVER SQLERROR EXIT
 
+REVOKE CREATE SESSION FROM dd;
+
+DECLARE
+   lc_username   VARCHAR2 (32) := 'DD';
 BEGIN
+  FOR ln_cur IN (SELECT sid, serial# FROM v$session WHERE username = lc_username) LOOP
+    EXECUTE IMMEDIATE ('ALTER SYSTEM KILL SESSION ''' || ln_cur.sid || ',' || ln_cur.serial# || ''' IMMEDIATE');
+  END LOOP;
+
   EXECUTE IMMEDIATE 'DROP USER dd CASCADE';
   EXCEPTION
   WHEN OTHERS
@@ -56,7 +64,15 @@ GRANT EXECUTE ON ctx_ddl TO dd;
 
 /* dd_non_ebr Schema for non editionable objects */
 
+REVOKE CREATE SESSION FROM dd_non_ebr;
+
+DECLARE
+   lc_username   VARCHAR2 (32) := 'DD_NON_EBR';
 BEGIN
+  FOR ln_cur IN (SELECT sid, serial# FROM v$session WHERE username = lc_username) LOOP
+    EXECUTE IMMEDIATE ('ALTER SYSTEM KILL SESSION ''' || ln_cur.sid || ',' || ln_cur.serial# || ''' IMMEDIATE');
+  END LOOP;
+   
   EXECUTE IMMEDIATE 'DROP USER dd_non_ebr CASCADE';
   EXCEPTION
   WHEN OTHERS
