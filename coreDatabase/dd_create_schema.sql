@@ -9,11 +9,11 @@ SET SERVEROUTPUT ON
 
 WHENEVER SQLERROR EXIT
 
-REVOKE CREATE SESSION FROM dd;
-
 DECLARE
    lc_username   VARCHAR2 (32) := 'DD';
 BEGIN
+  EXECUTE IMMEDIATE 'REVOKE CREATE SESSION FROM dd';
+  
   FOR ln_cur IN (SELECT sid, serial# FROM v$session WHERE username = lc_username) LOOP
     EXECUTE IMMEDIATE ('ALTER SYSTEM KILL SESSION ''' || ln_cur.sid || ',' || ln_cur.serial# || ''' IMMEDIATE');
   END LOOP;
@@ -22,7 +22,7 @@ BEGIN
   EXCEPTION
   WHEN OTHERS
   THEN
-  IF SQLCODE <> -1918
+  IF SQLCODE NOT IN (-1918, -01917)
   THEN
     RAISE;
   END IF;
@@ -64,11 +64,11 @@ GRANT EXECUTE ON ctx_ddl TO dd;
 
 /* dd_non_ebr Schema for non editionable objects */
 
-REVOKE CREATE SESSION FROM dd_non_ebr;
-
 DECLARE
    lc_username   VARCHAR2 (32) := 'DD_NON_EBR';
 BEGIN
+  EXECUTE IMMEDIATE 'REVOKE CREATE SESSION FROM dd_non_ebr';
+  
   FOR ln_cur IN (SELECT sid, serial# FROM v$session WHERE username = lc_username) LOOP
     EXECUTE IMMEDIATE ('ALTER SYSTEM KILL SESSION ''' || ln_cur.sid || ',' || ln_cur.serial# || ''' IMMEDIATE');
   END LOOP;
@@ -77,7 +77,7 @@ BEGIN
   EXCEPTION
   WHEN OTHERS
   THEN
-  IF SQLCODE <> -1918
+  IF SQLCODE NOT IN (-1918, -01917)
   THEN
     RAISE;
   END IF;
