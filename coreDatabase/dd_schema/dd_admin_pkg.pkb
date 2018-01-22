@@ -151,8 +151,19 @@ IS
   IS
      TYPE number_list_type IS TABLE OF NUMBER
         INDEX BY PLS_INTEGER;
-  
-     TYPE members_t IS TABLE OF dd_members%ROWTYPE;
+
+     TYPE members_r is record(
+       dinosaur_id           INTEGER,
+       location_id           INTEGER,
+       dino_name             VARCHAR2 (100),
+       email                 VARCHAR2 (100),
+       about_yourself        CLOB,
+       subscription_status   VARCHAR2 (1),
+       created_on            TIMESTAMP WITH LOCAL TIME ZONE,
+       changed_on            TIMESTAMP WITH LOCAL TIME ZONE
+    );
+    
+     TYPE members_t IS TABLE OF members_r;
   
      dino_list         number_list_type;
      location_list     number_list_type;
@@ -236,8 +247,25 @@ IS
         END LOOP;
   
         FORALL i IN 1 .. new_members.COUNT
-           INSERT INTO dd_members
-                VALUES new_members (i);
+          INSERT INTO dd_members (
+              dinosaur_id,
+              location_id,
+              dino_name,
+              email,
+              about_yourself,
+              subscription_status,
+              created_on,
+              changed_on
+          ) VALUES (
+              new_members(i).dinosaur_id,
+              new_members(i).location_id,
+              new_members(i).dino_name,
+              new_members(i).email,
+              new_members(i).about_yourself,
+              new_members(i).subscription_status,
+              new_members(i).created_on,
+              new_members(i).changed_on
+          );
   
         COMMIT;
      ELSE
