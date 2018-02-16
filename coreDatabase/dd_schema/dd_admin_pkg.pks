@@ -23,6 +23,6 @@ AS
 
   FUNCTION generate_members (amount IN NUMBER) return NUMBER;
 
-  --  PROCEDURE load_settings;
+  PROCEDURE load_settings;
 END;
 /
