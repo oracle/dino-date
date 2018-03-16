@@ -53,25 +53,11 @@ create or replace package body test_admin_generate_members as
     is
   begin
     set_max_members(10);
-    
+
     ut.expect(dd.dd_admin_pkg.generate_members(10000) ).to_equal(0);
-        
+
     set_max_members(60);
   end generate_zero;
-    
-    
-
---    PROCEDURE null_string
---        IS
---    BEGIN
---        ut.expect(betwnstr(NULL,2,5) ).to_(be_null() );
---    END;
---
---    PROCEDURE disabled_test
---        IS
---    BEGIN
---        ut.expect(betwnstr(NULL,NULL,NULL) ).not_to(be_null);
---    END;
 
 end test_admin_generate_members;
 /

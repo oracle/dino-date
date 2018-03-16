@@ -2,7 +2,7 @@
   "databaseChangeLog": [{
     "preConditions": [{
       "runningAs": {
-        "username": "dd"
+        "username": "dd_tests"
       }
     }]
   }, {
@@ -14,17 +14,14 @@
         "createProcedure": {
           "dbms": "oracle",
           "encoding": "utf8",
-          "path": "../../../coreDatabase/dd_schema/dd_admin_pkg.pkb",
+          "path": "../../coreDatabase/dd_tests_schema/test_admin-generate_members.pks",
           "relativeToChangelogFile": true,
           "schemaName": "dd"
-        },
-        "sql": {
-          "sql": "grant execute on dd_admin_pkg to dd_tests;"
         }
       }],
       "rollback": [{
         "sql": {
-          "sql": "drop package body dd_admin_pkg;"
+          "sql": "drop package test_admin-generate_members;"
         }
       }]
     }

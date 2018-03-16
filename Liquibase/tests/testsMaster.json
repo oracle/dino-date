@@ -1,0 +1,11 @@
+{
+  "databaseChangeLog": [{
+    "include": {
+      "file": "TEST_ADMIN-GENERATE_MEMBERS.pks.json"
+    }
+  }, {
+    "include": {
+      "file": "TEST_ADMIN-GENERATE_MEMBERS.pkb.json"
+    }
+  }]
+}

@@ -15,6 +15,9 @@
           "fullDefinition": true,
           "selectQuery": "CREATE OR REPLACE EDITIONING VIEW DD_SETTINGS (SETTING_ID, SETTING_NAME, CHAR_VALUE, NUM_VALUE, DATE_VALUE, CREATED_BY, CHANGED_BY, CREATED_ON, CHANGED_ON) AS SELECT \"SETTING_ID\",\"SETTING_NAME\",\"CHAR_VALUE\",\"NUM_VALUE\",\"DATE_VALUE\",\"CREATED_BY\",\"CHANGED_BY\",\"CREATED_ON\",\"CHANGED_ON\"\n  FROM dd_settings_t",
           "viewName": "DD_SETTINGS"
+        },
+        "sql": {
+          "sql": "grant all on dd.dd_settings to dd_tests;"
         }
       }]
     }
