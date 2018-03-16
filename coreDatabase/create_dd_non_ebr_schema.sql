@@ -14,7 +14,14 @@ WHENEVER SQLERROR EXIT
 DECLARE
    lc_username   VARCHAR2 (32) := 'DD_NON_EBR';
 BEGIN
-  EXECUTE IMMEDIATE 'REVOKE CREATE SESSION FROM dd_non_ebr';
+  BEGIN
+    EXECUTE IMMEDIATE 'REVOKE CREATE SESSION FROM dd_non_ebr';
+  EXCEPTION
+  WHEN OTHERS THEN
+    IF SQLCODE NOT IN (-01952) THEN
+      RAISE;
+    END IF;
+  END;
 
   FOR ln_cur IN (SELECT sid, serial# FROM v$session WHERE username = lc_username) LOOP
     EXECUTE IMMEDIATE ('ALTER SYSTEM KILL SESSION ''' || ln_cur.sid || ',' || ln_cur.serial# || ''' IMMEDIATE');
