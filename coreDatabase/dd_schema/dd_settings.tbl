@@ -5,8 +5,8 @@ CREATE TABLE dd_settings_t
   char_value             VARCHAR2(100),
   num_value              NUMBER,
   date_value             DATE,
-  created_by             VARCHAR2(100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
-  changed_by             VARCHAR2(100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
+  created_by             VARCHAR2(100) default on null sys_context('USERENV', 'CURRENT_USER'),
+  changed_by             VARCHAR2(100) default on null sys_context('USERENV', 'CURRENT_USER'),
   created_on             TIMESTAMP WITH LOCAL TIME ZONE          NOT NULL,
   changed_on             TIMESTAMP WITH LOCAL TIME ZONE          NOT NULL
 )

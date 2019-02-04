@@ -4,8 +4,8 @@ CREATE TABLE dd_dinosaurs_t
   species_name             VARCHAR2 (1000),
   average_length_in_feet   INTEGER,
   average_weight_in_tons   NUMBER,
-  created_by               VARCHAR2 (100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
-  changed_by               VARCHAR2 (100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
+  created_by               VARCHAR2 (100) default on null sys_context('USERENV', 'CURRENT_USER'),
+  changed_by               VARCHAR2 (100) default on null sys_context('USERENV', 'CURRENT_USER'),
   created_on               TIMESTAMP WITH LOCAL TIME ZONE NOT NULL,
   changed_on               TIMESTAMP WITH LOCAL TIME ZONE NOT NULL
 )

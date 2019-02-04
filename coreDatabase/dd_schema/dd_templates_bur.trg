@@ -5,6 +5,6 @@ FOR EACH ROW
   DECLARE
   BEGIN
     :new.changed_on := localtimestamp;
-    :new.changed_by := coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER);
+    :new.changed_by := sys_context('USERENV', 'CURRENT_USER');
   END dd_templates_bur;
 /

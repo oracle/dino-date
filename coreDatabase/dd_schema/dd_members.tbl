@@ -7,8 +7,8 @@ CREATE TABLE dd_members_t
   email                 VARCHAR2 (100) UNIQUE NOT NULL,
   about_yourself        CLOB,
   subscription_status   VARCHAR2 (1) DEFAULT 'P', -- 'P' for payment pending, 'V' for valid etc
-  created_by            VARCHAR2 (100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
-  changed_by            VARCHAR2 (100) default on null coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER),
+  created_by            VARCHAR2 (100) default on null sys_context('USERENV', 'CURRENT_USER'),
+  changed_by            VARCHAR2 (100) default on null sys_context('USERENV', 'CURRENT_USER'),
   created_on            TIMESTAMP WITH LOCAL TIME ZONE NOT NULL,
   changed_on            TIMESTAMP WITH LOCAL TIME ZONE NOT NULL
 )
