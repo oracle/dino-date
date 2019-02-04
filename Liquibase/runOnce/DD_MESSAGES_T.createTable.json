@@ -52,7 +52,7 @@
               "constraints": {
                 "nullable": false
               },
-              "defaultValueComputed": "sys_context('USERENV', 'CURRENT_USER')",
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
               "name": "CREATED_BY",
               "type": "VARCHAR2(100 BYTE)"
             }
@@ -61,7 +61,7 @@
               "constraints": {
                 "nullable": false
               },
-              "defaultValueComputed": "sys_context('USERENV', 'CURRENT_USER')",
+              "defaultValueComputed": "coalesce(SYS_CONTEXT('APEX$SESSION', 'APP_USER'),USER)",
               "name": "CHANGED_BY",
               "type": "VARCHAR2(100 BYTE)"
             }

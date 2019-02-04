@@ -1,0 +1,31 @@
+{
+  "databaseChangeLog": [{
+    "preConditions": [{
+      "runningAs": {
+        "username": "dd"
+      }
+    }]
+  }, {
+    "changeSet": {
+      "id": "201902041351",
+      "author": "bcarter",
+      "changes": [{
+          "addDefaultValue": {
+            "columnName": "CREATED_BY",
+            "defaultValueComputed": "sys_context('USERENV', 'CURRENT_USER')",
+            "schemaName": "DD",
+            "tableName": "DD_MESSAGES_T"
+          }
+        },
+        {
+          "addDefaultValue": {
+            "columnName": "CHANGED_BY",
+            "defaultValueComputed": "sys_context('USERENV', 'CURRENT_USER')",
+            "schemaName": "DD",
+            "tableName": "DD_MESSAGES_T"
+          }
+        }
+      ]
+    }
+  }]
+}

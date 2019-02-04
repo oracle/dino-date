@@ -63,5 +63,29 @@
     "include": {
       "file": "runOnce/DD_Setup_Text_Search.json"
     }
+  }, {
+    "include": {
+      "file": "runOnce/DD_DINOSAURS_T.changeDefaultComputed.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnce/DD_LOCATIONS_T.changeDefaultComputed.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnce/DD_MEMBERS_T.changeDefaultComputed.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnce/DD_MESSAGES_T.changeDefaultComputed.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnce/DD_SETTINGS_T.changeDefaultComputed.json"
+    }
+  }, {
+    "include": {
+      "file": "runOnce/DD_TEMPLATES_T.changeDefaultComputed.json"
+    }
   }]
 }
