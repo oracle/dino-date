@@ -284,11 +284,13 @@ def code(page, tag):
     file_names = {"registration": "members.py",
                   "search": "members.py",
                   "broadcast": "messages.py"}
-    sample = code_samples.get_code_sample(file_names[page], page + "_" + tag)
+    sampleFile = os.path.join(os.path.dirname(os.path.abspath(__file__)), file_names[page])
+    sample = code_samples.get_code_sample(sampleFile, page + "_" + tag)
     return {"code": sample}
 
-clientAppCodeDir = '../commonClient/' + (os.getenv("dd_python_clientAppCodeDir") or os.getenv("dd_clientAppCodeDir") or 'jet')
-print(clientAppCodeDir)
+clientAppCodeDir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                'commonClient',
+                                (os.getenv("dd_python_clientAppCodeDir") or os.getenv("dd_clientAppCodeDir") or 'jet'))
 
 @route('/', methods=['GET', 'POST'])
 def server_static():
@@ -300,6 +302,5 @@ def server_static():
 def server_static(path):
     return static_file(path, root=clientAppCodeDir)
     # return template('..\commonClient\app\index.html')
-
 
 run(host='0.0.0.0', port=os.getenv("dd_python_port") or os.getenv("dd_port") or 8080)

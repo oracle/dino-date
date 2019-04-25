@@ -102,7 +102,7 @@ def process_registration_aq(email, name, password, dinosaur_id, location_id, abo
  * @param integer offset             Start at this offest
  * @return array Array of the member id and names of dinos that match the search criteria
 '''
-#SampleTagStart search_thinDatabase
+#SampleTagStart search_like
 def do_search_thinDatabase(member_id, search_string, limit, offset):
     cur = con.cursor()
 
@@ -123,7 +123,7 @@ def do_search_thinDatabase(member_id, search_string, limit, offset):
     cur.close()
 
     return res
-#SampleTagEnd search_thinDatabase
+#SampleTagEnd search_like
 
 
 '''
