@@ -18,7 +18,7 @@ Using the most advanced features of Oracle Database and leveraging the most popu
 ## Learning Platform
 DinoDate is a constantly changing platform for learning how to integrate advanced Oracle features into different programming languages.
 
-This is example code but feel free to send improvments, or requests for new features.
+This is example code but feel free to send improvements, or requests for new features.
 
 ## [Installation](https://github.com/oracle/dino-date/tree/master/INSTALL.md)
 
