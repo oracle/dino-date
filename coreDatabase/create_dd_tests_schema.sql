@@ -68,3 +68,7 @@ GRANT EXECUTE ON DBMS_AQADM TO dd_tests;
 
 GRANT ctxapp TO dd_tests;
 GRANT EXECUTE ON ctx_ddl TO dd_tests;
+
+/* For utPLSQL Code Coverage */
+GRANT create any procedure to dd_tests;
+GRANT execute  any procedure to dd_tests;
